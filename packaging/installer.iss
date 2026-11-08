@@ -85,6 +85,7 @@ Source: "..\docs\LICENCIAS_TERCEROS.html"; DestDir: "{app}\docs"; Flags: ignorev
 Source: "..\docs\Matriz_de_compatibilidad.md"; DestDir: "{app}\docs"; Flags: ignoreversion
 Source: "..\docs\Limitaciones.md"; DestDir: "{app}\docs"; Flags: ignoreversion
 Source: "..\LICENSE.txt"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\THIRD_PARTY_NOTICES.md"; DestDir: "{app}"; Flags: ignoreversion
 
 [Icons]
 Name: "{group}\{#AppName}"; Filename: "{app}\{#AppExe}"; WorkingDir: "{app}"

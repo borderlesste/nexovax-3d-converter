@@ -19,11 +19,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
--------------------------------------------------------------------------------
-Third-party components / Componentes de terceros / Composants tiers
-
-The installer bundles third-party libraries (Qt/PySide6, Open CASCADE/OCP, VTK,
-IfcOpenShell, NumPy, trimesh, ufbx, Assimp, Pillow, Python and others) that are
-distributed under their own licenses (LGPL, BSD, MIT, Apache 2.0, PSF). They are
-NOT covered by the MIT license above. See docs/LICENCIAS_TERCEROS.html.
