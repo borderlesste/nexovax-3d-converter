@@ -1,0 +1,26 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><title>Licencias de terceros</title>
+<style>body{font-family:Segoe UI,Arial;max-width:1100px;margin:24px auto;padding:0 16px;color:#1d2733}
+table{border-collapse:collapse;width:100%}td,th{border:1px solid #d9e0ea;padding:6px 8px;text-align:left;vertical-align:top}
+th{background:#f3f6fa}pre{white-space:pre-wrap;background:#f7f9fc;border:1px solid #e3e9f1;padding:10px;font-size:12px;max-height:420px;overflow:auto}</style></head><body>
+<h1>Licencias de componentes de terceros</h1>
+<p>NEXOVAX 3D Converter incluye los siguientes componentes. Todos se distribuyen como bibliotecas
+independientes (DLL / módulos de extensión) enlazadas dinámicamente; pueden sustituirse por versiones
+modificadas reemplazando los archivos correspondientes en la carpeta <code>_internal</code> de la instalación,
+tal como exigen las licencias LGPL.</p>
+<table><tr><th>Componente</th><th>Versión</th><th>Licencia</th><th>Notas</th></tr>
+<tr><td>Python (intérprete)</td><td>3.12.10</td><td>PSF-2.0</td><td>Incluido por PyInstaller.</td></tr>
+<tr><td>Qt for Python (PySide6) y Qt 6</td><td>6.12.0</td><td>LGPL-3.0-only</td><td>Enlazado dinámicamente (DLL separadas, reemplazables).</td></tr><tr><td>Shiboken6</td><td>6.12.0</td><td>LGPL-3.0-only</td><td></td></tr><tr><td>OCP (bindings de Open CASCADE)</td><td>8.0.1.1.0</td><td>Apache-2.0</td><td>Incluye las DLL de Open CASCADE Technology (OCCT), licencia LGPL-2.1 con excepción adicional de Open CASCADE.</td></tr><tr><td>VTK — Visualization Toolkit</td><td>9.6.2</td><td>BSD-3-Clause</td><td>Visor 3D; también requerido por OCP.</td></tr><tr><td>IfcOpenShell</td><td>0.9.0.post1</td><td>LGPL-3.0-or-later</td><td>Motor BIM/IFC; incluye su propia compilación de OCCT (LGPL-2.1).</td></tr><tr><td>NumPy</td><td>2.5.4</td><td>BSD-3-Clause</td><td></td></tr><tr><td>trimesh</td><td>5.2.0</td><td>MIT</td><td>Lectura glTF/GLB.</td></tr><tr><td>ufbx (binding Python)</td><td>0.0.5</td><td>MIT / dominio público (biblioteca ufbx)</td><td>Lectura FBX y OBJ. El paquete PyPI 0.0.5 no declara licencia en sus metadatos; la biblioteca ufbx (github.com/ufbx/ufbx) es MIT o dominio público. Verificar el binding antes de redistribuir comercialmente.</td></tr><tr><td>assimp-py + Open Asset Import Library</td><td>1.2.0</td><td>MIT (binding) / BSD-3-Clause (assimp)</td><td>Validación independiente de mallas.</td></tr><tr><td>Pillow</td><td>13.0.0</td><td>MIT-CMU (HPND)</td><td>Texturas.</td></tr><tr><td>Shapely</td><td>2.2.0</td><td>BSD-3-Clause</td><td>Dependencia de IfcOpenShell.</td></tr><tr><td>Lark</td><td>1.3.1</td><td>MIT</td><td>Dependencia de IfcOpenShell.</td></tr><tr><td>isodate</td><td>0.7.2</td><td>BSD-3-Clause</td><td>Dependencia de IfcOpenShell.</td></tr><tr><td>python-dateutil</td><td>4.0.0</td><td>Apache-2.0 / BSD-3-Clause</td><td>Dependencia de IfcOpenShell.</td></tr><tr><td>typing_extensions</td><td>4.16.0</td><td>PSF-2.0</td><td></td></tr><tr><td>packaging</td><td>26.3</td><td>Apache-2.0 / BSD-2-Clause</td><td></td></tr><tr><td>PyInstaller (cargador de arranque)</td><td>6.22.3</td><td>GPL-2.0 con excepción de cargador</td><td>La excepción permite distribuir aplicaciones bajo cualquier licencia.</td></tr>
+<tr><td>Open CASCADE Technology</td><td>incluido en OCP / IfcOpenShell</td><td>LGPL-2.1 + excepción Open CASCADE</td><td>https://dev.opencascade.org</td></tr>
+<tr><td>Inno Setup (solo instalador)</td><td>6.7</td><td>Licencia Inno Setup (gratuita)</td><td>Usado para generar el instalador; no forma parte de la aplicación.</td></tr>
+</table>
+<h2>Código fuente de componentes LGPL</h2>
+<p>Qt / PySide6: https://code.qt.io · IfcOpenShell: https://github.com/IfcOpenShell/IfcOpenShell ·
+Open CASCADE: https://github.com/Open-Cascade-SAS/OCCT · OCP: https://github.com/CadQuery/OCP.
+Las versiones exactas utilizadas figuran en la tabla anterior.</p>
+<h2>Componentes evaluados y no incluidos</h2>
+<p><b>Blender</b> (GPL-2.0-or-later) se evaluó como motor de mallas en segundo plano. Se descartó porque añade
+≈1 GB a la instalación y su función (FBX) se cubre con ufbx (lectura, MIT) + un escritor FBX binario propio,
+validado con dos lectores independientes (ufbx y Assimp). No se distribuye Blender.</p>
+<h2>Textos de licencia</h2>
+
+</body></html>

@@ -1,0 +1,3972 @@
+[
+ {
+  "origen": "escena.gltf",
+  "formato_origen": "gltf",
+  "destino": "gltf",
+  "estado": "exitoso",
+  "fidelidad": "Directa",
+  "semantica": "Completa",
+  "validacion": {
+   "ok": true,
+   "bytes": 3059,
+   "triangles": 36,
+   "desviacion_dimensiones_m": 0.0,
+   "dimensiones_m": [
+    3.707107,
+    4.707107,
+    2.0
+   ],
+   "objetos": 3,
+   "assimp_meshes": 1,
+   "assimp_triangles": 12
+  },
+  "estadisticas": {
+   "importacion_s": 0.9,
+   "triangulos": 36,
+   "objetos": 3,
+   "triangulos_degenerados": 0,
+   "mallas_abiertas": 0,
+   "dimensiones_m": [
+    3.707107,
+    4.707107,
+    2.0
+   ],
+   "exportacion_s": 0.02,
+   "validacion_s": 0.03
+  },
+  "advertencias": [],
+  "perdidas": [],
+  "errores": [],
+  "salidas": [
+   "escena_gltf\\gltf\\escena.gltf",
+   "escena_gltf\\gltf\\escena_tex0.png",
+   "escena_gltf\\gltf\\escena.bin"
+  ]
+ },
+ {
+  "origen": "escena.gltf",
+  "formato_origen": "gltf",
+  "destino": "glb",
+  "estado": "exitoso",
+  "fidelidad": "Directa",
+  "semantica": "Completa",
+  "validacion": {
+   "ok": true,
+   "bytes": 2348,
+   "triangles": 36,
+   "desviacion_dimensiones_m": 0.0,
+   "dimensiones_m": [
+    3.707107,
+    4.707107,
+    2.0
+   ],
+   "objetos": 3,
+   "assimp_meshes": 1,
+   "assimp_triangles": 12
+  },
+  "estadisticas": {
+   "importacion_s": 0.9,
+   "triangulos": 36,
+   "objetos": 3,
+   "triangulos_degenerados": 0,
+   "mallas_abiertas": 0,
+   "dimensiones_m": [
+    3.707107,
+    4.707107,
+    2.0
+   ],
+   "exportacion_s": 0.0,
+   "validacion_s": 0.05
+  },
+  "advertencias": [],
+  "perdidas": [],
+  "errores": [],
+  "salidas": [
+   "escena_gltf\\glb\\escena.glb"
+  ]
+ },
+ {
+  "origen": "escena.gltf",
+  "formato_origen": "gltf",
+  "destino": "obj",
+  "estado": "exitoso_con_advertencias",
+  "fidelidad": "Directa",
+  "semantica": "Parcial",
+  "validacion": {
+   "ok": true,
+   "bytes": 2368,
+   "triangles": 36,
+   "desviacion_dimensiones_m": 1e-09,
+   "dimensiones_m": [
+    3.707107,
+    4.707107,
+    2.0
+   ],
+   "objetos": 3,
+   "assimp_meshes": 3,
+   "assimp_triangles": 36
+  },
+  "estadisticas": {
+   "importacion_s": 0.9,
+   "triangulos": 36,
+   "objetos": 3,
+   "triangulos_degenerados": 0,
+   "mallas_abiertas": 0,
+   "dimensiones_m": [
+    3.707107,
+    4.707107,
+    2.0
+   ],
+   "exportacion_s": 0.02,
+   "validacion_s": 0.73
+  },
+  "advertencias": [
+   "OBJ no declara unidades: coordenadas escritas en m, Y arriba."
+  ],
+  "perdidas": [
+   "Jerarquía aplanada: cada objeto se escribe como grupo con transformaciones aplicadas",
+   "Metadatos de glTF: no representable en OBJ"
+  ],
+  "errores": [],
+  "salidas": [
+   "escena_gltf\\obj\\escena.obj",
+   "escena_gltf\\obj\\escena.mtl",
+   "escena_gltf\\obj\\escena_tex0.png"
+  ]
+ },
+ {
+  "origen": "escena.gltf",
+  "formato_origen": "gltf",
+  "destino": "fbx",
+  "estado": "exitoso_con_advertencias",
+  "fidelidad": "Directa",
+  "semantica": "Parcial",
+  "validacion": {
+   "ok": true,
+   "bytes": 10652,
+   "triangles": 36,
+   "desviacion_dimensiones_m": 0.0,
+   "dimensiones_m": [
+    3.707107,
+    4.707107,
+    2.0
+   ],
+   "objetos": 3,
+   "assimp_meshes": 1,
+   "assimp_triangles": 12
+  },
+  "estadisticas": {
+   "importacion_s": 0.59,
+   "triangulos": 36,
+   "objetos": 3,
+   "triangulos_degenerados": 0,
+   "mallas_abiertas": 0,
+   "dimensiones_m": [
+    3.707107,
+    4.707107,
+    2.0
+   ],
+   "exportacion_s": 0.01,
+   "validacion_s": 0.61
+  },
+  "advertencias": [],
+  "perdidas": [
+   "Materiales PBR convertidos a modelo Phong de FBX (aproximación visual)",
+   "Metadatos de glTF: no representable en FBX"
+  ],
+  "errores": [],
+  "salidas": [
+   "escena_gltf\\fbx\\escena.fbx",
+   "escena_gltf\\fbx\\escena_tex0.png"
+  ]
+ },
+ {
+  "origen": "escena.gltf",
+  "formato_origen": "gltf",
+  "destino": "stl",
+  "estado": "exitoso_con_advertencias",
+  "fidelidad": "Directa",
+  "semantica": "Solo geometría",
+  "validacion": {
+   "ok": true,
+   "bytes": 1884,
+   "triangles": 36,
+   "desviacion_dimensiones_m": 4.8e-08,
+   "dimensiones_m": [
+    3.707107,
+    4.707107,
+    2.0
+   ],
+   "objetos": 1,
+   "assimp_meshes": 1,
+   "assimp_triangles": 36
+  },
+  "estadisticas": {
+   "importacion_s": 0.6,
+   "triangulos": 36,
+   "objetos": 3,
+   "triangulos_degenerados": 0,
+   "mallas_abiertas": 0,
+   "dimensiones_m": [
+    3.707107,
+    4.707107,
+    2.0
+   ],
+   "exportacion_s": 0.0,
+   "validacion_s": 0.01
+  },
+  "advertencias": [
+   "STL no declara unidades: coordenadas escritas en m, Z arriba."
+  ],
+  "perdidas": [
+   "STL no admite materiales, texturas, UV, nombres de objetos ni jerarquía"
+  ],
+  "errores": [],
+  "salidas": [
+   "escena_gltf\\stl\\escena.stl"
+  ]
+ },
+ {
+  "origen": "escena.gltf",
+  "formato_origen": "gltf",
+  "destino": "ifc",
+  "estado": "exitoso_con_advertencias",
+  "fidelidad": "Limitada (con pérdidas)",
+  "semantica": "Parcial",
+  "validacion": {
+   "ok": true,
+   "bytes": 6714,
+   "productos": 3,
+   "desviacion_dimensiones_m": 0.0,
+   "dimensiones_m": [
+    3.707107,
+    4.707107,
+    2.0
+   ],
+   "objetos": 3,
+   "errores_esquema": 0
+  },
+  "estadisticas": {
+   "importacion_s": 0.62,
+   "scene_a_bim_s": 0.97,
+   "productos_ifc": 3,
+   "dimensiones_m": [
+    3.707107,
+    4.707107,
+    2.0
+   ],
+   "exportacion_s": 0.01,
+   "validacion_s": 0.14
+  },
+  "advertencias": [],
+  "perdidas": [
+   "No existe información BIM en el origen: se crean entidades genéricas IfcBuildingElementProxy dentro de una estructura espacial mínima (Proyecto/Sitio/Edificio/Planta)",
+   "Texturas de glTF: no representable en IFC",
+   "UV de glTF: no representable en IFC"
+  ],
+  "errores": [],
+  "salidas": [
+   "escena_gltf\\ifc\\escena.ifc"
+  ]
+ },
+ {
+  "origen": "escena.gltf",
+  "formato_origen": "gltf",
+  "destino": "step",
+  "estado": "exitoso_con_advertencias",
+  "fidelidad": "Aproximada (facetada)",
+  "semantica": "Parcial",
+  "validacion": {
+   "ok": true,
+   "bytes": 83566,
+   "solidos": 3,
+   "caras": 36,
+   "desviacion_dimensiones_m": 0.0,
+   "dimensiones_m": [
+    3.707107,
+    4.707107,
+    2.0
+   ],
+   "objetos": 3,
+   "formas_no_validas": 0
+  },
+  "estadisticas": {
+   "importacion_s": 0.57,
+   "scene_a_cad_s": 2.27,
+   "piezas": 3,
+   "dimensiones_m": [
+    3.707107,
+    4.707107,
+    2.0
+   ],
+   "exportacion_s": 0.07,
+   "validacion_s": 0.13
+  },
+  "advertencias": [],
+  "perdidas": [
+   "Representación facetada: cada triángulo es una cara plana; no se recupera un sólido CAD paramétrico",
+   "Metadatos de glTF: no representable en STEP",
+   "Texturas de glTF: no representable en STEP",
+   "UV de glTF: no representable en STEP"
+  ],
+  "errores": [],
+  "salidas": [
+   "escena_gltf\\step\\escena.step"
+  ]
+ },
+ {
+  "origen": "escena.gltf",
+  "formato_origen": "gltf",
+  "destino": "iges",
+  "estado": "exitoso_con_advertencias",
+  "fidelidad": "Aproximada (facetada)",
+  "semantica": "Parcial",
+  "validacion": {
+   "ok": true,
+   "bytes": 73143,
+   "solidos": 3,
+   "caras": 36,
+   "desviacion_dimensiones_m": 0.0,
+   "dimensiones_m": [
+    3.707107,
+    4.707107,
+    2.0
+   ],
+   "objetos": 3,
+   "formas_no_validas": 0
+  },
+  "estadisticas": {
+   "importacion_s": 0.77,
+   "scene_a_cad_s": 1.55,
+   "piezas": 3,
+   "dimensiones_m": [
+    3.707107,
+    4.707107,
+    2.0
+   ],
+   "exportacion_s": 0.06,
+   "validacion_s": 0.07
+  },
+  "advertencias": [],
+  "perdidas": [
+   "Representación facetada: cada triángulo es una cara plana; no se recupera un sólido CAD paramétrico",
+   "IGES no conserva la estructura de ensamblaje; las piezas se exportan como entidades independientes",
+   "Metadatos de glTF: no representable en IGES",
+   "Texturas de glTF: no representable en IGES",
+   "UV de glTF: no representable en IGES",
+   "IGES: la jerarquía de ensamblaje se aplana (piezas independientes con nombre)."
+  ],
+  "errores": [],
+  "salidas": [
+   "escena_gltf\\iges\\escena.igs"
+  ]
+ },
+ {
+  "origen": "escena_jerarquia.glb",
+  "formato_origen": "glb",
+  "destino": "gltf",
+  "estado": "exitoso",
+  "fidelidad": "Directa",
+  "semantica": "Completa",
+  "validacion": {
+   "ok": true,
+   "bytes": 3089,
+   "triangles": 36,
+   "desviacion_dimensiones_m": 0.0,
+   "dimensiones_m": [
+    3.707107,
+    4.707107,
+    2.0
+   ],
+   "objetos": 3,
+   "assimp_meshes": 1,
+   "assimp_triangles": 12
+  },
+  "estadisticas": {
+   "importacion_s": 0.63,
+   "triangulos": 36,
+   "objetos": 3,
+   "triangulos_degenerados": 0,
+   "mallas_abiertas": 0,
+   "dimensiones_m": [
+    3.707107,
+    4.707107,
+    2.0
+   ],
+   "exportacion_s": 0.01,
+   "validacion_s": 0.01
+  },
+  "advertencias": [],
+  "perdidas": [],
+  "errores": [],
+  "salidas": [
+   "escena_jerarquia_glb\\gltf\\escena_jerarquia.gltf",
+   "escena_jerarquia_glb\\gltf\\escena_jerarquia_tex0.png",
+   "escena_jerarquia_glb\\gltf\\escena_jerarquia.bin"
+  ]
+ },
+ {
+  "origen": "escena_jerarquia.glb",
+  "formato_origen": "glb",
+  "destino": "glb",
+  "estado": "exitoso",
+  "fidelidad": "Directa",
+  "semantica": "Completa",
+  "validacion": {
+   "ok": true,
+   "bytes": 2360,
+   "triangles": 36,
+   "desviacion_dimensiones_m": 0.0,
+   "dimensiones_m": [
+    3.707107,
+    4.707107,
+    2.0
+   ],
+   "objetos": 3,
+   "assimp_meshes": 1,
+   "assimp_triangles": 12
+  },
+  "estadisticas": {
+   "importacion_s": 0.6,
+   "triangulos": 36,
+   "objetos": 3,
+   "triangulos_degenerados": 0,
+   "mallas_abiertas": 0,
+   "dimensiones_m": [
+    3.707107,
+    4.707107,
+    2.0
+   ],
+   "exportacion_s": 0.0,
+   "validacion_s": 0.02
+  },
+  "advertencias": [],
+  "perdidas": [],
+  "errores": [],
+  "salidas": [
+   "escena_jerarquia_glb\\glb\\escena_jerarquia.glb"
+  ]
+ },
+ {
+  "origen": "escena_jerarquia.glb",
+  "formato_origen": "glb",
+  "destino": "obj",
+  "estado": "exitoso_con_advertencias",
+  "fidelidad": "Directa",
+  "semantica": "Parcial",
+  "validacion": {
+   "ok": true,
+   "bytes": 2378,
+   "triangles": 36,
+   "desviacion_dimensiones_m": 1e-09,
+   "dimensiones_m": [
+    3.707107,
+    4.707107,
+    2.0
+   ],
+   "objetos": 3,
+   "assimp_meshes": 3,
+   "assimp_triangles": 36
+  },
+  "estadisticas": {
+   "importacion_s": 0.55,
+   "triangulos": 36,
+   "objetos": 3,
+   "triangulos_degenerados": 0,
+   "mallas_abiertas": 0,
+   "dimensiones_m": [
+    3.707107,
+    4.707107,
+    2.0
+   ],
+   "exportacion_s": 0.01,
+   "validacion_s": 0.47
+  },
+  "advertencias": [
+   "OBJ no declara unidades: coordenadas escritas en m, Y arriba."
+  ],
+  "perdidas": [
+   "Jerarquía aplanada: cada objeto se escribe como grupo con transformaciones aplicadas",
+   "Metadatos de GLB: no representable en OBJ"
+  ],
+  "errores": [],
+  "salidas": [
+   "escena_jerarquia_glb\\obj\\escena_jerarquia.obj",
+   "escena_jerarquia_glb\\obj\\escena_jerarquia.mtl",
+   "escena_jerarquia_glb\\obj\\escena_jerarquia_tex0.png"
+  ]
+ },
+ {
+  "origen": "escena_jerarquia.glb",
+  "formato_origen": "glb",
+  "destino": "fbx",
+  "estado": "exitoso_con_advertencias",
+  "fidelidad": "Directa",
+  "semantica": "Parcial",
+  "validacion": {
+   "ok": true,
+   "bytes": 10716,
+   "triangles": 36,
+   "desviacion_dimensiones_m": 0.0,
+   "dimensiones_m": [
+    3.707107,
+    4.707107,
+    2.0
+   ],
+   "objetos": 3,
+   "assimp_meshes": 1,
+   "assimp_triangles": 12
+  },
+  "estadisticas": {
+   "importacion_s": 0.53,
+   "triangulos": 36,
+   "objetos": 3,
+   "triangulos_degenerados": 0,
+   "mallas_abiertas": 0,
+   "dimensiones_m": [
+    3.707107,
+    4.707107,
+    2.0
+   ],
+   "exportacion_s": 0.01,
+   "validacion_s": 0.47
+  },
+  "advertencias": [],
+  "perdidas": [
+   "Materiales PBR convertidos a modelo Phong de FBX (aproximación visual)",
+   "Metadatos de GLB: no representable en FBX"
+  ],
+  "errores": [],
+  "salidas": [
+   "escena_jerarquia_glb\\fbx\\escena_jerarquia.fbx",
+   "escena_jerarquia_glb\\fbx\\escena_jerarquia_tex0.png"
+  ]
+ },
+ {
+  "origen": "escena_jerarquia.glb",
+  "formato_origen": "glb",
+  "destino": "stl",
+  "estado": "exitoso_con_advertencias",
+  "fidelidad": "Directa",
+  "semantica": "Solo geometría",
+  "validacion": {
+   "ok": true,
+   "bytes": 1884,
+   "triangles": 36,
+   "desviacion_dimensiones_m": 4.8e-08,
+   "dimensiones_m": [
+    3.707107,
+    4.707107,
+    2.0
+   ],
+   "objetos": 1,
+   "assimp_meshes": 1,
+   "assimp_triangles": 36
+  },
+  "estadisticas": {
+   "importacion_s": 0.52,
+   "triangulos": 36,
+   "objetos": 3,
+   "triangulos_degenerados": 0,
+   "mallas_abiertas": 0,
+   "dimensiones_m": [
+    3.707107,
+    4.707107,
+    2.0
+   ],
+   "exportacion_s": 0.01,
+   "validacion_s": 0.01
+  },
+  "advertencias": [
+   "STL no declara unidades: coordenadas escritas en m, Z arriba."
+  ],
+  "perdidas": [
+   "STL no admite materiales, texturas, UV, nombres de objetos ni jerarquía"
+  ],
+  "errores": [],
+  "salidas": [
+   "escena_jerarquia_glb\\stl\\escena_jerarquia.stl"
+  ]
+ },
+ {
+  "origen": "escena_jerarquia.glb",
+  "formato_origen": "glb",
+  "destino": "ifc",
+  "estado": "exitoso_con_advertencias",
+  "fidelidad": "Limitada (con pérdidas)",
+  "semantica": "Parcial",
+  "validacion": {
+   "ok": true,
+   "bytes": 6748,
+   "productos": 3,
+   "desviacion_dimensiones_m": 0.0,
+   "dimensiones_m": [
+    3.707107,
+    4.707107,
+    2.0
+   ],
+   "objetos": 3,
+   "errores_esquema": 0
+  },
+  "estadisticas": {
+   "importacion_s": 0.49,
+   "scene_a_bim_s": 0.55,
+   "productos_ifc": 3,
+   "dimensiones_m": [
+    3.707107,
+    4.707107,
+    2.0
+   ],
+   "exportacion_s": 0.01,
+   "validacion_s": 0.08
+  },
+  "advertencias": [],
+  "perdidas": [
+   "No existe información BIM en el origen: se crean entidades genéricas IfcBuildingElementProxy dentro de una estructura espacial mínima (Proyecto/Sitio/Edificio/Planta)",
+   "Texturas de GLB: no representable en IFC",
+   "UV de GLB: no representable en IFC"
+  ],
+  "errores": [],
+  "salidas": [
+   "escena_jerarquia_glb\\ifc\\escena_jerarquia.ifc"
+  ]
+ },
+ {
+  "origen": "escena_jerarquia.glb",
+  "formato_origen": "glb",
+  "destino": "step",
+  "estado": "exitoso_con_advertencias",
+  "fidelidad": "Aproximada (facetada)",
+  "semantica": "Parcial",
+  "validacion": {
+   "ok": true,
+   "bytes": 83586,
+   "solidos": 3,
+   "caras": 36,
+   "desviacion_dimensiones_m": 0.0,
+   "dimensiones_m": [
+    3.707107,
+    4.707107,
+    2.0
+   ],
+   "objetos": 3,
+   "formas_no_validas": 0
+  },
+  "estadisticas": {
+   "importacion_s": 0.51,
+   "scene_a_cad_s": 1.25,
+   "piezas": 3,
+   "dimensiones_m": [
+    3.707107,
+    4.707107,
+    2.0
+   ],
+   "exportacion_s": 0.04,
+   "validacion_s": 0.08
+  },
+  "advertencias": [],
+  "perdidas": [
+   "Representación facetada: cada triángulo es una cara plana; no se recupera un sólido CAD paramétrico",
+   "Metadatos de GLB: no representable en STEP",
+   "Texturas de GLB: no representable en STEP",
+   "UV de GLB: no representable en STEP"
+  ],
+  "errores": [],
+  "salidas": [
+   "escena_jerarquia_glb\\step\\escena_jerarquia.step"
+  ]
+ },
+ {
+  "origen": "escena_jerarquia.glb",
+  "formato_origen": "glb",
+  "destino": "iges",
+  "estado": "exitoso_con_advertencias",
+  "fidelidad": "Aproximada (facetada)",
+  "semantica": "Parcial",
+  "validacion": {
+   "ok": true,
+   "bytes": 73143,
+   "solidos": 3,
+   "caras": 36,
+   "desviacion_dimensiones_m": 0.0,
+   "dimensiones_m": [
+    3.707107,
+    4.707107,
+    2.0
+   ],
+   "objetos": 3,
+   "formas_no_validas": 0
+  },
+  "estadisticas": {
+   "importacion_s": 0.53,
+   "scene_a_cad_s": 1.29,
+   "piezas": 3,
+   "dimensiones_m": [
+    3.707107,
+    4.707107,
+    2.0
+   ],
+   "exportacion_s": 0.03,
+   "validacion_s": 0.05
+  },
+  "advertencias": [],
+  "perdidas": [
+   "Representación facetada: cada triángulo es una cara plana; no se recupera un sólido CAD paramétrico",
+   "IGES no conserva la estructura de ensamblaje; las piezas se exportan como entidades independientes",
+   "Metadatos de GLB: no representable en IGES",
+   "Texturas de GLB: no representable en IGES",
+   "UV de GLB: no representable en IGES",
+   "IGES: la jerarquía de ensamblaje se aplana (piezas independientes con nombre)."
+  ],
+  "errores": [],
+  "salidas": [
+   "escena_jerarquia_glb\\iges\\escena_jerarquia.igs"
+  ]
+ },
+ {
+  "origen": "mueble.obj",
+  "formato_origen": "obj",
+  "destino": "gltf",
+  "estado": "exitoso_con_advertencias",
+  "fidelidad": "Directa",
+  "semantica": "Completa",
+  "validacion": {
+   "ok": true,
+   "bytes": 8165,
+   "triangles": 64,
+   "desviacion_dimensiones_m": 4.8e-08,
+   "dimensiones_m": [
+    1.2,
+    0.6,
+    0.741
+   ],
+   "objetos": 6,
+   "assimp_meshes": 6,
+   "assimp_triangles": 64
+  },
+  "estadisticas": {
+   "importacion_s": 0.53,
+   "triangulos": 64,
+   "objetos": 6,
+   "triangulos_degenerados": 0,
+   "mallas_abiertas": 1,
+   "dimensiones_m": [
+    1.2,
+    0.6,
+    0.741
+   ],
+   "exportacion_s": 0.01,
+   "validacion_s": 0.47
+  },
+  "advertencias": [
+   "OBJ no declara unidades ni ejes: se asume m y Y arriba (configurable en Opciones)."
+  ],
+  "perdidas": [],
+  "errores": [],
+  "salidas": [
+   "mueble_obj\\gltf\\mueble.gltf",
+   "mueble_obj\\gltf\\mueble_tex0.png",
+   "mueble_obj\\gltf\\mueble.bin"
+  ]
+ },
+ {
+  "origen": "mueble.obj",
+  "formato_origen": "obj",
+  "destino": "glb",
+  "estado": "exitoso_con_advertencias",
+  "fidelidad": "Directa",
+  "semantica": "Completa",
+  "validacion": {
+   "ok": true,
+   "bytes": 9196,
+   "triangles": 64,
+   "desviacion_dimensiones_m": 4.8e-08,
+   "dimensiones_m": [
+    1.2,
+    0.6,
+    0.741
+   ],
+   "objetos": 6,
+   "assimp_meshes": 6,
+   "assimp_triangles": 64
+  },
+  "estadisticas": {
+   "importacion_s": 0.51,
+   "triangulos": 64,
+   "objetos": 6,
+   "triangulos_degenerados": 0,
+   "mallas_abiertas": 1,
+   "dimensiones_m": [
+    1.2,
+    0.6,
+    0.741
+   ],
+   "exportacion_s": 0.0,
+   "validacion_s": 0.51
+  },
+  "advertencias": [
+   "OBJ no declara unidades ni ejes: se asume m y Y arriba (configurable en Opciones)."
+  ],
+  "perdidas": [],
+  "errores": [],
+  "salidas": [
+   "mueble_obj\\glb\\mueble.glb"
+  ]
+ },
+ {
+  "origen": "mueble.obj",
+  "formato_origen": "obj",
+  "destino": "obj",
+  "estado": "exitoso_con_advertencias",
+  "fidelidad": "Directa",
+  "semantica": "Completa",
+  "validacion": {
+   "ok": true,
+   "bytes": 6202,
+   "triangles": 64,
+   "desviacion_dimensiones_m": 0.0,
+   "dimensiones_m": [
+    1.2,
+    0.6,
+    0.741
+   ],
+   "objetos": 6,
+   "assimp_meshes": 6,
+   "assimp_triangles": 64
+  },
+  "estadisticas": {
+   "importacion_s": 0.49,
+   "triangulos": 64,
+   "objetos": 6,
+   "triangulos_degenerados": 0,
+   "mallas_abiertas": 1,
+   "dimensiones_m": [
+    1.2,
+    0.6,
+    0.741
+   ],
+   "exportacion_s": 0.01,
+   "validacion_s": 0.44
+  },
+  "advertencias": [
+   "OBJ no declara unidades ni ejes: se asume m y Y arriba (configurable en Opciones).",
+   "OBJ no declara unidades: coordenadas escritas en m, Y arriba."
+  ],
+  "perdidas": [
+   "Jerarquía aplanada: cada objeto se escribe como grupo con transformaciones aplicadas"
+  ],
+  "errores": [],
+  "salidas": [
+   "mueble_obj\\obj\\mueble.obj",
+   "mueble_obj\\obj\\mueble.mtl",
+   "mueble_obj\\obj\\mueble_tex0.png"
+  ]
+ },
+ {
+  "origen": "mueble.obj",
+  "formato_origen": "obj",
+  "destino": "fbx",
+  "estado": "exitoso_con_advertencias",
+  "fidelidad": "Directa",
+  "semantica": "Completa",
+  "validacion": {
+   "ok": true,
+   "bytes": 20140,
+   "triangles": 64,
+   "desviacion_dimensiones_m": 0.0,
+   "dimensiones_m": [
+    1.2,
+    0.6,
+    0.741
+   ],
+   "objetos": 6,
+   "assimp_meshes": 6,
+   "assimp_triangles": 64
+  },
+  "estadisticas": {
+   "importacion_s": 0.46,
+   "triangulos": 64,
+   "objetos": 6,
+   "triangulos_degenerados": 0,
+   "mallas_abiertas": 1,
+   "dimensiones_m": [
+    1.2,
+    0.6,
+    0.741
+   ],
+   "exportacion_s": 0.0,
+   "validacion_s": 0.48
+  },
+  "advertencias": [
+   "OBJ no declara unidades ni ejes: se asume m y Y arriba (configurable en Opciones)."
+  ],
+  "perdidas": [
+   "Materiales PBR convertidos a modelo Phong de FBX (aproximación visual)"
+  ],
+  "errores": [],
+  "salidas": [
+   "mueble_obj\\fbx\\mueble.fbx",
+   "mueble_obj\\fbx\\mueble_tex0.png"
+  ]
+ },
+ {
+  "origen": "mueble.obj",
+  "formato_origen": "obj",
+  "destino": "stl",
+  "estado": "exitoso_con_advertencias",
+  "fidelidad": "Directa",
+  "semantica": "Solo geometría",
+  "validacion": {
+   "ok": true,
+   "bytes": 3284,
+   "triangles": 64,
+   "desviacion_dimensiones_m": 4.8e-08,
+   "dimensiones_m": [
+    1.2,
+    0.6,
+    0.741
+   ],
+   "objetos": 1,
+   "assimp_meshes": 1,
+   "assimp_triangles": 64
+  },
+  "estadisticas": {
+   "importacion_s": 0.52,
+   "triangulos": 64,
+   "objetos": 6,
+   "triangulos_degenerados": 0,
+   "mallas_abiertas": 1,
+   "dimensiones_m": [
+    1.2,
+    0.6,
+    0.741
+   ],
+   "exportacion_s": 0.0,
+   "validacion_s": 0.01
+  },
+  "advertencias": [
+   "OBJ no declara unidades ni ejes: se asume m y Y arriba (configurable en Opciones).",
+   "STL no declara unidades: coordenadas escritas en m, Z arriba."
+  ],
+  "perdidas": [
+   "STL no admite materiales, texturas, UV, nombres de objetos ni jerarquía"
+  ],
+  "errores": [],
+  "salidas": [
+   "mueble_obj\\stl\\mueble.stl"
+  ]
+ },
+ {
+  "origen": "mueble.obj",
+  "formato_origen": "obj",
+  "destino": "ifc",
+  "estado": "exitoso_con_advertencias",
+  "fidelidad": "Limitada (con pérdidas)",
+  "semantica": "Parcial",
+  "validacion": {
+   "ok": true,
+   "bytes": 12149,
+   "productos": 6,
+   "desviacion_dimensiones_m": 0.0,
+   "dimensiones_m": [
+    1.2,
+    0.6,
+    0.741
+   ],
+   "objetos": 6,
+   "errores_esquema": 0
+  },
+  "estadisticas": {
+   "importacion_s": 0.51,
+   "scene_a_bim_s": 0.69,
+   "productos_ifc": 6,
+   "dimensiones_m": [
+    1.2,
+    0.6,
+    0.741
+   ],
+   "exportacion_s": 0.0,
+   "validacion_s": 0.09
+  },
+  "advertencias": [
+   "OBJ no declara unidades ni ejes: se asume m y Y arriba (configurable en Opciones)."
+  ],
+  "perdidas": [
+   "No existe información BIM en el origen: se crean entidades genéricas IfcBuildingElementProxy dentro de una estructura espacial mínima (Proyecto/Sitio/Edificio/Planta)",
+   "Texturas de OBJ: no representable en IFC",
+   "UV de OBJ: no representable en IFC"
+  ],
+  "errores": [],
+  "salidas": [
+   "mueble_obj\\ifc\\mueble.ifc"
+  ]
+ },
+ {
+  "origen": "mueble.obj",
+  "formato_origen": "obj",
+  "destino": "step",
+  "estado": "exitoso_con_advertencias",
+  "fidelidad": "Aproximada (facetada)",
+  "semantica": "Parcial",
+  "validacion": {
+   "ok": true,
+   "bytes": 145798,
+   "solidos": 5,
+   "caras": 64,
+   "desviacion_dimensiones_m": 0.0,
+   "dimensiones_m": [
+    1.2,
+    0.6,
+    0.741
+   ],
+   "objetos": 6,
+   "formas_no_validas": 0
+  },
+  "estadisticas": {
+   "importacion_s": 0.53,
+   "scene_a_cad_s": 1.24,
+   "piezas": 6,
+   "dimensiones_m": [
+    1.2,
+    0.6,
+    0.741
+   ],
+   "exportacion_s": 0.05,
+   "validacion_s": 0.15
+  },
+  "advertencias": [
+   "OBJ no declara unidades ni ejes: se asume m y Y arriba (configurable en Opciones).",
+   "1 malla(s) abierta(s) o no manifold: se exportan como superficies (shell), no como sólidos."
+  ],
+  "perdidas": [
+   "Representación facetada: cada triángulo es una cara plana; no se recupera un sólido CAD paramétrico",
+   "Texturas de OBJ: no representable en STEP",
+   "UV de OBJ: no representable en STEP"
+  ],
+  "errores": [],
+  "salidas": [
+   "mueble_obj\\step\\mueble.step"
+  ]
+ },
+ {
+  "origen": "mueble.obj",
+  "formato_origen": "obj",
+  "destino": "iges",
+  "estado": "exitoso_con_advertencias",
+  "fidelidad": "Aproximada (facetada)",
+  "semantica": "Parcial",
+  "validacion": {
+   "ok": true,
+   "bytes": 129924,
+   "solidos": 5,
+   "caras": 64,
+   "desviacion_dimensiones_m": 0.0,
+   "dimensiones_m": [
+    1.2,
+    0.6,
+    0.741
+   ],
+   "objetos": 6,
+   "formas_no_validas": 0
+  },
+  "estadisticas": {
+   "importacion_s": 0.49,
+   "scene_a_cad_s": 1.15,
+   "piezas": 6,
+   "dimensiones_m": [
+    1.2,
+    0.6,
+    0.741
+   ],
+   "exportacion_s": 0.03,
+   "validacion_s": 0.09
+  },
+  "advertencias": [
+   "OBJ no declara unidades ni ejes: se asume m y Y arriba (configurable en Opciones).",
+   "1 malla(s) abierta(s) o no manifold: se exportan como superficies (shell), no como sólidos."
+  ],
+  "perdidas": [
+   "Representación facetada: cada triángulo es una cara plana; no se recupera un sólido CAD paramétrico",
+   "IGES no conserva la estructura de ensamblaje; las piezas se exportan como entidades independientes",
+   "Texturas de OBJ: no representable en IGES",
+   "UV de OBJ: no representable en IGES"
+  ],
+  "errores": [],
+  "salidas": [
+   "mueble_obj\\iges\\mueble.igs"
+  ]
+ },
+ {
+  "origen": "robot_jerarquia.fbx",
+  "formato_origen": "fbx",
+  "destino": "gltf",
+  "estado": "exitoso",
+  "fidelidad": "Directa",
+  "semantica": "Completa",
+  "validacion": {
+   "ok": true,
+   "bytes": 3060,
+   "triangles": 36,
+   "desviacion_dimensiones_m": 0.0,
+   "dimensiones_m": [
+    3.707107,
+    4.707107,
+    2.0
+   ],
+   "objetos": 3,
+   "assimp_meshes": 1,
+   "assimp_triangles": 12
+  },
+  "estadisticas": {
+   "importacion_s": 0.51,
+   "triangulos": 36,
+   "objetos": 3,
+   "triangulos_degenerados": 0,
+   "mallas_abiertas": 0,
+   "dimensiones_m": [
+    3.707107,
+    4.707107,
+    2.0
+   ],
+   "exportacion_s": 0.01,
+   "validacion_s": 0.57
+  },
+  "advertencias": [],
+  "perdidas": [],
+  "errores": [],
+  "salidas": [
+   "robot_jerarquia_fbx\\gltf\\robot_jerarquia.gltf",
+   "robot_jerarquia_fbx\\gltf\\robot_jerarquia_tex0.png",
+   "robot_jerarquia_fbx\\gltf\\robot_jerarquia.bin"
+  ]
+ },
+ {
+  "origen": "robot_jerarquia.fbx",
+  "formato_origen": "fbx",
+  "destino": "glb",
+  "estado": "exitoso",
+  "fidelidad": "Directa",
+  "semantica": "Completa",
+  "validacion": {
+   "ok": true,
+   "bytes": 3248,
+   "triangles": 36,
+   "desviacion_dimensiones_m": 0.0,
+   "dimensiones_m": [
+    3.707107,
+    4.707107,
+    2.0
+   ],
+   "objetos": 3,
+   "assimp_meshes": 1,
+   "assimp_triangles": 12
+  },
+  "estadisticas": {
+   "importacion_s": 0.47,
+   "triangulos": 36,
+   "objetos": 3,
+   "triangulos_degenerados": 0,
+   "mallas_abiertas": 0,
+   "dimensiones_m": [
+    3.707107,
+    4.707107,
+    2.0
+   ],
+   "exportacion_s": 0.0,
+   "validacion_s": 0.5
+  },
+  "advertencias": [],
+  "perdidas": [],
+  "errores": [],
+  "salidas": [
+   "robot_jerarquia_fbx\\glb\\robot_jerarquia.glb"
+  ]
+ },
+ {
+  "origen": "robot_jerarquia.fbx",
+  "formato_origen": "fbx",
+  "destino": "obj",
+  "estado": "exitoso_con_advertencias",
+  "fidelidad": "Directa",
+  "semantica": "Parcial",
+  "validacion": {
+   "ok": true,
+   "bytes": 7539,
+   "triangles": 36,
+   "desviacion_dimensiones_m": 1e-09,
+   "dimensiones_m": [
+    3.707107,
+    4.707107,
+    2.0
+   ],
+   "objetos": 3,
+   "assimp_meshes": 3,
+   "assimp_triangles": 36
+  },
+  "estadisticas": {
+   "importacion_s": 0.47,
+   "triangulos": 36,
+   "objetos": 3,
+   "triangulos_degenerados": 0,
+   "mallas_abiertas": 0,
+   "dimensiones_m": [
+    3.707107,
+    4.707107,
+    2.0
+   ],
+   "exportacion_s": 0.01,
+   "validacion_s": 0.5
+  },
+  "advertencias": [
+   "OBJ no declara unidades: coordenadas escritas en m, Y arriba."
+  ],
+  "perdidas": [
+   "Jerarquía aplanada: cada objeto se escribe como grupo con transformaciones aplicadas"
+  ],
+  "errores": [],
+  "salidas": [
+   "robot_jerarquia_fbx\\obj\\robot_jerarquia.obj",
+   "robot_jerarquia_fbx\\obj\\robot_jerarquia.mtl",
+   "robot_jerarquia_fbx\\obj\\robot_jerarquia_tex0.png"
+  ]
+ },
+ {
+  "origen": "robot_jerarquia.fbx",
+  "formato_origen": "fbx",
+  "destino": "fbx",
+  "estado": "exitoso_con_advertencias",
+  "fidelidad": "Directa",
+  "semantica": "Completa",
+  "validacion": {
+   "ok": true,
+   "bytes": 10652,
+   "triangles": 36,
+   "desviacion_dimensiones_m": 0.0,
+   "dimensiones_m": [
+    3.707107,
+    4.707107,
+    2.0
+   ],
+   "objetos": 3,
+   "assimp_meshes": 1,
+   "assimp_triangles": 12
+  },
+  "estadisticas": {
+   "importacion_s": 0.47,
+   "triangulos": 36,
+   "objetos": 3,
+   "triangulos_degenerados": 0,
+   "mallas_abiertas": 0,
+   "dimensiones_m": [
+    3.707107,
+    4.707107,
+    2.0
+   ],
+   "exportacion_s": 0.01,
+   "validacion_s": 0.51
+  },
+  "advertencias": [],
+  "perdidas": [
+   "Materiales PBR convertidos a modelo Phong de FBX (aproximación visual)"
+  ],
+  "errores": [],
+  "salidas": [
+   "robot_jerarquia_fbx\\fbx\\robot_jerarquia.fbx",
+   "robot_jerarquia_fbx\\fbx\\robot_jerarquia_tex0.png"
+  ]
+ },
+ {
+  "origen": "robot_jerarquia.fbx",
+  "formato_origen": "fbx",
+  "destino": "stl",
+  "estado": "exitoso_con_advertencias",
+  "fidelidad": "Directa",
+  "semantica": "Solo geometría",
+  "validacion": {
+   "ok": true,
+   "bytes": 1884,
+   "triangles": 36,
+   "desviacion_dimensiones_m": 4.8e-08,
+   "dimensiones_m": [
+    3.707107,
+    4.707107,
+    2.0
+   ],
+   "objetos": 1,
+   "assimp_meshes": 1,
+   "assimp_triangles": 36
+  },
+  "estadisticas": {
+   "importacion_s": 0.5,
+   "triangulos": 36,
+   "objetos": 3,
+   "triangulos_degenerados": 0,
+   "mallas_abiertas": 0,
+   "dimensiones_m": [
+    3.707107,
+    4.707107,
+    2.0
+   ],
+   "exportacion_s": 0.0,
+   "validacion_s": 0.01
+  },
+  "advertencias": [
+   "STL no declara unidades: coordenadas escritas en m, Z arriba."
+  ],
+  "perdidas": [
+   "STL no admite materiales, texturas, UV, nombres de objetos ni jerarquía"
+  ],
+  "errores": [],
+  "salidas": [
+   "robot_jerarquia_fbx\\stl\\robot_jerarquia.stl"
+  ]
+ },
+ {
+  "origen": "robot_jerarquia.fbx",
+  "formato_origen": "fbx",
+  "destino": "ifc",
+  "estado": "exitoso_con_advertencias",
+  "fidelidad": "Limitada (con pérdidas)",
+  "semantica": "Parcial",
+  "validacion": {
+   "ok": true,
+   "bytes": 8862,
+   "productos": 3,
+   "desviacion_dimensiones_m": 0.0,
+   "dimensiones_m": [
+    3.707107,
+    4.707107,
+    2.0
+   ],
+   "objetos": 3,
+   "errores_esquema": 0
+  },
+  "estadisticas": {
+   "importacion_s": 0.5,
+   "scene_a_bim_s": 0.65,
+   "productos_ifc": 3,
+   "dimensiones_m": [
+    3.707107,
+    4.707107,
+    2.0
+   ],
+   "exportacion_s": 0.0,
+   "validacion_s": 0.08
+  },
+  "advertencias": [],
+  "perdidas": [
+   "No existe información BIM en el origen: se crean entidades genéricas IfcBuildingElementProxy dentro de una estructura espacial mínima (Proyecto/Sitio/Edificio/Planta)",
+   "Texturas de FBX: no representable en IFC",
+   "UV de FBX: no representable en IFC"
+  ],
+  "errores": [],
+  "salidas": [
+   "robot_jerarquia_fbx\\ifc\\robot_jerarquia.ifc"
+  ]
+ },
+ {
+  "origen": "robot_jerarquia.fbx",
+  "formato_origen": "fbx",
+  "destino": "step",
+  "estado": "exitoso_con_advertencias",
+  "fidelidad": "Aproximada (facetada)",
+  "semantica": "Parcial",
+  "validacion": {
+   "ok": true,
+   "bytes": 85602,
+   "solidos": 3,
+   "caras": 36,
+   "desviacion_dimensiones_m": 0.0,
+   "dimensiones_m": [
+    3.707107,
+    4.707107,
+    2.0
+   ],
+   "objetos": 3,
+   "formas_no_validas": 0
+  },
+  "estadisticas": {
+   "importacion_s": 0.51,
+   "scene_a_cad_s": 1.26,
+   "piezas": 3,
+   "dimensiones_m": [
+    3.707107,
+    4.707107,
+    2.0
+   ],
+   "exportacion_s": 0.04,
+   "validacion_s": 0.11
+  },
+  "advertencias": [],
+  "perdidas": [
+   "Representación facetada: cada triángulo es una cara plana; no se recupera un sólido CAD paramétrico",
+   "Texturas de FBX: no representable en STEP",
+   "UV de FBX: no representable en STEP"
+  ],
+  "errores": [],
+  "salidas": [
+   "robot_jerarquia_fbx\\step\\robot_jerarquia.step"
+  ]
+ },
+ {
+  "origen": "robot_jerarquia.fbx",
+  "formato_origen": "fbx",
+  "destino": "iges",
+  "estado": "exitoso_con_advertencias",
+  "fidelidad": "Aproximada (facetada)",
+  "semantica": "Parcial",
+  "validacion": {
+   "ok": true,
+   "bytes": 73143,
+   "solidos": 3,
+   "caras": 36,
+   "desviacion_dimensiones_m": 0.0,
+   "dimensiones_m": [
+    3.707107,
+    4.707107,
+    2.0
+   ],
+   "objetos": 3,
+   "formas_no_validas": 0
+  },
+  "estadisticas": {
+   "importacion_s": 0.51,
+   "scene_a_cad_s": 1.15,
+   "piezas": 3,
+   "dimensiones_m": [
+    3.707107,
+    4.707107,
+    2.0
+   ],
+   "exportacion_s": 0.03,
+   "validacion_s": 0.06
+  },
+  "advertencias": [],
+  "perdidas": [
+   "Representación facetada: cada triángulo es una cara plana; no se recupera un sólido CAD paramétrico",
+   "IGES no conserva la estructura de ensamblaje; las piezas se exportan como entidades independientes",
+   "Texturas de FBX: no representable en IGES",
+   "UV de FBX: no representable en IGES",
+   "IGES: la jerarquía de ensamblaje se aplana (piezas independientes con nombre)."
+  ],
+  "errores": [],
+  "salidas": [
+   "robot_jerarquia_fbx\\iges\\robot_jerarquia.igs"
+  ]
+ },
+ {
+  "origen": "cubo_ascii.fbx",
+  "formato_origen": "fbx",
+  "destino": "gltf",
+  "estado": "exitoso",
+  "fidelidad": "Directa",
+  "semantica": "Completa",
+  "validacion": {
+   "ok": true,
+   "bytes": 1736,
+   "triangles": 12,
+   "desviacion_dimensiones_m": 0.0,
+   "dimensiones_m": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "objetos": 1,
+   "assimp_meshes": 1,
+   "assimp_triangles": 12
+  },
+  "estadisticas": {
+   "importacion_s": 0.5,
+   "triangulos": 12,
+   "objetos": 1,
+   "triangulos_degenerados": 0,
+   "mallas_abiertas": 0,
+   "dimensiones_m": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "exportacion_s": 0.01,
+   "validacion_s": 0.47
+  },
+  "advertencias": [],
+  "perdidas": [],
+  "errores": [],
+  "salidas": [
+   "cubo_ascii_fbx\\gltf\\cubo_ascii.gltf",
+   "cubo_ascii_fbx\\gltf\\cubo_ascii.bin"
+  ]
+ },
+ {
+  "origen": "cubo_ascii.fbx",
+  "formato_origen": "fbx",
+  "destino": "glb",
+  "estado": "exitoso",
+  "fidelidad": "Directa",
+  "semantica": "Completa",
+  "validacion": {
+   "ok": true,
+   "bytes": 1332,
+   "triangles": 12,
+   "desviacion_dimensiones_m": 0.0,
+   "dimensiones_m": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "objetos": 1,
+   "assimp_meshes": 1,
+   "assimp_triangles": 12
+  },
+  "estadisticas": {
+   "importacion_s": 0.53,
+   "triangulos": 12,
+   "objetos": 1,
+   "triangulos_degenerados": 0,
+   "mallas_abiertas": 0,
+   "dimensiones_m": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "exportacion_s": 0.0,
+   "validacion_s": 0.49
+  },
+  "advertencias": [],
+  "perdidas": [],
+  "errores": [],
+  "salidas": [
+   "cubo_ascii_fbx\\glb\\cubo_ascii.glb"
+  ]
+ },
+ {
+  "origen": "cubo_ascii.fbx",
+  "formato_origen": "fbx",
+  "destino": "obj",
+  "estado": "exitoso_con_advertencias",
+  "fidelidad": "Directa",
+  "semantica": "Parcial",
+  "validacion": {
+   "ok": true,
+   "bytes": 685,
+   "triangles": 12,
+   "desviacion_dimensiones_m": 0.0,
+   "dimensiones_m": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "objetos": 1,
+   "assimp_meshes": 1,
+   "assimp_triangles": 12
+  },
+  "estadisticas": {
+   "importacion_s": 0.49,
+   "triangulos": 12,
+   "objetos": 1,
+   "triangulos_degenerados": 0,
+   "mallas_abiertas": 0,
+   "dimensiones_m": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "exportacion_s": 0.0,
+   "validacion_s": 0.47
+  },
+  "advertencias": [
+   "OBJ no declara unidades: coordenadas escritas en cm, Y arriba."
+  ],
+  "perdidas": [
+   "Jerarquía aplanada: cada objeto se escribe como grupo con transformaciones aplicadas"
+  ],
+  "errores": [],
+  "salidas": [
+   "cubo_ascii_fbx\\obj\\cubo_ascii.obj",
+   "cubo_ascii_fbx\\obj\\cubo_ascii.mtl"
+  ]
+ },
+ {
+  "origen": "cubo_ascii.fbx",
+  "formato_origen": "fbx",
+  "destino": "fbx",
+  "estado": "exitoso_con_advertencias",
+  "fidelidad": "Directa",
+  "semantica": "Completa",
+  "validacion": {
+   "ok": true,
+   "bytes": 5612,
+   "triangles": 12,
+   "desviacion_dimensiones_m": 0.0,
+   "dimensiones_m": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "objetos": 1,
+   "assimp_meshes": 1,
+   "assimp_triangles": 12
+  },
+  "estadisticas": {
+   "importacion_s": 0.48,
+   "triangulos": 12,
+   "objetos": 1,
+   "triangulos_degenerados": 0,
+   "mallas_abiertas": 0,
+   "dimensiones_m": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "exportacion_s": 0.0,
+   "validacion_s": 0.47
+  },
+  "advertencias": [],
+  "perdidas": [
+   "Materiales PBR convertidos a modelo Phong de FBX (aproximación visual)"
+  ],
+  "errores": [],
+  "salidas": [
+   "cubo_ascii_fbx\\fbx\\cubo_ascii.fbx"
+  ]
+ },
+ {
+  "origen": "cubo_ascii.fbx",
+  "formato_origen": "fbx",
+  "destino": "stl",
+  "estado": "exitoso_con_advertencias",
+  "fidelidad": "Directa",
+  "semantica": "Solo geometría",
+  "validacion": {
+   "ok": true,
+   "bytes": 684,
+   "triangles": 12,
+   "desviacion_dimensiones_m": 0.0,
+   "dimensiones_m": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "objetos": 1,
+   "assimp_meshes": 1,
+   "assimp_triangles": 12
+  },
+  "estadisticas": {
+   "importacion_s": 0.49,
+   "triangulos": 12,
+   "objetos": 1,
+   "triangulos_degenerados": 0,
+   "mallas_abiertas": 0,
+   "dimensiones_m": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "exportacion_s": 0.0,
+   "validacion_s": 0.01
+  },
+  "advertencias": [
+   "STL no declara unidades: coordenadas escritas en cm, Z arriba."
+  ],
+  "perdidas": [
+   "STL no admite materiales, texturas, UV, nombres de objetos ni jerarquía"
+  ],
+  "errores": [],
+  "salidas": [
+   "cubo_ascii_fbx\\stl\\cubo_ascii.stl"
+  ]
+ },
+ {
+  "origen": "cubo_ascii.fbx",
+  "formato_origen": "fbx",
+  "destino": "ifc",
+  "estado": "exitoso_con_advertencias",
+  "fidelidad": "Limitada (con pérdidas)",
+  "semantica": "Parcial",
+  "validacion": {
+   "ok": true,
+   "bytes": 3472,
+   "productos": 1,
+   "desviacion_dimensiones_m": 0.0,
+   "dimensiones_m": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "objetos": 1,
+   "errores_esquema": 0
+  },
+  "estadisticas": {
+   "importacion_s": 0.47,
+   "scene_a_bim_s": 0.62,
+   "productos_ifc": 1,
+   "dimensiones_m": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "exportacion_s": 0.01,
+   "validacion_s": 0.07
+  },
+  "advertencias": [],
+  "perdidas": [
+   "No existe información BIM en el origen: se crean entidades genéricas IfcBuildingElementProxy dentro de una estructura espacial mínima (Proyecto/Sitio/Edificio/Planta)",
+   "Texturas de FBX: no representable en IFC",
+   "UV de FBX: no representable en IFC"
+  ],
+  "errores": [],
+  "salidas": [
+   "cubo_ascii_fbx\\ifc\\cubo_ascii.ifc"
+  ]
+ },
+ {
+  "origen": "cubo_ascii.fbx",
+  "formato_origen": "fbx",
+  "destino": "step",
+  "estado": "exitoso_con_advertencias",
+  "fidelidad": "Aproximada (facetada)",
+  "semantica": "Parcial",
+  "validacion": {
+   "ok": true,
+   "bytes": 25951,
+   "solidos": 1,
+   "caras": 12,
+   "desviacion_dimensiones_m": 0.0,
+   "dimensiones_m": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "objetos": 1,
+   "formas_no_validas": 0
+  },
+  "estadisticas": {
+   "importacion_s": 0.46,
+   "scene_a_cad_s": 1.16,
+   "piezas": 1,
+   "dimensiones_m": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "exportacion_s": 0.04,
+   "validacion_s": 0.04
+  },
+  "advertencias": [],
+  "perdidas": [
+   "Representación facetada: cada triángulo es una cara plana; no se recupera un sólido CAD paramétrico",
+   "Texturas de FBX: no representable en STEP",
+   "UV de FBX: no representable en STEP"
+  ],
+  "errores": [],
+  "salidas": [
+   "cubo_ascii_fbx\\step\\cubo_ascii.step"
+  ]
+ },
+ {
+  "origen": "cubo_ascii.fbx",
+  "formato_origen": "fbx",
+  "destino": "iges",
+  "estado": "exitoso_con_advertencias",
+  "fidelidad": "Aproximada (facetada)",
+  "semantica": "Parcial",
+  "validacion": {
+   "ok": true,
+   "bytes": 24300,
+   "solidos": 1,
+   "caras": 12,
+   "desviacion_dimensiones_m": 0.0,
+   "dimensiones_m": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "objetos": 1,
+   "formas_no_validas": 0
+  },
+  "estadisticas": {
+   "importacion_s": 0.5,
+   "scene_a_cad_s": 1.1,
+   "piezas": 1,
+   "dimensiones_m": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "exportacion_s": 0.02,
+   "validacion_s": 0.04
+  },
+  "advertencias": [],
+  "perdidas": [
+   "Representación facetada: cada triángulo es una cara plana; no se recupera un sólido CAD paramétrico",
+   "IGES no conserva la estructura de ensamblaje; las piezas se exportan como entidades independientes",
+   "Texturas de FBX: no representable en IGES",
+   "UV de FBX: no representable en IGES"
+  ],
+  "errores": [],
+  "salidas": [
+   "cubo_ascii_fbx\\iges\\cubo_ascii.igs"
+  ]
+ },
+ {
+  "origen": "soporte_binario.stl",
+  "formato_origen": "stl",
+  "destino": "gltf",
+  "estado": "exitoso_con_advertencias",
+  "fidelidad": "Directa",
+  "semantica": "Completa",
+  "validacion": {
+   "ok": true,
+   "bytes": 1512,
+   "triangles": 192,
+   "desviacion_dimensiones_m": 0.0,
+   "dimensiones_m": [
+    0.04,
+    0.04,
+    0.04
+   ],
+   "objetos": 1,
+   "assimp_meshes": 1,
+   "assimp_triangles": 192
+  },
+  "estadisticas": {
+   "importacion_s": 0.02,
+   "triangulos": 192,
+   "objetos": 1,
+   "triangulos_degenerados": 0,
+   "mallas_abiertas": 0,
+   "dimensiones_m": [
+    0.04,
+    0.04,
+    0.04
+   ],
+   "exportacion_s": 0.01,
+   "validacion_s": 0.51
+  },
+  "advertencias": [
+   "STL no declara unidades ni ejes: se asume mm y Z arriba (configurable en Opciones)."
+  ],
+  "perdidas": [],
+  "errores": [],
+  "salidas": [
+   "soporte_binario_stl\\gltf\\soporte_binario.gltf",
+   "soporte_binario_stl\\gltf\\soporte_binario.bin"
+  ]
+ },
+ {
+  "origen": "soporte_binario.stl",
+  "formato_origen": "stl",
+  "destino": "glb",
+  "estado": "exitoso_con_advertencias",
+  "fidelidad": "Directa",
+  "semantica": "Completa",
+  "validacion": {
+   "ok": true,
+   "bytes": 4440,
+   "triangles": 192,
+   "desviacion_dimensiones_m": 0.0,
+   "dimensiones_m": [
+    0.04,
+    0.04,
+    0.04
+   ],
+   "objetos": 1,
+   "assimp_meshes": 1,
+   "assimp_triangles": 192
+  },
+  "estadisticas": {
+   "importacion_s": 0.0,
+   "triangulos": 192,
+   "objetos": 1,
+   "triangulos_degenerados": 0,
+   "mallas_abiertas": 0,
+   "dimensiones_m": [
+    0.04,
+    0.04,
+    0.04
+   ],
+   "exportacion_s": 0.0,
+   "validacion_s": 0.49
+  },
+  "advertencias": [
+   "STL no declara unidades ni ejes: se asume mm y Z arriba (configurable en Opciones)."
+  ],
+  "perdidas": [],
+  "errores": [],
+  "salidas": [
+   "soporte_binario_stl\\glb\\soporte_binario.glb"
+  ]
+ },
+ {
+  "origen": "soporte_binario.stl",
+  "formato_origen": "stl",
+  "destino": "obj",
+  "estado": "exitoso_con_advertencias",
+  "fidelidad": "Directa",
+  "semantica": "Completa",
+  "validacion": {
+   "ok": true,
+   "bytes": 9778,
+   "triangles": 192,
+   "desviacion_dimensiones_m": 0.0,
+   "dimensiones_m": [
+    0.04,
+    0.04,
+    0.04
+   ],
+   "objetos": 1,
+   "assimp_meshes": 1,
+   "assimp_triangles": 192
+  },
+  "estadisticas": {
+   "importacion_s": 0.0,
+   "triangulos": 192,
+   "objetos": 1,
+   "triangulos_degenerados": 0,
+   "mallas_abiertas": 0,
+   "dimensiones_m": [
+    0.04,
+    0.04,
+    0.04
+   ],
+   "exportacion_s": 0.01,
+   "validacion_s": 0.49
+  },
+  "advertencias": [
+   "STL no declara unidades ni ejes: se asume mm y Z arriba (configurable en Opciones).",
+   "OBJ no declara unidades: coordenadas escritas en mm, Y arriba."
+  ],
+  "perdidas": [
+   "Jerarquía aplanada: cada objeto se escribe como grupo con transformaciones aplicadas"
+  ],
+  "errores": [],
+  "salidas": [
+   "soporte_binario_stl\\obj\\soporte_binario.obj"
+  ]
+ },
+ {
+  "origen": "soporte_binario.stl",
+  "formato_origen": "stl",
+  "destino": "fbx",
+  "estado": "exitoso_con_advertencias",
+  "fidelidad": "Directa",
+  "semantica": "Completa",
+  "validacion": {
+   "ok": true,
+   "bytes": 6796,
+   "triangles": 192,
+   "desviacion_dimensiones_m": 0.0,
+   "dimensiones_m": [
+    0.04,
+    0.04,
+    0.04
+   ],
+   "objetos": 1,
+   "assimp_meshes": 1,
+   "assimp_triangles": 192
+  },
+  "estadisticas": {
+   "importacion_s": 0.02,
+   "triangulos": 192,
+   "objetos": 1,
+   "triangulos_degenerados": 0,
+   "mallas_abiertas": 0,
+   "dimensiones_m": [
+    0.04,
+    0.04,
+    0.04
+   ],
+   "exportacion_s": 0.01,
+   "validacion_s": 0.48
+  },
+  "advertencias": [
+   "STL no declara unidades ni ejes: se asume mm y Z arriba (configurable en Opciones)."
+  ],
+  "perdidas": [
+   "Materiales PBR convertidos a modelo Phong de FBX (aproximación visual)"
+  ],
+  "errores": [],
+  "salidas": [
+   "soporte_binario_stl\\fbx\\soporte_binario.fbx"
+  ]
+ },
+ {
+  "origen": "soporte_binario.stl",
+  "formato_origen": "stl",
+  "destino": "stl",
+  "estado": "exitoso_con_advertencias",
+  "fidelidad": "Directa",
+  "semantica": "Completa",
+  "validacion": {
+   "ok": true,
+   "bytes": 9684,
+   "triangles": 192,
+   "desviacion_dimensiones_m": 0.0,
+   "dimensiones_m": [
+    0.04,
+    0.04,
+    0.04
+   ],
+   "objetos": 1,
+   "assimp_meshes": 1,
+   "assimp_triangles": 192
+  },
+  "estadisticas": {
+   "importacion_s": 0.01,
+   "triangulos": 192,
+   "objetos": 1,
+   "triangulos_degenerados": 0,
+   "mallas_abiertas": 0,
+   "dimensiones_m": [
+    0.04,
+    0.04,
+    0.04
+   ],
+   "exportacion_s": 0.0,
+   "validacion_s": 0.02
+  },
+  "advertencias": [
+   "STL no declara unidades ni ejes: se asume mm y Z arriba (configurable en Opciones).",
+   "STL no declara unidades: coordenadas escritas en mm, Z arriba."
+  ],
+  "perdidas": [
+   "STL no admite materiales, texturas, UV, nombres de objetos ni jerarquía"
+  ],
+  "errores": [],
+  "salidas": [
+   "soporte_binario_stl\\stl\\soporte_binario.stl"
+  ]
+ },
+ {
+  "origen": "soporte_binario.stl",
+  "formato_origen": "stl",
+  "destino": "ifc",
+  "estado": "exitoso_con_advertencias",
+  "fidelidad": "Limitada (con pérdidas)",
+  "semantica": "Completa",
+  "validacion": {
+   "ok": true,
+   "bytes": 16034,
+   "productos": 1,
+   "desviacion_dimensiones_m": 0.0,
+   "dimensiones_m": [
+    0.04,
+    0.04,
+    0.04
+   ],
+   "objetos": 1,
+   "errores_esquema": 0
+  },
+  "estadisticas": {
+   "importacion_s": 0.01,
+   "scene_a_bim_s": 0.62,
+   "productos_ifc": 1,
+   "dimensiones_m": [
+    0.04,
+    0.04,
+    0.04
+   ],
+   "exportacion_s": 0.01,
+   "validacion_s": 0.16
+  },
+  "advertencias": [
+   "STL no declara unidades ni ejes: se asume mm y Z arriba (configurable en Opciones)."
+  ],
+  "perdidas": [
+   "No existe información BIM en el origen: se crean entidades genéricas IfcBuildingElementProxy dentro de una estructura espacial mínima (Proyecto/Sitio/Edificio/Planta)"
+  ],
+  "errores": [],
+  "salidas": [
+   "soporte_binario_stl\\ifc\\soporte_binario.ifc"
+  ]
+ },
+ {
+  "origen": "soporte_binario.stl",
+  "formato_origen": "stl",
+  "destino": "step",
+  "estado": "exitoso_con_advertencias",
+  "fidelidad": "Aproximada (facetada)",
+  "semantica": "Completa",
+  "validacion": {
+   "ok": true,
+   "bytes": 405890,
+   "solidos": 1,
+   "caras": 192,
+   "desviacion_dimensiones_m": 0.0,
+   "dimensiones_m": [
+    0.04,
+    0.04,
+    0.04
+   ],
+   "objetos": 1,
+   "formas_no_validas": 0
+  },
+  "estadisticas": {
+   "importacion_s": 0.0,
+   "scene_a_cad_s": 1.28,
+   "piezas": 1,
+   "dimensiones_m": [
+    0.04,
+    0.04,
+    0.04
+   ],
+   "exportacion_s": 0.09,
+   "validacion_s": 0.31
+  },
+  "advertencias": [
+   "STL no declara unidades ni ejes: se asume mm y Z arriba (configurable en Opciones)."
+  ],
+  "perdidas": [
+   "Representación facetada: cada triángulo es una cara plana; no se recupera un sólido CAD paramétrico"
+  ],
+  "errores": [],
+  "salidas": [
+   "soporte_binario_stl\\step\\soporte_binario.step"
+  ]
+ },
+ {
+  "origen": "soporte_binario.stl",
+  "formato_origen": "stl",
+  "destino": "iges",
+  "estado": "exitoso_con_advertencias",
+  "fidelidad": "Aproximada (facetada)",
+  "semantica": "Completa",
+  "validacion": {
+   "ok": true,
+   "bytes": 364176,
+   "solidos": 1,
+   "caras": 192,
+   "desviacion_dimensiones_m": 0.0,
+   "dimensiones_m": [
+    0.04,
+    0.04,
+    0.04
+   ],
+   "objetos": 1,
+   "formas_no_validas": 0
+  },
+  "estadisticas": {
+   "importacion_s": 0.01,
+   "scene_a_cad_s": 1.2,
+   "piezas": 1,
+   "dimensiones_m": [
+    0.04,
+    0.04,
+    0.04
+   ],
+   "exportacion_s": 0.06,
+   "validacion_s": 0.25
+  },
+  "advertencias": [
+   "STL no declara unidades ni ejes: se asume mm y Z arriba (configurable en Opciones)."
+  ],
+  "perdidas": [
+   "Representación facetada: cada triángulo es una cara plana; no se recupera un sólido CAD paramétrico",
+   "IGES no conserva la estructura de ensamblaje; las piezas se exportan como entidades independientes"
+  ],
+  "errores": [],
+  "salidas": [
+   "soporte_binario_stl\\iges\\soporte_binario.igs"
+  ]
+ },
+ {
+  "origen": "dos_solidos_ascii.stl",
+  "formato_origen": "stl",
+  "destino": "gltf",
+  "estado": "exitoso_con_advertencias",
+  "fidelidad": "Directa",
+  "semantica": "Completa",
+  "validacion": {
+   "ok": true,
+   "bytes": 2533,
+   "triangles": 8,
+   "desviacion_dimensiones_m": 0.0,
+   "dimensiones_m": [
+    0.04,
+    0.01,
+    0.01
+   ],
+   "objetos": 2,
+   "assimp_meshes": 2,
+   "assimp_triangles": 8
+  },
+  "estadisticas": {
+   "importacion_s": 0.01,
+   "triangulos": 8,
+   "objetos": 2,
+   "triangulos_degenerados": 0,
+   "mallas_abiertas": 0,
+   "dimensiones_m": [
+    0.04,
+    0.01,
+    0.01
+   ],
+   "exportacion_s": 0.01,
+   "validacion_s": 0.49
+  },
+  "advertencias": [
+   "STL no declara unidades ni ejes: se asume mm y Z arriba (configurable en Opciones)."
+  ],
+  "perdidas": [],
+  "errores": [],
+  "salidas": [
+   "dos_solidos_ascii_stl\\gltf\\dos_solidos_ascii.gltf",
+   "dos_solidos_ascii_stl\\gltf\\dos_solidos_ascii.bin"
+  ]
+ },
+ {
+  "origen": "dos_solidos_ascii.stl",
+  "formato_origen": "stl",
+  "destino": "glb",
+  "estado": "exitoso_con_advertencias",
+  "fidelidad": "Directa",
+  "semantica": "Completa",
+  "validacion": {
+   "ok": true,
+   "bytes": 1724,
+   "triangles": 8,
+   "desviacion_dimensiones_m": 0.0,
+   "dimensiones_m": [
+    0.04,
+    0.01,
+    0.01
+   ],
+   "objetos": 2,
+   "assimp_meshes": 2,
+   "assimp_triangles": 8
+  },
+  "estadisticas": {
+   "importacion_s": 0.01,
+   "triangulos": 8,
+   "objetos": 2,
+   "triangulos_degenerados": 0,
+   "mallas_abiertas": 0,
+   "dimensiones_m": [
+    0.04,
+    0.01,
+    0.01
+   ],
+   "exportacion_s": 0.0,
+   "validacion_s": 0.5
+  },
+  "advertencias": [
+   "STL no declara unidades ni ejes: se asume mm y Z arriba (configurable en Opciones)."
+  ],
+  "perdidas": [],
+  "errores": [],
+  "salidas": [
+   "dos_solidos_ascii_stl\\glb\\dos_solidos_ascii.glb"
+  ]
+ },
+ {
+  "origen": "dos_solidos_ascii.stl",
+  "formato_origen": "stl",
+  "destino": "obj",
+  "estado": "exitoso_con_advertencias",
+  "fidelidad": "Directa",
+  "semantica": "Completa",
+  "validacion": {
+   "ok": true,
+   "bytes": 376,
+   "triangles": 8,
+   "desviacion_dimensiones_m": 0.0,
+   "dimensiones_m": [
+    0.04,
+    0.01,
+    0.01
+   ],
+   "objetos": 2,
+   "assimp_meshes": 2,
+   "assimp_triangles": 8
+  },
+  "estadisticas": {
+   "importacion_s": 0.02,
+   "triangulos": 8,
+   "objetos": 2,
+   "triangulos_degenerados": 0,
+   "mallas_abiertas": 0,
+   "dimensiones_m": [
+    0.04,
+    0.01,
+    0.01
+   ],
+   "exportacion_s": 0.0,
+   "validacion_s": 0.49
+  },
+  "advertencias": [
+   "STL no declara unidades ni ejes: se asume mm y Z arriba (configurable en Opciones).",
+   "OBJ no declara unidades: coordenadas escritas en mm, Y arriba."
+  ],
+  "perdidas": [
+   "Jerarquía aplanada: cada objeto se escribe como grupo con transformaciones aplicadas"
+  ],
+  "errores": [],
+  "salidas": [
+   "dos_solidos_ascii_stl\\obj\\dos_solidos_ascii.obj"
+  ]
+ },
+ {
+  "origen": "dos_solidos_ascii.stl",
+  "formato_origen": "stl",
+  "destino": "fbx",
+  "estado": "exitoso_con_advertencias",
+  "fidelidad": "Directa",
+  "semantica": "Completa",
+  "validacion": {
+   "ok": true,
+   "bytes": 5900,
+   "triangles": 8,
+   "desviacion_dimensiones_m": 0.0,
+   "dimensiones_m": [
+    0.04,
+    0.01,
+    0.01
+   ],
+   "objetos": 2,
+   "assimp_meshes": 2,
+   "assimp_triangles": 8
+  },
+  "estadisticas": {
+   "importacion_s": 0.01,
+   "triangulos": 8,
+   "objetos": 2,
+   "triangulos_degenerados": 0,
+   "mallas_abiertas": 0,
+   "dimensiones_m": [
+    0.04,
+    0.01,
+    0.01
+   ],
+   "exportacion_s": 0.0,
+   "validacion_s": 0.5
+  },
+  "advertencias": [
+   "STL no declara unidades ni ejes: se asume mm y Z arriba (configurable en Opciones)."
+  ],
+  "perdidas": [
+   "Materiales PBR convertidos a modelo Phong de FBX (aproximación visual)"
+  ],
+  "errores": [],
+  "salidas": [
+   "dos_solidos_ascii_stl\\fbx\\dos_solidos_ascii.fbx"
+  ]
+ },
+ {
+  "origen": "dos_solidos_ascii.stl",
+  "formato_origen": "stl",
+  "destino": "stl",
+  "estado": "exitoso_con_advertencias",
+  "fidelidad": "Directa",
+  "semantica": "Completa",
+  "validacion": {
+   "ok": true,
+   "bytes": 484,
+   "triangles": 8,
+   "desviacion_dimensiones_m": 0.0,
+   "dimensiones_m": [
+    0.04,
+    0.01,
+    0.01
+   ],
+   "objetos": 1,
+   "assimp_meshes": 1,
+   "assimp_triangles": 8
+  },
+  "estadisticas": {
+   "importacion_s": 0.01,
+   "triangulos": 8,
+   "objetos": 2,
+   "triangulos_degenerados": 0,
+   "mallas_abiertas": 0,
+   "dimensiones_m": [
+    0.04,
+    0.01,
+    0.01
+   ],
+   "exportacion_s": 0.0,
+   "validacion_s": 0.0
+  },
+  "advertencias": [
+   "STL no declara unidades ni ejes: se asume mm y Z arriba (configurable en Opciones).",
+   "STL no declara unidades: coordenadas escritas en mm, Z arriba."
+  ],
+  "perdidas": [
+   "STL no admite materiales, texturas, UV, nombres de objetos ni jerarquía"
+  ],
+  "errores": [],
+  "salidas": [
+   "dos_solidos_ascii_stl\\stl\\dos_solidos_ascii.stl"
+  ]
+ },
+ {
+  "origen": "dos_solidos_ascii.stl",
+  "formato_origen": "stl",
+  "destino": "ifc",
+  "estado": "exitoso_con_advertencias",
+  "fidelidad": "Limitada (con pérdidas)",
+  "semantica": "Completa",
+  "validacion": {
+   "ok": true,
+   "bytes": 3884,
+   "productos": 2,
+   "desviacion_dimensiones_m": 0.0,
+   "dimensiones_m": [
+    0.04,
+    0.01,
+    0.01
+   ],
+   "objetos": 2,
+   "errores_esquema": 0
+  },
+  "estadisticas": {
+   "importacion_s": 0.01,
+   "scene_a_bim_s": 0.71,
+   "productos_ifc": 2,
+   "dimensiones_m": [
+    0.04,
+    0.01,
+    0.01
+   ],
+   "exportacion_s": 0.0,
+   "validacion_s": 0.07
+  },
+  "advertencias": [
+   "STL no declara unidades ni ejes: se asume mm y Z arriba (configurable en Opciones)."
+  ],
+  "perdidas": [
+   "No existe información BIM en el origen: se crean entidades genéricas IfcBuildingElementProxy dentro de una estructura espacial mínima (Proyecto/Sitio/Edificio/Planta)"
+  ],
+  "errores": [],
+  "salidas": [
+   "dos_solidos_ascii_stl\\ifc\\dos_solidos_ascii.ifc"
+  ]
+ },
+ {
+  "origen": "dos_solidos_ascii.stl",
+  "formato_origen": "stl",
+  "destino": "step",
+  "estado": "exitoso_con_advertencias",
+  "fidelidad": "Aproximada (facetada)",
+  "semantica": "Completa",
+  "validacion": {
+   "ok": true,
+   "bytes": 20413,
+   "solidos": 2,
+   "caras": 8,
+   "desviacion_dimensiones_m": 0.0,
+   "dimensiones_m": [
+    0.04,
+    0.01,
+    0.01
+   ],
+   "objetos": 2,
+   "formas_no_validas": 0
+  },
+  "estadisticas": {
+   "importacion_s": 0.01,
+   "scene_a_cad_s": 1.26,
+   "piezas": 2,
+   "dimensiones_m": [
+    0.04,
+    0.01,
+    0.01
+   ],
+   "exportacion_s": 0.03,
+   "validacion_s": 0.04
+  },
+  "advertencias": [
+   "STL no declara unidades ni ejes: se asume mm y Z arriba (configurable en Opciones)."
+  ],
+  "perdidas": [
+   "Representación facetada: cada triángulo es una cara plana; no se recupera un sólido CAD paramétrico"
+  ],
+  "errores": [],
+  "salidas": [
+   "dos_solidos_ascii_stl\\step\\dos_solidos_ascii.step"
+  ]
+ },
+ {
+  "origen": "dos_solidos_ascii.stl",
+  "formato_origen": "stl",
+  "destino": "iges",
+  "estado": "exitoso_con_advertencias",
+  "fidelidad": "Aproximada (facetada)",
+  "semantica": "Completa",
+  "validacion": {
+   "ok": true,
+   "bytes": 17658,
+   "solidos": 2,
+   "caras": 8,
+   "desviacion_dimensiones_m": 0.0,
+   "dimensiones_m": [
+    0.04,
+    0.01,
+    0.01
+   ],
+   "objetos": 2,
+   "formas_no_validas": 0
+  },
+  "estadisticas": {
+   "importacion_s": 0.01,
+   "scene_a_cad_s": 1.2,
+   "piezas": 2,
+   "dimensiones_m": [
+    0.04,
+    0.01,
+    0.01
+   ],
+   "exportacion_s": 0.03,
+   "validacion_s": 0.03
+  },
+  "advertencias": [
+   "STL no declara unidades ni ejes: se asume mm y Z arriba (configurable en Opciones)."
+  ],
+  "perdidas": [
+   "Representación facetada: cada triángulo es una cara plana; no se recupera un sólido CAD paramétrico",
+   "IGES no conserva la estructura de ensamblaje; las piezas se exportan como entidades independientes"
+  ],
+  "errores": [],
+  "salidas": [
+   "dos_solidos_ascii_stl\\iges\\dos_solidos_ascii.igs"
+  ]
+ },
+ {
+  "origen": "edificio_ifc4.ifc",
+  "formato_origen": "ifc",
+  "destino": "gltf",
+  "estado": "exitoso_con_advertencias",
+  "fidelidad": "Teselación",
+  "semantica": "Parcial",
+  "validacion": {
+   "ok": true,
+   "bytes": 21545,
+   "triangles": 824,
+   "desviacion_dimensiones_m": 0.0,
+   "dimensiones_m": [
+    12.0,
+    8.0,
+    6.3
+   ],
+   "objetos": 14,
+   "assimp_meshes": 14,
+   "assimp_triangles": 824
+  },
+  "estadisticas": {
+   "importacion_s": 0.21,
+   "bim_a_scene_s": 0.21,
+   "triangulos": 824,
+   "objetos": 14,
+   "triangulos_degenerados": 0,
+   "mallas_abiertas": 0,
+   "dimensiones_m": [
+    12.0,
+    8.0,
+    6.3
+   ],
+   "exportacion_s": 0.02,
+   "validacion_s": 0.4
+  },
+  "advertencias": [],
+  "perdidas": [
+   "Geometría IFC aproximada por triángulos",
+   "Relaciones IFC (conexiones, sistemas, fases, aberturas como entidades) no representables en mallas",
+   "Semántica BIM de IFC: no representable en glTF"
+  ],
+  "errores": [],
+  "salidas": [
+   "edificio_ifc4_ifc\\gltf\\edificio_ifc4.gltf",
+   "edificio_ifc4_ifc\\gltf\\edificio_ifc4.bin"
+  ]
+ },
+ {
+  "origen": "edificio_ifc4.ifc",
+  "formato_origen": "ifc",
+  "destino": "glb",
+  "estado": "exitoso_con_advertencias",
+  "fidelidad": "Teselación",
+  "semantica": "Parcial",
+  "validacion": {
+   "ok": true,
+   "bytes": 28752,
+   "triangles": 824,
+   "desviacion_dimensiones_m": 0.0,
+   "dimensiones_m": [
+    12.0,
+    8.0,
+    6.3
+   ],
+   "objetos": 14,
+   "assimp_meshes": 14,
+   "assimp_triangles": 824
+  },
+  "estadisticas": {
+   "importacion_s": 0.23,
+   "bim_a_scene_s": 0.25,
+   "triangulos": 824,
+   "objetos": 14,
+   "triangulos_degenerados": 0,
+   "mallas_abiertas": 0,
+   "dimensiones_m": [
+    12.0,
+    8.0,
+    6.3
+   ],
+   "exportacion_s": 0.02,
+   "validacion_s": 0.45
+  },
+  "advertencias": [],
+  "perdidas": [
+   "Geometría IFC aproximada por triángulos",
+   "Relaciones IFC (conexiones, sistemas, fases, aberturas como entidades) no representables en mallas",
+   "Semántica BIM de IFC: no representable en GLB"
+  ],
+  "errores": [],
+  "salidas": [
+   "edificio_ifc4_ifc\\glb\\edificio_ifc4.glb"
+  ]
+ },
+ {
+  "origen": "edificio_ifc4.ifc",
+  "formato_origen": "ifc",
+  "destino": "obj",
+  "estado": "exitoso_con_advertencias",
+  "fidelidad": "Teselación",
+  "semantica": "Parcial",
+  "validacion": {
+   "ok": true,
+   "bytes": 48108,
+   "triangles": 824,
+   "desviacion_dimensiones_m": 0.0,
+   "dimensiones_m": [
+    12.0,
+    8.0,
+    6.3
+   ],
+   "objetos": 14,
+   "assimp_meshes": 14,
+   "assimp_triangles": 824
+  },
+  "estadisticas": {
+   "importacion_s": 0.25,
+   "bim_a_scene_s": 0.23,
+   "triangulos": 824,
+   "objetos": 14,
+   "triangulos_degenerados": 0,
+   "mallas_abiertas": 0,
+   "dimensiones_m": [
+    12.0,
+    8.0,
+    6.3
+   ],
+   "exportacion_s": 0.02,
+   "validacion_s": 0.62
+  },
+  "advertencias": [
+   "OBJ no declara unidades: coordenadas escritas en m, Y arriba."
+  ],
+  "perdidas": [
+   "Geometría IFC aproximada por triángulos",
+   "Relaciones IFC (conexiones, sistemas, fases, aberturas como entidades) no representables en mallas",
+   "Jerarquía aplanada: cada objeto se escribe como grupo con transformaciones aplicadas",
+   "Metadatos de IFC: no representable en OBJ",
+   "Semántica BIM de IFC: no representable en OBJ"
+  ],
+  "errores": [],
+  "salidas": [
+   "edificio_ifc4_ifc\\obj\\edificio_ifc4.obj",
+   "edificio_ifc4_ifc\\obj\\edificio_ifc4.mtl"
+  ]
+ },
+ {
+  "origen": "edificio_ifc4.ifc",
+  "formato_origen": "ifc",
+  "destino": "fbx",
+  "estado": "exitoso_con_advertencias",
+  "fidelidad": "Teselación",
+  "semantica": "Parcial",
+  "validacion": {
+   "ok": true,
+   "bytes": 54044,
+   "triangles": 824,
+   "desviacion_dimensiones_m": 0.0,
+   "dimensiones_m": [
+    12.0,
+    8.0,
+    6.3
+   ],
+   "objetos": 14,
+   "assimp_meshes": 14,
+   "assimp_triangles": 824
+  },
+  "estadisticas": {
+   "importacion_s": 0.21,
+   "bim_a_scene_s": 0.22,
+   "triangulos": 824,
+   "objetos": 14,
+   "triangulos_degenerados": 0,
+   "mallas_abiertas": 0,
+   "dimensiones_m": [
+    12.0,
+    8.0,
+    6.3
+   ],
+   "exportacion_s": 0.02,
+   "validacion_s": 0.6
+  },
+  "advertencias": [],
+  "perdidas": [
+   "Geometría IFC aproximada por triángulos",
+   "Relaciones IFC (conexiones, sistemas, fases, aberturas como entidades) no representables en mallas",
+   "Materiales PBR convertidos a modelo Phong de FBX (aproximación visual)",
+   "Metadatos de IFC: no representable en FBX",
+   "Semántica BIM de IFC: no representable en FBX"
+  ],
+  "errores": [],
+  "salidas": [
+   "edificio_ifc4_ifc\\fbx\\edificio_ifc4.fbx"
+  ]
+ },
+ {
+  "origen": "edificio_ifc4.ifc",
+  "formato_origen": "ifc",
+  "destino": "stl",
+  "estado": "exitoso_con_advertencias",
+  "fidelidad": "Teselación",
+  "semantica": "Solo geometría",
+  "validacion": {
+   "ok": true,
+   "bytes": 41284,
+   "triangles": 824,
+   "desviacion_dimensiones_m": 1.2e-08,
+   "dimensiones_m": [
+    12.0,
+    8.0,
+    6.3
+   ],
+   "objetos": 1,
+   "assimp_meshes": 1,
+   "assimp_triangles": 824
+  },
+  "estadisticas": {
+   "importacion_s": 0.28,
+   "bim_a_scene_s": 0.26,
+   "triangulos": 824,
+   "objetos": 14,
+   "triangulos_degenerados": 0,
+   "mallas_abiertas": 0,
+   "dimensiones_m": [
+    12.0,
+    8.0,
+    6.3
+   ],
+   "exportacion_s": 0.01,
+   "validacion_s": 0.02
+  },
+  "advertencias": [
+   "STL no declara unidades: coordenadas escritas en m, Z arriba."
+  ],
+  "perdidas": [
+   "Geometría IFC aproximada por triángulos",
+   "Relaciones IFC (conexiones, sistemas, fases, aberturas como entidades) no representables en mallas",
+   "STL no admite materiales, texturas, UV, nombres de objetos ni jerarquía"
+  ],
+  "errores": [],
+  "salidas": [
+   "edificio_ifc4_ifc\\stl\\edificio_ifc4.stl"
+  ]
+ },
+ {
+  "origen": "edificio_ifc4.ifc",
+  "formato_origen": "ifc",
+  "destino": "ifc",
+  "estado": "exitoso",
+  "fidelidad": "Directa",
+  "semantica": "Completa",
+  "validacion": {
+   "ok": true,
+   "bytes": 17175,
+   "productos": 14,
+   "objetos": 14,
+   "errores_esquema": 0
+  },
+  "estadisticas": {
+   "importacion_s": 0.21,
+   "productos_ifc": 14,
+   "exportacion_s": 0.01,
+   "validacion_s": 0.11
+  },
+  "advertencias": [],
+  "perdidas": [],
+  "errores": [],
+  "salidas": [
+   "edificio_ifc4_ifc\\ifc\\edificio_ifc4.ifc"
+  ]
+ },
+ {
+  "origen": "edificio_ifc4.ifc",
+  "formato_origen": "ifc",
+  "destino": "step",
+  "estado": "exitoso_con_advertencias",
+  "fidelidad": "Directa",
+  "semantica": "Parcial",
+  "validacion": {
+   "ok": true,
+   "bytes": 196157,
+   "solidos": 14,
+   "caras": 72,
+   "desviacion_dimensiones_m": 0.0,
+   "dimensiones_m": [
+    12.0,
+    8.0,
+    6.3
+   ],
+   "objetos": 14,
+   "formas_no_validas": 0
+  },
+  "estadisticas": {
+   "importacion_s": 0.23,
+   "bim_a_cad_s": 1.87,
+   "piezas": 14,
+   "dimensiones_m": [
+    12.0,
+    8.0,
+    6.3
+   ],
+   "exportacion_s": 0.07,
+   "validacion_s": 0.2
+  },
+  "advertencias": [],
+  "perdidas": [
+   "Datos BIM (propiedades, clasificación, relaciones, estructura espacial) no representables en CAD",
+   "Metadatos de IFC: no representable en STEP",
+   "Semántica BIM de IFC: no representable en STEP"
+  ],
+  "errores": [],
+  "salidas": [
+   "edificio_ifc4_ifc\\step\\edificio_ifc4.step"
+  ]
+ },
+ {
+  "origen": "edificio_ifc4.ifc",
+  "formato_origen": "ifc",
+  "destino": "iges",
+  "estado": "exitoso_con_advertencias",
+  "fidelidad": "Directa",
+  "semantica": "Parcial",
+  "validacion": {
+   "ok": true,
+   "bytes": 168237,
+   "solidos": 14,
+   "caras": 72,
+   "desviacion_dimensiones_m": 0.0,
+   "dimensiones_m": [
+    12.0,
+    8.0,
+    6.3
+   ],
+   "objetos": 14,
+   "formas_no_validas": 0
+  },
+  "estadisticas": {
+   "importacion_s": 0.27,
+   "bim_a_cad_s": 1.75,
+   "piezas": 14,
+   "dimensiones_m": [
+    12.0,
+    8.0,
+    6.3
+   ],
+   "exportacion_s": 0.06,
+   "validacion_s": 0.15
+  },
+  "advertencias": [],
+  "perdidas": [
+   "Datos BIM (propiedades, clasificación, relaciones, estructura espacial) no representables en CAD",
+   "IGES no conserva la estructura de ensamblaje; las piezas se exportan como entidades independientes",
+   "Metadatos de IFC: no representable en IGES",
+   "Semántica BIM de IFC: no representable en IGES",
+   "IGES: la jerarquía de ensamblaje se aplana (piezas independientes con nombre)."
+  ],
+  "errores": [],
+  "salidas": [
+   "edificio_ifc4_ifc\\iges\\edificio_ifc4.igs"
+  ]
+ },
+ {
+  "origen": "almacen_ifc2x3.ifc",
+  "formato_origen": "ifc",
+  "destino": "gltf",
+  "estado": "exitoso_con_advertencias",
+  "fidelidad": "Teselación",
+  "semantica": "Parcial",
+  "validacion": {
+   "ok": true,
+   "bytes": 11705,
+   "triangles": 412,
+   "desviacion_dimensiones_m": 0.0,
+   "dimensiones_m": [
+    12.0,
+    8.0,
+    3.3
+   ],
+   "objetos": 7,
+   "assimp_meshes": 7,
+   "assimp_triangles": 412
+  },
+  "estadisticas": {
+   "importacion_s": 0.53,
+   "bim_a_scene_s": 0.28,
+   "triangulos": 412,
+   "objetos": 7,
+   "triangulos_degenerados": 0,
+   "mallas_abiertas": 0,
+   "dimensiones_m": [
+    12.0,
+    8.0,
+    3.3
+   ],
+   "exportacion_s": 0.0,
+   "validacion_s": 0.38
+  },
+  "advertencias": [],
+  "perdidas": [
+   "Geometría IFC aproximada por triángulos",
+   "Relaciones IFC (conexiones, sistemas, fases, aberturas como entidades) no representables en mallas",
+   "Semántica BIM de IFC: no representable en glTF"
+  ],
+  "errores": [],
+  "salidas": [
+   "almacen_ifc2x3_ifc\\gltf\\almacen_ifc2x3.gltf",
+   "almacen_ifc2x3_ifc\\gltf\\almacen_ifc2x3.bin"
+  ]
+ },
+ {
+  "origen": "almacen_ifc2x3.ifc",
+  "formato_origen": "ifc",
+  "destino": "glb",
+  "estado": "exitoso_con_advertencias",
+  "fidelidad": "Teselación",
+  "semantica": "Parcial",
+  "validacion": {
+   "ok": true,
+   "bytes": 15020,
+   "triangles": 412,
+   "desviacion_dimensiones_m": 0.0,
+   "dimensiones_m": [
+    12.0,
+    8.0,
+    3.3
+   ],
+   "objetos": 7,
+   "assimp_meshes": 7,
+   "assimp_triangles": 412
+  },
+  "estadisticas": {
+   "importacion_s": 0.2,
+   "bim_a_scene_s": 0.2,
+   "triangulos": 412,
+   "objetos": 7,
+   "triangulos_degenerados": 0,
+   "mallas_abiertas": 0,
+   "dimensiones_m": [
+    12.0,
+    8.0,
+    3.3
+   ],
+   "exportacion_s": 0.02,
+   "validacion_s": 0.4
+  },
+  "advertencias": [],
+  "perdidas": [
+   "Geometría IFC aproximada por triángulos",
+   "Relaciones IFC (conexiones, sistemas, fases, aberturas como entidades) no representables en mallas",
+   "Semántica BIM de IFC: no representable en GLB"
+  ],
+  "errores": [],
+  "salidas": [
+   "almacen_ifc2x3_ifc\\glb\\almacen_ifc2x3.glb"
+  ]
+ },
+ {
+  "origen": "almacen_ifc2x3.ifc",
+  "formato_origen": "ifc",
+  "destino": "obj",
+  "estado": "exitoso_con_advertencias",
+  "fidelidad": "Teselación",
+  "semantica": "Parcial",
+  "validacion": {
+   "ok": true,
+   "bytes": 23509,
+   "triangles": 412,
+   "desviacion_dimensiones_m": 0.0,
+   "dimensiones_m": [
+    12.0,
+    8.0,
+    3.3
+   ],
+   "objetos": 7,
+   "assimp_meshes": 7,
+   "assimp_triangles": 412
+  },
+  "estadisticas": {
+   "importacion_s": 0.19,
+   "bim_a_scene_s": 0.19,
+   "triangulos": 412,
+   "objetos": 7,
+   "triangulos_degenerados": 0,
+   "mallas_abiertas": 0,
+   "dimensiones_m": [
+    12.0,
+    8.0,
+    3.3
+   ],
+   "exportacion_s": 0.02,
+   "validacion_s": 0.51
+  },
+  "advertencias": [
+   "OBJ no declara unidades: coordenadas escritas en m, Y arriba."
+  ],
+  "perdidas": [
+   "Geometría IFC aproximada por triángulos",
+   "Relaciones IFC (conexiones, sistemas, fases, aberturas como entidades) no representables en mallas",
+   "Jerarquía aplanada: cada objeto se escribe como grupo con transformaciones aplicadas",
+   "Metadatos de IFC: no representable en OBJ",
+   "Semántica BIM de IFC: no representable en OBJ"
+  ],
+  "errores": [],
+  "salidas": [
+   "almacen_ifc2x3_ifc\\obj\\almacen_ifc2x3.obj",
+   "almacen_ifc2x3_ifc\\obj\\almacen_ifc2x3.mtl"
+  ]
+ },
+ {
+  "origen": "almacen_ifc2x3.ifc",
+  "formato_origen": "ifc",
+  "destino": "fbx",
+  "estado": "exitoso_con_advertencias",
+  "fidelidad": "Teselación",
+  "semantica": "Parcial",
+  "validacion": {
+   "ok": true,
+   "bytes": 30812,
+   "triangles": 412,
+   "desviacion_dimensiones_m": 0.0,
+   "dimensiones_m": [
+    12.0,
+    8.0,
+    3.3
+   ],
+   "objetos": 7,
+   "assimp_meshes": 7,
+   "assimp_triangles": 412
+  },
+  "estadisticas": {
+   "importacion_s": 0.2,
+   "bim_a_scene_s": 0.2,
+   "triangulos": 412,
+   "objetos": 7,
+   "triangulos_degenerados": 0,
+   "mallas_abiertas": 0,
+   "dimensiones_m": [
+    12.0,
+    8.0,
+    3.3
+   ],
+   "exportacion_s": 0.01,
+   "validacion_s": 0.52
+  },
+  "advertencias": [],
+  "perdidas": [
+   "Geometría IFC aproximada por triángulos",
+   "Relaciones IFC (conexiones, sistemas, fases, aberturas como entidades) no representables en mallas",
+   "Materiales PBR convertidos a modelo Phong de FBX (aproximación visual)",
+   "Metadatos de IFC: no representable en FBX",
+   "Semántica BIM de IFC: no representable en FBX"
+  ],
+  "errores": [],
+  "salidas": [
+   "almacen_ifc2x3_ifc\\fbx\\almacen_ifc2x3.fbx"
+  ]
+ },
+ {
+  "origen": "almacen_ifc2x3.ifc",
+  "formato_origen": "ifc",
+  "destino": "stl",
+  "estado": "exitoso_con_advertencias",
+  "fidelidad": "Teselación",
+  "semantica": "Solo geometría",
+  "validacion": {
+   "ok": true,
+   "bytes": 20684,
+   "triangles": 412,
+   "desviacion_dimensiones_m": 1.2e-08,
+   "dimensiones_m": [
+    12.0,
+    8.0,
+    3.3
+   ],
+   "objetos": 1,
+   "assimp_meshes": 1,
+   "assimp_triangles": 412
+  },
+  "estadisticas": {
+   "importacion_s": 0.17,
+   "bim_a_scene_s": 0.18,
+   "triangulos": 412,
+   "objetos": 7,
+   "triangulos_degenerados": 0,
+   "mallas_abiertas": 0,
+   "dimensiones_m": [
+    12.0,
+    8.0,
+    3.3
+   ],
+   "exportacion_s": 0.01,
+   "validacion_s": 0.01
+  },
+  "advertencias": [
+   "STL no declara unidades: coordenadas escritas en m, Z arriba."
+  ],
+  "perdidas": [
+   "Geometría IFC aproximada por triángulos",
+   "Relaciones IFC (conexiones, sistemas, fases, aberturas como entidades) no representables en mallas",
+   "STL no admite materiales, texturas, UV, nombres de objetos ni jerarquía"
+  ],
+  "errores": [],
+  "salidas": [
+   "almacen_ifc2x3_ifc\\stl\\almacen_ifc2x3.stl"
+  ]
+ },
+ {
+  "origen": "almacen_ifc2x3.ifc",
+  "formato_origen": "ifc",
+  "destino": "ifc",
+  "estado": "exitoso",
+  "fidelidad": "Directa",
+  "semantica": "Completa",
+  "validacion": {
+   "ok": true,
+   "bytes": 13013,
+   "productos": 7,
+   "objetos": 7,
+   "errores_esquema": 0
+  },
+  "estadisticas": {
+   "importacion_s": 0.19,
+   "productos_ifc": 7,
+   "exportacion_s": 0.01,
+   "validacion_s": 0.06
+  },
+  "advertencias": [],
+  "perdidas": [],
+  "errores": [],
+  "salidas": [
+   "almacen_ifc2x3_ifc\\ifc\\almacen_ifc2x3.ifc"
+  ]
+ },
+ {
+  "origen": "almacen_ifc2x3.ifc",
+  "formato_origen": "ifc",
+  "destino": "step",
+  "estado": "exitoso_con_advertencias",
+  "fidelidad": "Directa",
+  "semantica": "Parcial",
+  "validacion": {
+   "ok": true,
+   "bytes": 99317,
+   "solidos": 7,
+   "caras": 36,
+   "desviacion_dimensiones_m": 0.0,
+   "dimensiones_m": [
+    12.0,
+    8.0,
+    3.3
+   ],
+   "objetos": 7,
+   "formas_no_validas": 0
+  },
+  "estadisticas": {
+   "importacion_s": 0.2,
+   "bim_a_cad_s": 1.38,
+   "piezas": 7,
+   "dimensiones_m": [
+    12.0,
+    8.0,
+    3.3
+   ],
+   "exportacion_s": 0.06,
+   "validacion_s": 0.11
+  },
+  "advertencias": [],
+  "perdidas": [
+   "Datos BIM (propiedades, clasificación, relaciones, estructura espacial) no representables en CAD",
+   "Metadatos de IFC: no representable en STEP",
+   "Semántica BIM de IFC: no representable en STEP"
+  ],
+  "errores": [],
+  "salidas": [
+   "almacen_ifc2x3_ifc\\step\\almacen_ifc2x3.step"
+  ]
+ },
+ {
+  "origen": "almacen_ifc2x3.ifc",
+  "formato_origen": "ifc",
+  "destino": "iges",
+  "estado": "exitoso_con_advertencias",
+  "fidelidad": "Directa",
+  "semantica": "Parcial",
+  "validacion": {
+   "ok": true,
+   "bytes": 84240,
+   "solidos": 7,
+   "caras": 36,
+   "desviacion_dimensiones_m": 0.0,
+   "dimensiones_m": [
+    12.0,
+    8.0,
+    3.3
+   ],
+   "objetos": 7,
+   "formas_no_validas": 0
+  },
+  "estadisticas": {
+   "importacion_s": 0.2,
+   "bim_a_cad_s": 1.36,
+   "piezas": 7,
+   "dimensiones_m": [
+    12.0,
+    8.0,
+    3.3
+   ],
+   "exportacion_s": 0.05,
+   "validacion_s": 0.1
+  },
+  "advertencias": [],
+  "perdidas": [
+   "Datos BIM (propiedades, clasificación, relaciones, estructura espacial) no representables en CAD",
+   "IGES no conserva la estructura de ensamblaje; las piezas se exportan como entidades independientes",
+   "Metadatos de IFC: no representable en IGES",
+   "Semántica BIM de IFC: no representable en IGES",
+   "IGES: la jerarquía de ensamblaje se aplana (piezas independientes con nombre)."
+  ],
+  "errores": [],
+  "salidas": [
+   "almacen_ifc2x3_ifc\\iges\\almacen_ifc2x3.igs"
+  ]
+ },
+ {
+  "origen": "ensamblaje_mecanico.step",
+  "formato_origen": "step",
+  "destino": "gltf",
+  "estado": "exitoso_con_advertencias",
+  "fidelidad": "Teselación",
+  "semantica": "Completa",
+  "validacion": {
+   "ok": true,
+   "bytes": 5861,
+   "triangles": 24696,
+   "desviacion_dimensiones_m": 3e-09,
+   "dimensiones_m": [
+    0.12,
+    0.08,
+    0.082
+   ],
+   "objetos": 4,
+   "assimp_meshes": 4,
+   "assimp_triangles": 24696
+  },
+  "estadisticas": {
+   "importacion_s": 1.2,
+   "cad_a_scene_s": 0.45,
+   "triangulos": 24696,
+   "objetos": 4,
+   "triangulos_degenerados": 0,
+   "mallas_abiertas": 0,
+   "dimensiones_m": [
+    0.12,
+    0.08,
+    0.082
+   ],
+   "exportacion_s": 0.01,
+   "validacion_s": 0.6
+  },
+  "advertencias": [],
+  "perdidas": [
+   "Superficies exactas B-Rep aproximadas por triángulos según la tolerancia configurada"
+  ],
+  "errores": [],
+  "salidas": [
+   "ensamblaje_mecanico_step\\gltf\\ensamblaje_mecanico.gltf",
+   "ensamblaje_mecanico_step\\gltf\\ensamblaje_mecanico.bin"
+  ]
+ },
+ {
+  "origen": "ensamblaje_mecanico.step",
+  "formato_origen": "step",
+  "destino": "glb",
+  "estado": "exitoso_con_advertencias",
+  "fidelidad": "Teselación",
+  "semantica": "Completa",
+  "validacion": {
+   "ok": true,
+   "bytes": 483364,
+   "triangles": 24696,
+   "desviacion_dimensiones_m": 3e-09,
+   "dimensiones_m": [
+    0.12,
+    0.08,
+    0.082
+   ],
+   "objetos": 4,
+   "assimp_meshes": 4,
+   "assimp_triangles": 24696
+  },
+  "estadisticas": {
+   "importacion_s": 1.25,
+   "cad_a_scene_s": 0.5,
+   "triangulos": 24696,
+   "objetos": 4,
+   "triangulos_degenerados": 0,
+   "mallas_abiertas": 0,
+   "dimensiones_m": [
+    0.12,
+    0.08,
+    0.082
+   ],
+   "exportacion_s": 0.01,
+   "validacion_s": 0.5
+  },
+  "advertencias": [],
+  "perdidas": [
+   "Superficies exactas B-Rep aproximadas por triángulos según la tolerancia configurada"
+  ],
+  "errores": [],
+  "salidas": [
+   "ensamblaje_mecanico_step\\glb\\ensamblaje_mecanico.glb"
+  ]
+ },
+ {
+  "origen": "ensamblaje_mecanico.step",
+  "formato_origen": "step",
+  "destino": "obj",
+  "estado": "exitoso_con_advertencias",
+  "fidelidad": "Teselación",
+  "semantica": "Parcial",
+  "validacion": {
+   "ok": true,
+   "bytes": 1777168,
+   "triangles": 24696,
+   "desviacion_dimensiones_m": 0.0,
+   "dimensiones_m": [
+    0.12,
+    0.08,
+    0.082
+   ],
+   "objetos": 4,
+   "assimp_meshes": 4,
+   "assimp_triangles": 24696
+  },
+  "estadisticas": {
+   "importacion_s": 1.18,
+   "cad_a_scene_s": 0.54,
+   "triangulos": 24696,
+   "objetos": 4,
+   "triangulos_degenerados": 0,
+   "mallas_abiertas": 0,
+   "dimensiones_m": [
+    0.12,
+    0.08,
+    0.082
+   ],
+   "exportacion_s": 0.18,
+   "validacion_s": 0.73
+  },
+  "advertencias": [
+   "OBJ no declara unidades: coordenadas escritas en mm, Y arriba."
+  ],
+  "perdidas": [
+   "Superficies exactas B-Rep aproximadas por triángulos según la tolerancia configurada",
+   "Jerarquía aplanada: cada objeto se escribe como grupo con transformaciones aplicadas"
+  ],
+  "errores": [],
+  "salidas": [
+   "ensamblaje_mecanico_step\\obj\\ensamblaje_mecanico.obj",
+   "ensamblaje_mecanico_step\\obj\\ensamblaje_mecanico.mtl"
+  ]
+ },
+ {
+  "origen": "ensamblaje_mecanico.step",
+  "formato_origen": "step",
+  "destino": "fbx",
+  "estado": "exitoso_con_advertencias",
+  "fidelidad": "Teselación",
+  "semantica": "Completa",
+  "validacion": {
+   "ok": true,
+   "bytes": 597292,
+   "triangles": 24696,
+   "desviacion_dimensiones_m": 0.0,
+   "dimensiones_m": [
+    0.12,
+    0.08,
+    0.082
+   ],
+   "objetos": 4,
+   "assimp_meshes": 4,
+   "assimp_triangles": 24696
+  },
+  "estadisticas": {
+   "importacion_s": 1.17,
+   "cad_a_scene_s": 0.48,
+   "triangulos": 24696,
+   "objetos": 4,
+   "triangulos_degenerados": 0,
+   "mallas_abiertas": 0,
+   "dimensiones_m": [
+    0.12,
+    0.08,
+    0.082
+   ],
+   "exportacion_s": 0.13,
+   "validacion_s": 0.91
+  },
+  "advertencias": [],
+  "perdidas": [
+   "Superficies exactas B-Rep aproximadas por triángulos según la tolerancia configurada",
+   "Materiales PBR convertidos a modelo Phong de FBX (aproximación visual)"
+  ],
+  "errores": [],
+  "salidas": [
+   "ensamblaje_mecanico_step\\fbx\\ensamblaje_mecanico.fbx"
+  ]
+ },
+ {
+  "origen": "ensamblaje_mecanico.step",
+  "formato_origen": "step",
+  "destino": "stl",
+  "estado": "exitoso_con_advertencias",
+  "fidelidad": "Teselación",
+  "semantica": "Solo geometría",
+  "validacion": {
+   "ok": true,
+   "bytes": 1234884,
+   "triangles": 24696,
+   "desviacion_dimensiones_m": 0.0,
+   "dimensiones_m": [
+    0.12,
+    0.08,
+    0.082
+   ],
+   "objetos": 1,
+   "assimp_meshes": 1,
+   "assimp_triangles": 24696
+  },
+  "estadisticas": {
+   "importacion_s": 1.3,
+   "cad_a_scene_s": 0.52,
+   "triangulos": 24696,
+   "objetos": 4,
+   "triangulos_degenerados": 0,
+   "mallas_abiertas": 0,
+   "dimensiones_m": [
+    0.12,
+    0.08,
+    0.082
+   ],
+   "exportacion_s": 0.02,
+   "validacion_s": 0.14
+  },
+  "advertencias": [
+   "STL no declara unidades: coordenadas escritas en mm, Z arriba."
+  ],
+  "perdidas": [
+   "Superficies exactas B-Rep aproximadas por triángulos según la tolerancia configurada",
+   "STL no admite materiales, texturas, UV, nombres de objetos ni jerarquía"
+  ],
+  "errores": [],
+  "salidas": [
+   "ensamblaje_mecanico_step\\stl\\ensamblaje_mecanico.stl"
+  ]
+ },
+ {
+  "origen": "ensamblaje_mecanico.step",
+  "formato_origen": "step",
+  "destino": "ifc",
+  "estado": "exitoso_con_advertencias",
+  "fidelidad": "Limitada (con pérdidas)",
+  "semantica": "Completa",
+  "validacion": {
+   "ok": true,
+   "bytes": 2224183,
+   "productos": 4,
+   "desviacion_dimensiones_m": 0.0,
+   "dimensiones_m": [
+    0.12,
+    0.08,
+    0.082
+   ],
+   "objetos": 4,
+   "errores_esquema": 0
+  },
+  "estadisticas": {
+   "importacion_s": 1.3,
+   "cad_a_scene_s": 0.51,
+   "scene_a_bim_s": 1.43,
+   "productos_ifc": 4,
+   "dimensiones_m": [
+    0.12,
+    0.08,
+    0.082
+   ],
+   "exportacion_s": 0.74,
+   "validacion_s": 14.3
+  },
+  "advertencias": [],
+  "perdidas": [
+   "Superficies exactas B-Rep aproximadas por triángulos según la tolerancia configurada",
+   "No existe información BIM en el origen: se crean entidades genéricas IfcBuildingElementProxy dentro de una estructura espacial mínima (Proyecto/Sitio/Edificio/Planta)"
+  ],
+  "errores": [],
+  "salidas": [
+   "ensamblaje_mecanico_step\\ifc\\ensamblaje_mecanico.ifc"
+  ]
+ },
+ {
+  "origen": "ensamblaje_mecanico.step",
+  "formato_origen": "step",
+  "destino": "step",
+  "estado": "exitoso",
+  "fidelidad": "Directa",
+  "semantica": "Completa",
+  "validacion": {
+   "ok": true,
+   "bytes": 104163,
+   "solidos": 4,
+   "caras": 38,
+   "desviacion_dimensiones_m": 0.0,
+   "dimensiones_m": [
+    0.12,
+    0.08,
+    0.082
+   ],
+   "objetos": 4,
+   "formas_no_validas": 0
+  },
+  "estadisticas": {
+   "importacion_s": 1.22,
+   "piezas": 4,
+   "dimensiones_m": [
+    0.12,
+    0.08,
+    0.082
+   ],
+   "exportacion_s": 0.02,
+   "validacion_s": 0.11
+  },
+  "advertencias": [],
+  "perdidas": [],
+  "errores": [],
+  "salidas": [
+   "ensamblaje_mecanico_step\\step\\ensamblaje_mecanico.step"
+  ]
+ },
+ {
+  "origen": "ensamblaje_mecanico.step",
+  "formato_origen": "step",
+  "destino": "iges",
+  "estado": "exitoso_con_advertencias",
+  "fidelidad": "Directa",
+  "semantica": "Parcial",
+  "validacion": {
+   "ok": true,
+   "bytes": 127899,
+   "solidos": 4,
+   "caras": 38,
+   "desviacion_dimensiones_m": 0.0,
+   "dimensiones_m": [
+    0.12,
+    0.08,
+    0.082
+   ],
+   "objetos": 4,
+   "formas_no_validas": 0
+  },
+  "estadisticas": {
+   "importacion_s": 1.08,
+   "piezas": 4,
+   "dimensiones_m": [
+    0.12,
+    0.08,
+    0.082
+   ],
+   "exportacion_s": 0.02,
+   "validacion_s": 0.08
+  },
+  "advertencias": [],
+  "perdidas": [
+   "IGES no conserva la estructura de ensamblaje; las piezas se exportan como entidades independientes",
+   "IGES: la jerarquía de ensamblaje se aplana (piezas independientes con nombre)."
+  ],
+  "errores": [],
+  "salidas": [
+   "ensamblaje_mecanico_step\\iges\\ensamblaje_mecanico.igs"
+  ]
+ },
+ {
+  "origen": "ensamblaje_mecanico.igs",
+  "formato_origen": "iges",
+  "destino": "gltf",
+  "estado": "exitoso_con_advertencias",
+  "fidelidad": "Teselación",
+  "semantica": "Completa",
+  "validacion": {
+   "ok": true,
+   "bytes": 6259,
+   "triangles": 24696,
+   "desviacion_dimensiones_m": 3e-09,
+   "dimensiones_m": [
+    0.12,
+    0.08,
+    0.082
+   ],
+   "objetos": 4,
+   "assimp_meshes": 4,
+   "assimp_triangles": 24696
+  },
+  "estadisticas": {
+   "importacion_s": 1.25,
+   "cad_a_scene_s": 0.73,
+   "triangulos": 24696,
+   "objetos": 4,
+   "triangulos_degenerados": 0,
+   "mallas_abiertas": 0,
+   "dimensiones_m": [
+    0.12,
+    0.08,
+    0.082
+   ],
+   "exportacion_s": 0.02,
+   "validacion_s": 1.04
+  },
+  "advertencias": [],
+  "perdidas": [
+   "Superficies exactas B-Rep aproximadas por triángulos según la tolerancia configurada"
+  ],
+  "errores": [],
+  "salidas": [
+   "ensamblaje_mecanico_igs\\gltf\\ensamblaje_mecanico.gltf",
+   "ensamblaje_mecanico_igs\\gltf\\ensamblaje_mecanico.bin"
+  ]
+ },
+ {
+  "origen": "ensamblaje_mecanico.igs",
+  "formato_origen": "iges",
+  "destino": "glb",
+  "estado": "exitoso_con_advertencias",
+  "fidelidad": "Teselación",
+  "semantica": "Completa",
+  "validacion": {
+   "ok": true,
+   "bytes": 483504,
+   "triangles": 24696,
+   "desviacion_dimensiones_m": 3e-09,
+   "dimensiones_m": [
+    0.12,
+    0.08,
+    0.082
+   ],
+   "objetos": 4,
+   "assimp_meshes": 4,
+   "assimp_triangles": 24696
+  },
+  "estadisticas": {
+   "importacion_s": 1.78,
+   "cad_a_scene_s": 0.84,
+   "triangulos": 24696,
+   "objetos": 4,
+   "triangulos_degenerados": 0,
+   "mallas_abiertas": 0,
+   "dimensiones_m": [
+    0.12,
+    0.08,
+    0.082
+   ],
+   "exportacion_s": 0.01,
+   "validacion_s": 0.82
+  },
+  "advertencias": [],
+  "perdidas": [
+   "Superficies exactas B-Rep aproximadas por triángulos según la tolerancia configurada"
+  ],
+  "errores": [],
+  "salidas": [
+   "ensamblaje_mecanico_igs\\glb\\ensamblaje_mecanico.glb"
+  ]
+ },
+ {
+  "origen": "ensamblaje_mecanico.igs",
+  "formato_origen": "iges",
+  "destino": "obj",
+  "estado": "exitoso_con_advertencias",
+  "fidelidad": "Teselación",
+  "semantica": "Parcial",
+  "validacion": {
+   "ok": true,
+   "bytes": 1777196,
+   "triangles": 24696,
+   "desviacion_dimensiones_m": 0.0,
+   "dimensiones_m": [
+    0.12,
+    0.08,
+    0.082
+   ],
+   "objetos": 4,
+   "assimp_meshes": 4,
+   "assimp_triangles": 24696
+  },
+  "estadisticas": {
+   "importacion_s": 1.36,
+   "cad_a_scene_s": 0.6,
+   "triangulos": 24696,
+   "objetos": 4,
+   "triangulos_degenerados": 0,
+   "mallas_abiertas": 0,
+   "dimensiones_m": [
+    0.12,
+    0.08,
+    0.082
+   ],
+   "exportacion_s": 0.21,
+   "validacion_s": 0.87
+  },
+  "advertencias": [
+   "OBJ no declara unidades: coordenadas escritas en mm, Y arriba."
+  ],
+  "perdidas": [
+   "Superficies exactas B-Rep aproximadas por triángulos según la tolerancia configurada",
+   "Jerarquía aplanada: cada objeto se escribe como grupo con transformaciones aplicadas"
+  ],
+  "errores": [],
+  "salidas": [
+   "ensamblaje_mecanico_igs\\obj\\ensamblaje_mecanico.obj",
+   "ensamblaje_mecanico_igs\\obj\\ensamblaje_mecanico.mtl"
+  ]
+ },
+ {
+  "origen": "ensamblaje_mecanico.igs",
+  "formato_origen": "iges",
+  "destino": "fbx",
+  "estado": "exitoso_con_advertencias",
+  "fidelidad": "Teselación",
+  "semantica": "Completa",
+  "validacion": {
+   "ok": true,
+   "bytes": 597772,
+   "triangles": 24696,
+   "desviacion_dimensiones_m": 0.0,
+   "dimensiones_m": [
+    0.12,
+    0.08,
+    0.082
+   ],
+   "objetos": 4,
+   "assimp_meshes": 4,
+   "assimp_triangles": 24696
+  },
+  "estadisticas": {
+   "importacion_s": 1.3,
+   "cad_a_scene_s": 0.53,
+   "triangulos": 24696,
+   "objetos": 4,
+   "triangulos_degenerados": 0,
+   "mallas_abiertas": 0,
+   "dimensiones_m": [
+    0.12,
+    0.08,
+    0.082
+   ],
+   "exportacion_s": 0.09,
+   "validacion_s": 0.89
+  },
+  "advertencias": [],
+  "perdidas": [
+   "Superficies exactas B-Rep aproximadas por triángulos según la tolerancia configurada",
+   "Materiales PBR convertidos a modelo Phong de FBX (aproximación visual)"
+  ],
+  "errores": [],
+  "salidas": [
+   "ensamblaje_mecanico_igs\\fbx\\ensamblaje_mecanico.fbx"
+  ]
+ },
+ {
+  "origen": "ensamblaje_mecanico.igs",
+  "formato_origen": "iges",
+  "destino": "stl",
+  "estado": "exitoso_con_advertencias",
+  "fidelidad": "Teselación",
+  "semantica": "Solo geometría",
+  "validacion": {
+   "ok": true,
+   "bytes": 1234884,
+   "triangles": 24696,
+   "desviacion_dimensiones_m": 0.0,
+   "dimensiones_m": [
+    0.12,
+    0.08,
+    0.082
+   ],
+   "objetos": 1,
+   "assimp_meshes": 1,
+   "assimp_triangles": 24696
+  },
+  "estadisticas": {
+   "importacion_s": 1.38,
+   "cad_a_scene_s": 0.57,
+   "triangulos": 24696,
+   "objetos": 4,
+   "triangulos_degenerados": 0,
+   "mallas_abiertas": 0,
+   "dimensiones_m": [
+    0.12,
+    0.08,
+    0.082
+   ],
+   "exportacion_s": 0.02,
+   "validacion_s": 0.11
+  },
+  "advertencias": [
+   "STL no declara unidades: coordenadas escritas en mm, Z arriba."
+  ],
+  "perdidas": [
+   "Superficies exactas B-Rep aproximadas por triángulos según la tolerancia configurada",
+   "STL no admite materiales, texturas, UV, nombres de objetos ni jerarquía"
+  ],
+  "errores": [],
+  "salidas": [
+   "ensamblaje_mecanico_igs\\stl\\ensamblaje_mecanico.stl"
+  ]
+ },
+ {
+  "origen": "ensamblaje_mecanico.igs",
+  "formato_origen": "iges",
+  "destino": "ifc",
+  "estado": "exitoso_con_advertencias",
+  "fidelidad": "Limitada (con pérdidas)",
+  "semantica": "Completa",
+  "validacion": {
+   "ok": true,
+   "bytes": 2223451,
+   "productos": 4,
+   "desviacion_dimensiones_m": 0.0,
+   "dimensiones_m": [
+    0.12,
+    0.08,
+    0.082
+   ],
+   "objetos": 4,
+   "errores_esquema": 0
+  },
+  "estadisticas": {
+   "importacion_s": 1.37,
+   "cad_a_scene_s": 0.59,
+   "scene_a_bim_s": 1.79,
+   "productos_ifc": 4,
+   "dimensiones_m": [
+    0.12,
+    0.08,
+    0.082
+   ],
+   "exportacion_s": 0.95,
+   "validacion_s": 9.35
+  },
+  "advertencias": [],
+  "perdidas": [
+   "Superficies exactas B-Rep aproximadas por triángulos según la tolerancia configurada",
+   "No existe información BIM en el origen: se crean entidades genéricas IfcBuildingElementProxy dentro de una estructura espacial mínima (Proyecto/Sitio/Edificio/Planta)"
+  ],
+  "errores": [],
+  "salidas": [
+   "ensamblaje_mecanico_igs\\ifc\\ensamblaje_mecanico.ifc"
+  ]
+ },
+ {
+  "origen": "ensamblaje_mecanico.igs",
+  "formato_origen": "iges",
+  "destino": "step",
+  "estado": "exitoso",
+  "fidelidad": "Directa",
+  "semantica": "Completa",
+  "validacion": {
+   "ok": true,
+   "bytes": 99357,
+   "solidos": 4,
+   "caras": 38,
+   "desviacion_dimensiones_m": 0.0,
+   "dimensiones_m": [
+    0.12,
+    0.08,
+    0.082
+   ],
+   "objetos": 4,
+   "formas_no_validas": 0
+  },
+  "estadisticas": {
+   "importacion_s": 1.35,
+   "piezas": 4,
+   "dimensiones_m": [
+    0.12,
+    0.08,
+    0.082
+   ],
+   "exportacion_s": 0.02,
+   "validacion_s": 0.11
+  },
+  "advertencias": [],
+  "perdidas": [],
+  "errores": [],
+  "salidas": [
+   "ensamblaje_mecanico_igs\\step\\ensamblaje_mecanico.step"
+  ]
+ },
+ {
+  "origen": "ensamblaje_mecanico.igs",
+  "formato_origen": "iges",
+  "destino": "iges",
+  "estado": "exitoso_con_advertencias",
+  "fidelidad": "Directa",
+  "semantica": "Completa",
+  "validacion": {
+   "ok": true,
+   "bytes": 125550,
+   "solidos": 4,
+   "caras": 38,
+   "desviacion_dimensiones_m": 0.0,
+   "dimensiones_m": [
+    0.12,
+    0.08,
+    0.082
+   ],
+   "objetos": 4,
+   "formas_no_validas": 0
+  },
+  "estadisticas": {
+   "importacion_s": 1.51,
+   "piezas": 4,
+   "dimensiones_m": [
+    0.12,
+    0.08,
+    0.082
+   ],
+   "exportacion_s": 0.01,
+   "validacion_s": 0.11
+  },
+  "advertencias": [],
+  "perdidas": [
+   "IGES no conserva la estructura de ensamblaje; las piezas se exportan como entidades independientes"
+  ],
+  "errores": [],
+  "salidas": [
+   "ensamblaje_mecanico_igs\\iges\\ensamblaje_mecanico.igs"
+  ]
+ }
+]

@@ -1,0 +1,60 @@
+solid tetra_A
+facet normal 0.0 0.0 -1.0
+ outer loop
+  vertex 0.0 0.0 0.0
+  vertex 0.0 10.0 0.0
+  vertex 10.0 0.0 0.0
+ endloop
+endfacet
+facet normal 0.0 -1.0 0.0
+ outer loop
+  vertex 0.0 0.0 0.0
+  vertex 10.0 0.0 0.0
+  vertex 0.0 0.0 10.0
+ endloop
+endfacet
+facet normal -1.0 0.0 0.0
+ outer loop
+  vertex 0.0 0.0 0.0
+  vertex 0.0 0.0 10.0
+  vertex 0.0 10.0 0.0
+ endloop
+endfacet
+facet normal 0.5773502691896257 0.5773502691896257 0.5773502691896257
+ outer loop
+  vertex 10.0 0.0 0.0
+  vertex 0.0 10.0 0.0
+  vertex 0.0 0.0 10.0
+ endloop
+endfacet
+endsolid tetra_A
+solid tetra_B
+facet normal 0.0 0.0 -1.0
+ outer loop
+  vertex 30.0 0.0 0.0
+  vertex 30.0 10.0 0.0
+  vertex 40.0 0.0 0.0
+ endloop
+endfacet
+facet normal 0.0 -1.0 0.0
+ outer loop
+  vertex 30.0 0.0 0.0
+  vertex 40.0 0.0 0.0
+  vertex 30.0 0.0 10.0
+ endloop
+endfacet
+facet normal -1.0 0.0 0.0
+ outer loop
+  vertex 30.0 0.0 0.0
+  vertex 30.0 0.0 10.0
+  vertex 30.0 10.0 0.0
+ endloop
+endfacet
+facet normal 0.5773502691896257 0.5773502691896257 0.5773502691896257
+ outer loop
+  vertex 40.0 0.0 0.0
+  vertex 30.0 10.0 0.0
+  vertex 30.0 0.0 10.0
+ endloop
+endfacet
+endsolid tetra_B

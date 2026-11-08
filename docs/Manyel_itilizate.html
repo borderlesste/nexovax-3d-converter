@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="ht">
+<head>
+<meta charset="utf-8">
+<title>Manyèl itilizatè — NEXOVAX 3D Converter</title>
+<style>
+  body { font-family: "Segoe UI", Arial, sans-serif; color: #1d2733; max-width: 960px; margin: 28px auto; padding: 0 18px; line-height: 1.55; }
+  h1 { color: #1856a8; border-bottom: 3px solid #1f6fd6; padding-bottom: 6px; }
+  h2 { color: #1856a8; margin-top: 34px; border-bottom: 1px solid #d9e0ea; padding-bottom: 4px; }
+  code, kbd { background: #eef2f7; border: 1px solid #d9e0ea; border-radius: 4px; padding: 1px 5px; font-size: 92%; }
+  pre { background: #1d2733; color: #e8eef6; padding: 12px 14px; border-radius: 6px; overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; margin: 10px 0; }
+  th, td { border: 1px solid #d9e0ea; padding: 6px 9px; text-align: left; vertical-align: top; }
+  th { background: #f3f6fa; }
+  .note { background: #f4f8fe; border-left: 4px solid #1f6fd6; padding: 8px 12px; margin: 12px 0; }
+  .warn { background: #fff8e6; border-left: 4px solid #e0a020; padding: 8px 12px; margin: 12px 0; }
+</style>
+</head>
+<body>
+<h1>NEXOVAX 3D Converter — Manyèl itilizatè</h1>
+<p>Vèsyon 1.0 · Aplikasyon pou Windows 10/11 (64 bit) ki konvèti modèl 3D ant
+<b>glTF, GLB, OBJ, FBX, STL, IFC, STEP ak IGES</b> san koneksyon entènèt.</p>
+<ol>
+  <li><a href="#komanse">Pou kòmanse</a></li>
+  <li><a href="#entefas">Entèfas la</a></li>
+  <li><a href="#konveti">Konvèti fichye</a></li>
+  <li><a href="#opsyon">Opsyon konvèsyon yo</a></li>
+  <li><a href="#rezilta">Rezilta, verifikasyon ak rapò</a></li>
+  <li><a href="#fòma">Sa ki rete apre konvèsyon an</a></li>
+  <li><a href="#cli">Liy kòmand</a></li>
+  <li><a href="#pwoblem">Lè gen pwoblèm</a></li>
+  <li><a href="#vipriv">San entènèt ak vi prive</a></li>
+</ol>
+
+<h2 id="komanse">1. Pou kòmanse</h2>
+<ol>
+  <li>Louvri <b>NEXOVAX 3D Converter</b> nan rakousi ki sou biwo a oswa nan meni Kòmanse.</li>
+  <li>Klike sou <b>Ajoute fichye</b> (<kbd>Ctrl</kbd>+<kbd>O</kbd>), <b>Ajoute dosye</b>, oswa trennen fichye ak dosye nan fenèt la.</li>
+  <li>Chwazi <b>Fòma destinasyon</b> an nan pano <i>Konfigirasyon</i> an.</li>
+  <li>Si ou vle, chwazi yon <b>Dosye sòti</b> (si ou kite l vid, chak rezilta ap anrejistre bò kote fichye sous li).</li>
+  <li>Klike sou <b>KONVÈTI</b> (<kbd>F5</kbd>). Lè l fini, klike sou <b>Louvri dosye destinasyon an</b>.</li>
+  <li>Lang: chwazi <i>Español</i>, <i>Français</i> oswa <i>Kreyòl ayisyen</i> nan seleksyon ki anlè a (aplikasyon an ap rekòmanse).</li>
+</ol>
+<div class="note">Fichye orijinal la <b>pa janm chanje</b>. Si gen yon fichye ki gen menm non deja, aplikasyon an kreye
+<code>non (1).ext</code>, sof si ou aktive « Ekri sou fichye ki egziste deja ».</div>
+
+<h2 id="entefas">2. Entèfas la</h2>
+<h3>Pano « Fichye » (agoch)</h3>
+<p>Lis modèl yo ak non, ekstansyon, gwosè ak eta. Ti kare a montre si fichye a ap konvèti. Aplikasyon an detekte fòma a selon
+<b>vrè kontni</b> fichye a, pa sèlman ekstansyon an; si yo pa dakò, yon avètisman parèt nan jounal la. Klike adwat: make/demake tout,
+louvri dosye a, wè rapò a, retire nan lis la. Bwat <i>Filtre fichye</i> (<kbd>Ctrl</kbd>+<kbd>F</kbd>) filtre lis la pa non.</p>
+<table>
+<tr><th>Eta</th><th>Sa sa vle di</th></tr>
+<tr><td>Ap tann</td><td>Ajoute, poko konvèti.</td></tr>
+<tr><td>Nan fil / Ap konvèti</td><td>Fè pati lo k ap travay la.</td></tr>
+<tr><td>Konvèti</td><td>Rezilta a fèt epi li verifye san pwoblèm.</td></tr>
+<tr><td>Ak avètisman</td><td>Rezilta a valab, men gen pèt enfòmasyon ki ekri nan rapò a oswa sipozisyon (egzanp: inite yon STL).</td></tr>
+<tr><td>Echwe</td><td>Okenn fichye pa fèt. Rezon an nan jounal la ak nan rapò a.</td></tr>
+<tr><td>Anile</td><td>Itilizatè a kanpe l; pa gen moso fichye ki rete.</td></tr>
+</table>
+<h3>Pano « Apèsi 3D » (nan mitan)</h3>
+<p>Li montre fichye ou chwazi a. Vire: bouton goch · Deplase: bouton mitan (oswa <kbd>Shift</kbd>+goch) · Zoum: wou sourit la.
+Bouton yo: vi izometrik, mete nan mitan, pwoche/elwaye, mòd <i>Ak lonbraj / Fil / Lonbraj + arèt</i>, kadriyaj, aks XYZ ak tout ekran
+(<kbd>F11</kbd>). Bwat <i>Dimansyon modèl la</i> bay gwosè a an mèt (X, Y, Z, Z se vètikal) ak volim lan lè modèl la fèmen.
+Apèsi a kalkile nan yon pwosesis apa: li pa janm bloke konvèsyon an ni entèfas la.</p>
+<h3>Pano « Konfigirasyon » (adwat)</h3>
+<p>Li montre fòma ki detekte a, <b>chemen konvèsyon</b> ki pral itilize a (ak nivo fidelite li) ak tout opsyon yo. Opsyon ki pa
+gen efè sou konvèsyon ou chwazi a <b>dezaktive</b>. Bouton <b>Pwofil</b> la anrejistre ak rechaje konfigirasyon ki gen non.</p>
+<h3>Pano « Tretman » (anba)</h3>
+<p>Ba pwogrè, tan ki pase ak tan ki rete, <b>Fil konvèsyon</b> (klike de fwa = tout rapò a), <b>Jounal</b> ak lè chak evènman
+(ou ka anrejistre l) ak bwat <b>Pèt enfòmasyon ki posib</b>, ki di davans sa ki ka pèdi epi apre sa montre sa ki te rive vre.</p>
+
+<h2 id="konveti">3. Konvèti fichye</h2>
+<p>Ou ka konvèti anpil fichye ki nan fòma diferan nan yon sèl fòma destinasyon. Chak fichye trete nan yon <b>pwosesis izole</b>:
+si yon fichye domaje fè yon motè tonbe, se sèlman travay sa a ki echwe, rès lo a kontinye. <b>Anile</b> kanpe travay k ap fèt la ak
+sa k ap tann yo san danje.</p>
+
+<h2 id="opsyon">4. Opsyon konvèsyon yo</h2>
+<table>
+<tr><th>Opsyon</th><th>Deskripsyon</th></tr>
+<tr><td>Kalite mayaj</td><td>Ba · Mwayen · Wo · Trè wo. Kantite triyang lè w konvèti STEP/IGES/IFC an mayaj.</td></tr>
+<tr><td>Tolerans teselasyon</td><td>Pi gwo distans (mm) ant sifas egzak la ak triyang yo. <i>Otomatik</i> = selon gwosè modèl la ak kalite a.</td></tr>
+<tr><td>Echèl</td><td>Faktè anplis (1 = pa gen chanjman). Li toujou ekri nan rapò a.</td></tr>
+<tr><td>Inite sous (OBJ/STL)</td><td>OBJ ak STL pa sere inite. Otomatik: STL an milimèt, OBJ an mèt.</td></tr>
+<tr><td>Inite sòti (OBJ/STL)</td><td>Otomatik: inite sous la rete (STEP an mm → STL an mm; IFC an m → OBJ an m).</td></tr>
+<tr><td>Oryantasyon aks</td><td>Pou OBJ/STL. Otomatik: OBJ ak Y anwo, STL ak Z anwo.</td></tr>
+<tr><td>Kenbe materyo / estrikti</td><td>Koulè, PBR ak teksti; yerachi objè, asanblaj ak estrikti espasyal IFC.</td></tr>
+<tr><td>Mete pwopriyete</td><td>Psets ak idantifyan IFC nan <i>extras</i> glTF; done orijin nan yon pset <code>NEXOVAX_Origen</code> lè w kreye yon IFC.</td></tr>
+<tr><td>Mete ansanm pa materyo</td><td>Mete tout objè ki gen menm materyo ansanm (fichye pi lejè; yerachi a pèdi).</td></tr>
+<tr><td>Chema IFC / STEP</td><td>IFC4 oswa IFC2X3; STEP AP214 (pa defo, ak koulè), AP242 oswa AP203.</td></tr>
+<tr><td>Limit triyang → CAD</td><td>Si mayaj la depase limit sa a, konvèsyon mayaj → STEP/IGES refize, paske B-Rep an fasèt la ta twò gwo epi li pa t ap itil.</td></tr>
+<tr><td>Verifye rezilta a</td><td>Li reli fichye ki fèt la epi li konpare l ak modèl la (nou rekòmande sa).</td></tr>
+</table>
+
+<h2 id="rezilta">5. Rezilta, verifikasyon ak rapò</h2>
+<p>Apre chak fichye ekri, aplikasyon an verifye li egziste epi li pa vid, li reli l, li tcheke gen jewometri, li konpare bwat
+ki antoure modèl la ak kantite objè yo, epi li li l ak yon lòt lektè endepandan (<b>Assimp</b> pou mayaj, kontwòl topolojik
+<b>OCCT</b> pou STEP/IGES, verifikasyon chema <b>IfcOpenShell</b> pou IFC). Fichye a kopye nan dosye destinasyon an sèlman si
+verifikasyon an reyisi (ekriti atomik: pa janm gen fichye ki mwatye ekri).</p>
+
+<h2 id="fòma">6. Sa ki rete apre konvèsyon an</h2>
+<table>
+<tr><th>Kalite</th><th>Egzanp</th><th>Sa k ap pase</th></tr>
+<tr><td>Dirèk</td><td>OBJ→GLB, GLB→FBX, STEP→IGES, IFC→STEP</td><td>Menm reprezantasyon jewometrik. IFC→STEP kenbe B-Rep egzak chak eleman.</td></tr>
+<tr><td>Teselasyon</td><td>STEP→STL, IGES→GLB, IFC→OBJ</td><td>Sifas egzak yo vin triyang selon tolerans lan.</td></tr>
+<tr><td>An fasèt</td><td>STL→STEP, OBJ→IGES</td><td>Chak triyang vin yon fas plat: B-Rep valab (solid si mayaj la fèmen) men <b>se pa</b> yon modèl CAD paramètrik.</td></tr>
+<tr><td>Limite</td><td>OBJ→IFC, STEP→IFC</td><td>IFC valab ak eleman jenerik <code>IfcBuildingElementProxy</code>. Aplikasyon an pa envante okenn enfòmasyon BIM.</td></tr>
+</table>
+<div class="warn"><b>Animasyon, eskelèt, kamera ak limyè</b> FBX/glTF pa konvèti: jewometri a ekspòte nan pozisyon estatik li.</div>
+
+<h2 id="cli">7. Liy kòmand</h2>
+<pre>nexovax3d-cli.exe convert moso.step -t stl -o C:\Soti --quality alta
+nexovax3d-cli.exe convert C:\Model -r -t glb --report rapo.json
+nexovax3d-cli.exe --lang ht matrix
+nexovax3d-cli.exe convert --help</pre>
+<p>Kòd sòti 0 si tout konvèsyon yo reyisi, 1 si youn echwe. Lang: <code>--lang es|fr|ht</code>.</p>
+
+<h2 id="pwoblem">8. Lè gen pwoblèm</h2>
+<table>
+<tr><th>Sa w wè</th><th>Kòz ak solisyon</th></tr>
+<tr><td>« Fòma a pa rekonèt »</td><td>Kontni an pa koresponn ak okenn nan 8 fòma yo oswa fichye a domaje.</td></tr>
+<tr><td>« Fichye oksilyè jewometri a manke »</td><td>Yon .gltf bezwen fichye .bin li (ak teksti li yo) nan menm dosye a.</td></tr>
+<tr><td>Modèl la twò gwo oswa twò piti</td><td>Tcheke <i>Inite sous</i> OBJ/STL yo oswa itilize <i>Echèl</i>.</td></tr>
+<tr><td>Modèl la kouche</td><td>Chanje <i>Oryantasyon aks</i> yo (OBJ/STL).</td></tr>
+<tr><td>Mayaj → STEP refize</td><td>Li depase limit triyang lan. Senplifye mayaj la oswa ogmante limit la.</td></tr>
+<tr><td>Apèsi pa disponib</td><td>Òdinatè a pa gen OpenGL 3.2 (kèk machin vityèl). Konvèsyon an mache kanmenm.</td></tr>
+</table>
+
+<h2 id="vipriv">9. San entènèt ak vi prive</h2>
+<p>Tout motè yo nan enstalasyon an. Aplikasyon an pa itilize okenn sèvis sou entènèt, li pa mande kont ni aktivasyon, li pa
+telechaje anyen epi li pa voye okenn done. Fichye tanporè yo kreye nan <code>%TEMP%\u3dc</code> epi yo efase apre travay la.
+Referans ekstèn modèl yo li sèlman nan dosye modèl la; URL ak chemen ki soti deyò dosye a bloke.</p>
+<p><i>Nòt: tradiksyon kreyòl sa a dwe revize pa yon moun ki pale lang lan natifnatal anvan piblikasyon.</i></p>
+</body>
+</html>

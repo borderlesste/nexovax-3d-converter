@@ -1,0 +1,4 @@
+# Herramientas de desarrollo, pruebas y empaquetado
+pytest==9.2.0
+pyinstaller==6.22.3
+pyinstaller-hooks-contrib==2026.9

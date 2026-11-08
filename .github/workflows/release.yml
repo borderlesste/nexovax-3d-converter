@@ -1,0 +1,57 @@
+# Compila, prueba y (opcionalmente) publica el instalador de NEXOVAX 3D Converter en los servidores de GitHub.
+# Ejecución manual: pestaña Actions → "Compilar y publicar" → Run workflow.
+#   - Sin etiqueta: solo compila y deja el instalador como artefacto descargable (para verificar).
+#   - Con etiqueta (p. ej. v1.1.0): además crea/actualiza esa versión en Releases con el instalador.
+name: Compilar y publicar
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Etiqueta de versión a publicar (vacío = solo compilar)"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+jobs:
+  windows:
+    runs-on: windows-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instalar Inno Setup
+        run: choco install innosetup -y --no-progress
+
+      - name: Compilar (pruebas + ejecutables + instalador)
+        shell: pwsh
+        run: |
+          python -m venv .venv
+          powershell -ExecutionPolicy Bypass -File packaging\build.ps1
+
+      - name: Suma SHA-256
+        shell: pwsh
+        run: |
+          $h = (Get-FileHash build\installer\NEXOVAX3DConverter-Setup.exe -Algorithm SHA256).Hash
+          "$h  NEXOVAX3DConverter-Setup.exe" | Out-File -Encoding ascii build\installer\SHA256SUMS.txt
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: NEXOVAX3DConverter-Setup
+          path: build/installer/
+
+      - name: Publicar versión en GitHub Releases
+        if: ${{ inputs.tag != '' }}
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ inputs.tag }}
+          files: |
+            build/installer/NEXOVAX3DConverter-Setup.exe
+            build/installer/SHA256SUMS.txt
+          body_path: docs/NOTAS_DE_VERSION.md

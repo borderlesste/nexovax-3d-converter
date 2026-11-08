@@ -1,0 +1,90 @@
+﻿; Kreyòl ayisyen pou Inno Setup 6 — tradiksyon NEXOVAX 3D Converter.
+; Mesaj ki pa nan fichye sa a pran vèsyon angle a (Default.isl). Pou revize pa yon moun ki pale lang lan natifnatal.
+
+[LangOptions]
+LanguageName=Krey<00F2>l ayisyen
+LanguageID=$0480
+LanguageCodePage=0
+
+[Messages]
+SetupAppTitle=Enstalasyon
+SetupWindowTitle=Enstalasyon - %1
+UninstallAppTitle=Dezenstalasyon
+UninstallAppFullTitle=Dezenstale %1
+ConfirmTitle=Konfime
+PrivilegesRequiredOverrideTitle=Chwazi kijan pou enstale
+PrivilegesRequiredOverrideInstruction=Chwazi mòd enstalasyon an
+PrivilegesRequiredOverrideText2=Ou ka enstale %1 pou ou sèlman, oswa pou tout itilizatè yo (sa mande dwa administratè).
+PrivilegesRequiredOverrideAllUsers=Enstale pou &tout itilizatè yo
+PrivilegesRequiredOverrideCurrentUser=Enstale pou &mwen sèlman
+PrivilegesRequiredOverrideCurrentUserRecommended=Enstale pou &mwen sèlman (rekòmande)
+ExitSetupTitle=Kite enstalasyon an
+ExitSetupMessage=Enstalasyon an poko fini. Si ou kite kounye a, pwogram nan p ap enstale.%n%nOu ka relanse enstalasyon an yon lòt lè pou fini l.%n%nKite enstalasyon an?
+AboutSetupMenuItem=&Konsènan enstalatè a...
+ButtonBack=< &Retounen
+ButtonNext=&Swivan >
+ButtonInstall=&Enstale
+ButtonOK=OK
+ButtonCancel=Anile
+ButtonYes=&Wi
+ButtonNo=&Non
+ButtonFinish=&Fini
+ButtonBrowse=&Chèche...
+ButtonWizardBrowse=C&hèche...
+ButtonNewFolder=&Kreye nouvo dosye
+SelectLanguageTitle=Chwazi lang enstalasyon an
+SelectLanguageLabel=Chwazi lang ou vle itilize pandan enstalasyon an.
+BrowseDialogTitle=Chèche yon dosye
+BrowseDialogLabel=Chwazi yon dosye nan lis ki anba a, epi klike sou OK.
+NewFolderName=Nouvo dosye
+WelcomeLabel1=Byenvini nan asistan enstalasyon [name]
+WelcomeLabel2=Asistan sa a pral enstale [name/ver] sou òdinatè ou.%n%nNou rekòmande pou ou fèmen tout lòt aplikasyon anvan ou kontinye.
+WizardSelectDir=Chwazi kote pou enstale l
+SelectDirDesc=Ki kote pou [name] enstale?
+SelectDirLabel3=Enstalatè a pral enstale [name] nan dosye sa a.
+SelectDirBrowseLabel=Pou kontinye, klike sou Swivan. Si ou vle chwazi yon lòt dosye, klike sou Chèche.
+DiskSpaceGBLabel=Fòk gen omwen [gb] GB espas lib sou disk la.
+DiskSpaceMBLabel=Fòk gen omwen [mb] MB espas lib sou disk la.
+DiskSpaceWarningTitle=Pa gen ase espas sou disk la
+DiskSpaceWarning=Enstalasyon an bezwen omwen %1 KB espas lib, men disk ou chwazi a gen sèlman %2 KB.%n%nÈske ou vle kontinye kanmenm?
+DirExistsTitle=Dosye a egziste deja
+DirExists=Dosye sa a:%n%n%1%n%negziste deja. Èske ou vle enstale ladan l kanmenm?
+WizardSelectTasks=Chwazi lòt travay
+SelectTasksDesc=Ki lòt travay pou fè?
+SelectTasksLabel2=Chwazi lòt travay ou vle enstalatè a fè pandan l ap enstale [name], epi klike sou Swivan.
+WizardReady=Pare pou enstale
+ReadyLabel1=Enstalatè a pare pou kòmanse enstale [name] sou òdinatè ou.
+ReadyLabel2a=Klike sou Enstale pou kontinye, oswa klike sou Retounen si ou vle revize oswa chanje yon paramèt.
+ReadyLabel2b=Klike sou Enstale pou kontinye.
+ReadyMemoDir=Kote pou enstale l:
+ReadyMemoTasks=Lòt travay:
+WizardPreparing=N ap prepare enstalasyon an
+PreparingDesc=Enstalatè a ap prepare pou enstale [name] sou òdinatè ou.
+WizardInstalling=N ap enstale
+InstallingLabel=Tanpri tann pandan enstalatè a ap enstale [name] sou òdinatè ou.
+FinishedHeadingLabel=Asistan enstalasyon [name] fini
+FinishedLabelNoIcons=Enstalatè a fin enstale [name] sou òdinatè ou.
+FinishedLabel=Enstalatè a fin enstale [name] sou òdinatè ou. Ou ka lanse aplikasyon an ak rakousi ki enstale yo.
+ClickFinish=Klike sou Fini pou sòti.
+RunEntryExec=Lanse %1
+SetupAborted=Enstalasyon an pa t fini.%n%nTanpri korije pwoblèm nan epi relanse enstalasyon an.
+AbortRetryIgnoreSelectAction=Chwazi yon aksyon
+StatusClosingApplications=N ap fèmen aplikasyon yo...
+StatusCreateDirs=N ap kreye dosye yo...
+StatusExtractFiles=N ap ekstrè fichye yo...
+StatusCreateIcons=N ap kreye rakousi yo...
+StatusCreateRegistryEntries=N ap ekri nan rejis la...
+StatusSavingUninstall=N ap anrejistre enfòmasyon dezenstalasyon...
+StatusRunProgram=N ap fini enstalasyon an...
+StatusRollback=N ap anile chanjman yo...
+ConfirmUninstall=Èske ou si ou vle retire %1 nèt ak tout eleman li yo?
+UninstallStatusLabel=Tanpri tann pandan n ap retire %1 sou òdinatè ou.
+UninstalledAll=%1 retire sou òdinatè ou san pwoblèm.
+UninstallDataCorrupted=Fichye "%1" la domaje. Nou pa ka dezenstale
+WizardUninstalling=Eta dezenstalasyon an
+StatusUninstalling=N ap dezenstale %1...
+
+[CustomMessages]
+AdditionalIcons=Lòt rakousi:
+CreateDesktopIcon=Kreye yon rakousi sou &biwo a
+LaunchProgram=Lanse %1

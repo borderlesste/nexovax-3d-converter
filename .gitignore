@@ -1,0 +1,8 @@
+.venv/
+build/
+__pycache__/
+*.pyc
+.pytest_cache/
+*.spec.bak
+packaging/app.png
+*.u3dc-partial

@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Manuel d'utilisation — NEXOVAX 3D Converter</title>
+<style>
+  body { font-family: "Segoe UI", Arial, sans-serif; color: #1d2733; max-width: 960px; margin: 28px auto; padding: 0 18px; line-height: 1.55; }
+  h1 { color: #1856a8; border-bottom: 3px solid #1f6fd6; padding-bottom: 6px; }
+  h2 { color: #1856a8; margin-top: 34px; border-bottom: 1px solid #d9e0ea; padding-bottom: 4px; }
+  code, kbd { background: #eef2f7; border: 1px solid #d9e0ea; border-radius: 4px; padding: 1px 5px; font-size: 92%; }
+  pre { background: #1d2733; color: #e8eef6; padding: 12px 14px; border-radius: 6px; overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; margin: 10px 0; }
+  th, td { border: 1px solid #d9e0ea; padding: 6px 9px; text-align: left; vertical-align: top; }
+  th { background: #f3f6fa; }
+  .note { background: #f4f8fe; border-left: 4px solid #1f6fd6; padding: 8px 12px; margin: 12px 0; }
+  .warn { background: #fff8e6; border-left: 4px solid #e0a020; padding: 8px 12px; margin: 12px 0; }
+</style>
+</head>
+<body>
+<h1>NEXOVAX 3D Converter — Manuel d'utilisation</h1>
+<p>Version 1.0 · Application de bureau pour Windows 10/11 (64 bits) qui convertit des modèles 3D entre
+<b>glTF, GLB, OBJ, FBX, STL, IFC, STEP et IGES</b> sans connexion Internet.</p>
+<ol>
+  <li><a href="#debut">Premiers pas</a></li>
+  <li><a href="#interface">L'interface</a></li>
+  <li><a href="#convertir">Convertir des fichiers</a></li>
+  <li><a href="#options">Options de conversion</a></li>
+  <li><a href="#resultats">Résultats, validation et rapports</a></li>
+  <li><a href="#formats">Ce qui est conservé</a></li>
+  <li><a href="#cli">Ligne de commande</a></li>
+  <li><a href="#problemes">Résolution des problèmes</a></li>
+  <li><a href="#confidentialite">Fonctionnement hors ligne et confidentialité</a></li>
+</ol>
+
+<h2 id="debut">1. Premiers pas</h2>
+<ol>
+  <li>Ouvrez <b>NEXOVAX 3D Converter</b> depuis le raccourci du bureau ou le menu Démarrer.</li>
+  <li>Cliquez sur <b>Ajouter des fichiers</b> (<kbd>Ctrl</kbd>+<kbd>O</kbd>), <b>Ajouter un dossier</b>, ou glissez des fichiers et dossiers dans la fenêtre.</li>
+  <li>Choisissez le <b>Format cible</b> dans le panneau <i>Configuration</i>.</li>
+  <li>Choisissez éventuellement un <b>Dossier de sortie</b> (s'il est vide, chaque résultat est enregistré à côté de son fichier source).</li>
+  <li>Cliquez sur <b>CONVERTIR</b> (<kbd>F5</kbd>). Ensuite, utilisez <b>Ouvrir le dossier de destination</b>.</li>
+  <li>Langue : choisissez <i>Español</i>, <i>Français</i> ou <i>Kreyòl ayisyen</i> dans le sélecteur de l'en-tête (l'application redémarre).</li>
+</ol>
+<div class="note">Le fichier d'origine n'est <b>jamais modifié</b>. Si un fichier du même nom existe déjà, <code>nom (1).ext</code>
+est créé, sauf si l'option « Écraser les fichiers existants » est activée.</div>
+
+<h2 id="interface">2. L'interface</h2>
+<h3>Panneau « Fichiers » (gauche)</h3>
+<p>Liste des modèles avec nom, extension, taille et état. La case à cocher indique si le fichier sera converti. Le format est détecté
+d'après le <b>contenu réel</b> du fichier et pas seulement l'extension ; en cas de différence, un avertissement apparaît dans le journal.
+Clic droit : tout cocher/décocher, ouvrir le dossier, voir le rapport, retirer de la liste. Le champ <i>Filtrer les fichiers</i>
+(<kbd>Ctrl</kbd>+<kbd>F</kbd>) filtre la liste par nom.</p>
+<table>
+<tr><th>État</th><th>Signification</th></tr>
+<tr><td>En attente</td><td>Ajouté, non converti.</td></tr>
+<tr><td>En file / En conversion</td><td>Fait partie du lot en cours.</td></tr>
+<tr><td>Converti</td><td>Résultat généré et validé sans incident.</td></tr>
+<tr><td>Avec avertissements</td><td>Résultat valide, avec des pertes d'informations documentées ou des hypothèses (par ex. les unités d'un STL).</td></tr>
+<tr><td>Échec</td><td>Aucun fichier n'a été généré. La cause figure dans le journal et le rapport.</td></tr>
+<tr><td>Annulé</td><td>Arrêté par l'utilisateur ; aucun fichier partiel ne reste.</td></tr>
+</table>
+<h3>Panneau « Aperçu 3D » (centre)</h3>
+<p>Affiche le fichier sélectionné. Rotation : bouton gauche · Déplacer : bouton central (ou <kbd>Maj</kbd>+gauche) · Zoom : molette.
+Boutons : vue isométrique, centrer, zoom avant/arrière, mode <i>Ombré / Filaire / Ombré + arêtes</i>, grille, axes XYZ et plein écran
+(<kbd>F11</kbd>). L'encadré <i>Dimensions du modèle</i> donne la taille en mètres (X, Y, Z avec Z vertical) et le volume lorsque le modèle est fermé.
+L'aperçu est calculé dans un processus séparé : il ne bloque jamais la conversion ni l'interface.</p>
+<h3>Panneau « Configuration » (droite)</h3>
+<p>Affiche le format détecté, le <b>chemin de conversion</b> utilisé (avec son niveau de fidélité) et toutes les options. Les options sans
+effet sur la conversion choisie sont <b>désactivées</b>. Le bouton <b>Profils</b> enregistre et rappelle des configurations nommées.</p>
+<h3>Panneau « Traitement » (bas)</h3>
+<p>Barre de progression, temps écoulé et estimé, <b>File de conversion</b> (double-clic = rapport complet), <b>Journal</b> horodaté
+(enregistrable) et l'encadré <b>Perte d'informations possible</b>, qui annonce les pertes avant la conversion puis montre ce qui s'est réellement passé.</p>
+
+<h2 id="convertir">3. Convertir des fichiers</h2>
+<p>Vous pouvez convertir de nombreux fichiers de formats différents vers un même format cible. Chaque fichier est traité dans un
+<b>processus isolé</b> : si un fichier endommagé fait échouer un moteur, seule cette tâche échoue et le reste du lot continue.
+<b>Annuler</b> arrête la tâche en cours et celles en attente en toute sécurité.</p>
+
+<h2 id="options">4. Options de conversion</h2>
+<table>
+<tr><th>Option</th><th>Description</th></tr>
+<tr><td>Qualité du maillage</td><td>Basse · Moyenne · Haute · Très haute. Densité de triangles lors de la conversion STEP/IGES/IFC vers maillage.</td></tr>
+<tr><td>Tolérance de tessellation</td><td>Écart maximal (mm) entre la surface exacte et les triangles. <i>Automatique</i> = proportionnelle à la taille du modèle selon la qualité.</td></tr>
+<tr><td>Échelle</td><td>Facteur supplémentaire (1 = aucun changement). Toujours indiqué dans le rapport.</td></tr>
+<tr><td>Unités source (OBJ/STL)</td><td>OBJ et STL n'enregistrent pas d'unités. Automatique : STL en millimètres, OBJ en mètres.</td></tr>
+<tr><td>Unités de sortie (OBJ/STL)</td><td>Automatique : l'unité de la source est conservée (STEP en mm → STL en mm ; IFC en m → OBJ en m).</td></tr>
+<tr><td>Orientation des axes</td><td>Pour OBJ/STL. Automatique : OBJ avec Y vers le haut, STL avec Z vers le haut.</td></tr>
+<tr><td>Conserver les matériaux / la structure</td><td>Couleurs, PBR et textures ; hiérarchie d'objets, assemblages et structure spatiale IFC.</td></tr>
+<tr><td>Inclure les propriétés</td><td>Psets et identifiants IFC dans les <i>extras</i> glTF ; données d'origine dans un pset <code>NEXOVAX_Origen</code> lors de la création d'un IFC.</td></tr>
+<tr><td>Fusionner par matériau</td><td>Réunit tous les objets d'un même matériau (fichiers plus légers ; la hiérarchie est perdue).</td></tr>
+<tr><td>Schéma IFC / STEP</td><td>IFC4 ou IFC2X3 ; STEP AP214 (par défaut, avec couleurs), AP242 ou AP203.</td></tr>
+<tr><td>Limite de triangles → CAO</td><td>Au-delà, la conversion maillage → STEP/IGES est refusée, car le B-Rep facettisé serait énorme et peu utile.</td></tr>
+<tr><td>Valider le résultat</td><td>Relit le fichier généré et le compare au modèle (recommandé).</td></tr>
+</table>
+
+<h2 id="resultats">5. Résultats, validation et rapports</h2>
+<p>Après l'écriture de chaque fichier, l'application vérifie qu'il existe et n'est pas vide, le relit, contrôle la présence de
+géométrie, compare la boîte englobante et le nombre d'objets, puis le lit avec un lecteur indépendant (<b>Assimp</b> pour les
+maillages, contrôle topologique <b>OCCT</b> pour STEP/IGES, validation de schéma <b>IfcOpenShell</b> pour IFC). Le fichier n'est
+copié dans le dossier de destination que si la validation réussit (écriture atomique).</p>
+
+<h2 id="formats">6. Ce qui est conservé</h2>
+<table>
+<tr><th>Type</th><th>Exemples</th><th>Ce qui se passe</th></tr>
+<tr><td>Directe</td><td>OBJ→GLB, GLB→FBX, STEP→IGES, IFC→STEP</td><td>Même représentation géométrique. IFC→STEP conserve le B-Rep exact de chaque élément.</td></tr>
+<tr><td>Tessellation</td><td>STEP→STL, IGES→GLB, IFC→OBJ</td><td>Surfaces exactes converties en triangles selon la tolérance.</td></tr>
+<tr><td>Facettisée</td><td>STL→STEP, OBJ→IGES</td><td>Chaque triangle devient une face plane : B-Rep valide (solide si le maillage est fermé) mais <b>pas</b> un modèle CAO paramétrique.</td></tr>
+<tr><td>Limitée</td><td>OBJ→IFC, STEP→IFC</td><td>IFC valide avec des éléments génériques <code>IfcBuildingElementProxy</code>. Aucune information BIM n'est inventée.</td></tr>
+</table>
+<div class="warn">Les <b>animations, squelettes, caméras et lumières</b> FBX/glTF ne sont pas converties : la géométrie est exportée dans sa pose statique.</div>
+
+<h2 id="cli">7. Ligne de commande</h2>
+<pre>nexovax3d-cli.exe convert piece.step -t stl -o C:\Sortie --quality alta
+nexovax3d-cli.exe convert C:\Modeles -r -t glb --report rapport.json
+nexovax3d-cli.exe --lang fr matrix
+nexovax3d-cli.exe convert --help</pre>
+<p>Code de sortie 0 si toutes les conversions réussissent, 1 si l'une échoue. Langue : <code>--lang es|fr|ht</code>.</p>
+
+<h2 id="problemes">8. Résolution des problèmes</h2>
+<table>
+<tr><th>Symptôme</th><th>Cause probable et solution</th></tr>
+<tr><td>« Format non reconnu »</td><td>Le contenu ne correspond à aucun des 8 formats ou le fichier est endommagé.</td></tr>
+<tr><td>« Fichier auxiliaire de géométrie manquant »</td><td>Un .gltf a besoin de son .bin (et de ses textures) dans le même dossier.</td></tr>
+<tr><td>Modèle trop grand ou trop petit</td><td>Vérifiez les <i>Unités source</i> des OBJ/STL ou utilisez <i>Échelle</i>.</td></tr>
+<tr><td>Modèle couché</td><td>Ajustez l'<i>Orientation des axes</i> (OBJ/STL).</td></tr>
+<tr><td>Maillage → STEP refusé</td><td>La limite de triangles est dépassée. Simplifiez le maillage ou augmentez la limite.</td></tr>
+<tr><td>Aperçu indisponible</td><td>L'ordinateur ne dispose pas d'OpenGL 3.2 (certaines machines virtuelles). La conversion fonctionne quand même.</td></tr>
+</table>
+
+<h2 id="confidentialite">9. Fonctionnement hors ligne et confidentialité</h2>
+<p>Tous les moteurs sont inclus dans l'installation. L'application n'utilise aucun service en ligne, ne demande ni compte ni
+activation, ne télécharge rien et n'envoie aucune donnée. Les fichiers temporaires sont créés dans <code>%TEMP%\u3dc</code> et
+supprimés à la fin. Les références externes des modèles ne sont lues que dans le dossier du modèle ; les URL et chemins sortant de ce dossier sont bloqués.</p>
+</body>
+</html>
