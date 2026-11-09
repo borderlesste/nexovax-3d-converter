@@ -33,10 +33,9 @@ def read_stl(path: str, report) -> SceneModel:
     if is_binary:
         dtype = np.dtype([("n", "<f4", 3), ("v", "<f4", (3, 3)), ("attr", "<u2")])
         data = np.fromfile(path, dtype=dtype, count=count, offset=84)
-        name = header[:80].split(b"\x00")[0].decode("latin-1", "replace").strip()
-        if name.lower().startswith("solid"):
-            name = name[5:].strip()
-        solids.append((name or os.path.splitext(os.path.basename(path))[0], data["v"].astype(np.float64)))
+        # La cabecera binaria es un comentario libre (texto del exportador o basura), no un nombre de objeto
+        stl_header = header[:80].split(b"\x00")[0].decode("latin-1", "replace").strip()
+        solids.append((os.path.splitext(os.path.basename(path))[0], data["v"].astype(np.float64)))
         if np.any(data["attr"] != 0):
             report.loss("Atributos de color por faceta del STL binario (no estándar) ignorados.")
     else:
@@ -53,6 +52,8 @@ def read_stl(path: str, report) -> SceneModel:
                 raise ValueError("STL ASCII corrupto: número de vértices no múltiplo de 3.")
             solids.append((bname.strip() or f"solid{len(solids)}", vs.reshape(-1, 3, 3)))
     scene = SceneModel(name=os.path.splitext(os.path.basename(path))[0])
+    if is_binary:
+        scene.metadata["stl_header"] = stl_header
     total = 0
     for name, tris in solids:
         if not np.all(np.isfinite(tris)):

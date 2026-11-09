@@ -41,10 +41,16 @@ class ConversionOptions:
     gltf_embed: bool = False        # .gltf con buffers embebidos (data URI)
     ifc_schema: str = "IFC4"        # IFC4 | IFC2X3
     step_schema: str = "AP214"      # AP203 | AP214 | AP242
-    sew_mesh_to_solid: bool = True  # malla → STEP/IGES: intentar sólido cerrado
+    sew_mesh_to_solid: bool = True  # malla → STEP/IGES: sólido por cada componente cerrado y válido
+    mesh_repair: bool = True        # malla → CAD: soldar, quitar degenerados/duplicados, orientar normales
+    mesh_simplify: str = "auto"     # malla → CAD: "auto" (solo si supera el objetivo) | "off"
+    mesh_target_triangles: int = 100_000   # objetivo de simplificación para B-Rep facetado
+    unify_coplanar: bool = True     # malla → CAD: unir triángulos coplanares en caras poligonales
+    unify_max_triangles: int = 50_000      # por componente; por encima se omite (coste)
+    brep_check_max_faces: int = 60_000     # BRepCheck completo solo hasta este nº de caras
     # Límites y seguridad
     max_file_mb: int = 2048
-    max_triangles_to_cad: int = 200_000
+    max_triangles_to_cad: int = 1_000_000   # límite absoluto (además del límite por memoria y tiempo)
     timeout_s: int = 1800
     overwrite: bool = False
     validate: bool = True

@@ -95,7 +95,7 @@ def test_long_paths(tmp_path):
 
 def test_cancellation_kills_worker_and_leaves_nothing(tmp_path):
     big = tmp_path / "grande.stl"
-    _write_sphere_stl(str(big), 400)
+    _write_sphere_stl(str(big), 700)
     ev = threading.Event()
     threading.Timer(2.0, ev.set).start()
     out = tmp_path / "out"
@@ -114,8 +114,8 @@ def test_isolated_matches_in_process(tmp_path):
 def test_dense_mesh_to_cad_refused_with_explanation(tmp_path):
     big = tmp_path / "denso.stl"
     _write_sphere_stl(str(big), 400)
-    rep = convert_file(str(big), opts(tmp_path / "o", "step", max_triangles_to_cad=50_000))
-    assert rep.status == Status.FAILED and "no es recomendable" in rep.errors[0]
+    rep = convert_file(str(big), opts(tmp_path / "o", "step", max_triangles_to_cad=50_000, mesh_simplify="off"))
+    assert rep.status == Status.FAILED and "Active la simplificación" in rep.errors[0]
     assert not (tmp_path / "o").exists() or not os.listdir(tmp_path / "o")
 
 

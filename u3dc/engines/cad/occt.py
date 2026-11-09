@@ -9,6 +9,7 @@ Unidad interna: milímetros.
 from __future__ import annotations
 
 import os
+import time
 
 import numpy as np
 
@@ -246,6 +247,17 @@ def shape_stats(shape) -> dict:
 
 # ============================================================================ escritura
 
+def _record_write(report, key: str, value, seconds: float, path: str | None = None) -> None:
+    tech = getattr(report, "technical", None)
+    if tech is None:
+        return
+    w = tech.setdefault("escritura_cad", {})
+    w[key] = value
+    w[key + "_s"] = round(seconds, 2)
+    if path and os.path.isfile(path):
+        w["bytes"] = os.path.getsize(path)
+
+
 def write_cad(cad: CADModel, path: str, fmt: str, report, step_schema: str = "AP214",
               keep_structure: bool = True) -> list[str]:
     from OCP.IFSelect import IFSelect_ReturnStatus
@@ -312,9 +324,17 @@ def write_cad(cad: CADModel, path: str, fmt: str, report, step_schema: str = "AP
         writer = STEPCAFControl_Writer()
         writer.SetNameMode(True)
         writer.SetColorMode(True)
-        if not writer.Transfer(doc, STEPControl_StepModelType.STEPControl_AsIs):
+        set_stage = getattr(report, "set_stage", lambda s: None)
+        set_stage("transferencia STEP")
+        t0 = time.time()
+        transferred = bool(writer.Transfer(doc, STEPControl_StepModelType.STEPControl_AsIs))
+        _record_write(report, "transferencia", transferred, time.time() - t0)
+        if not transferred:
             raise ValueError("OCCT no pudo transferir la geometría a STEP.")
+        set_stage("escritura STEP")
+        t0 = time.time()
         status = writer.Write(path)
+        _record_write(report, "escritura", getattr(status, "name", str(status)), time.time() - t0, path)
     else:
         from OCP.IGESCAFControl import IGESCAFControl_Writer
         from OCP.IGESControl import IGESControl_Controller
@@ -324,9 +344,18 @@ def write_cad(cad: CADModel, path: str, fmt: str, report, step_schema: str = "AP
         writer = IGESCAFControl_Writer()
         writer.SetNameMode(True)
         writer.SetColorMode(True)
-        if not writer.Transfer(doc):
+        set_stage = getattr(report, "set_stage", lambda s: None)
+        set_stage("transferencia IGES")
+        t0 = time.time()
+        transferred = bool(writer.Transfer(doc))
+        _record_write(report, "transferencia", transferred, time.time() - t0)
+        if not transferred:
             raise ValueError("OCCT no pudo transferir la geometría a IGES.")
+        set_stage("escritura IGES")
+        t0 = time.time()
         status = writer.Write(path)
+        _record_write(report, "escritura", status if isinstance(status, bool) else getattr(status, "name", str(status)),
+                      time.time() - t0, path)
         if keep_structure and any(p.path for p in parts):
             report.loss("IGES: la jerarquía de ensamblaje se aplana (piezas independientes con nombre).")
     ok = status if isinstance(status, bool) else status == IFSelect_ReturnStatus.IFSelect_RetDone
@@ -436,113 +465,34 @@ def tessellate(cad: CADModel, options, report, progress=None) -> SceneModel:
 
 # ============================================================================ malla → B-Rep facetado
 
-def mesh_to_shape(vertices_mm: np.ndarray, faces: np.ndarray, report, name: str, try_solid: bool = True):
-    """Construye un B-Rep facetado con topología compartida (aristas comunes entre triángulos)."""
-    from OCP.BRep import BRep_Builder
-    from OCP.BRepBuilderAPI import (BRepBuilderAPI_MakeVertex, BRepBuilderAPI_MakeEdge,
-                                    BRepBuilderAPI_MakeWire, BRepBuilderAPI_MakeFace, BRepBuilderAPI_MakeSolid,
-                                    BRepBuilderAPI_Sewing)
-    from OCP.BRepCheck import BRepCheck_Analyzer
-    from OCP.gp import gp_Pnt
-    from OCP.ShapeFix import ShapeFix_Solid, ShapeFix_Shell
-    from OCP.TopoDS import TopoDS_Shell, TopoDS_Compound, TopoDS
-    from OCP.BRep import BRep_Tool
-
-    from ..mesh.stl_io import weld
-    v, f = weld(vertices_mm[faces])
-    # eliminar triángulos degenerados
-    ok = (f[:, 0] != f[:, 1]) & (f[:, 1] != f[:, 2]) & (f[:, 0] != f[:, 2])
-    tri = v[f]
-    area = np.linalg.norm(np.cross(tri[:, 1] - tri[:, 0], tri[:, 2] - tri[:, 0]), axis=1)
-    scale = float(np.ptp(v, axis=0).max()) or 1.0
-    ok &= area > (scale * 1e-9) ** 2
-    if (~ok).sum():
-        report.warn(f"'{name}': {int((~ok).sum())} triángulo(s) degenerado(s) omitidos.")
-    f = f[ok]
-    used = np.unique(f)
-    vtx = {}
-    for i in used:
-        vtx[int(i)] = BRepBuilderAPI_MakeVertex(gp_Pnt(*map(float, v[i]))).Vertex()
-    edges = {}
-    builder = BRep_Builder()
-    shell = TopoDS_Shell()
-    builder.MakeShell(shell)
-    failed = 0
-    faces_built = []
-    for a, b, c in f.tolist():
-        wire_edges = []
-        for i, j in ((a, b), (b, c), (c, a)):
-            key = (i, j) if i < j else (j, i)
-            e = edges.get(key)
-            if e is None:
-                e = BRepBuilderAPI_MakeEdge(vtx[key[0]], vtx[key[1]]).Edge()
-                edges[key] = e
-            wire_edges.append(e if i < j else TopoDS.Edge(e.Reversed()))
-        try:
-            mw = BRepBuilderAPI_MakeWire(*wire_edges)
-            if not mw.IsDone():
-                failed += 1
-                continue
-            mf = BRepBuilderAPI_MakeFace(mw.Wire(), True)
-            if not mf.IsDone():
-                failed += 1
-                continue
-            face = mf.Face()
-            builder.Add(shell, face)
-            faces_built.append(face)
-        except Exception:
-            failed += 1
-    if failed:
-        report.warn(f"'{name}': {failed} cara(s) no pudieron construirse.")
-    if not faces_built:
-        raise ValueError(f"'{name}': no se pudo construir ninguna cara B-Rep.")
-    shape = shell
-    closed = False
-    try:
-        shell.Closed(BRep_Tool.IsClosed_s(shell))
-        closed = BRep_Tool.IsClosed_s(shell)
-    except Exception:
-        closed = False
-    if try_solid and closed:
-        try:
-            ms = BRepBuilderAPI_MakeSolid(shell)
-            if ms.IsDone():
-                fixer = ShapeFix_Solid(ms.Solid())
-                fixer.Perform()
-                solid = fixer.Solid()
-                if BRepCheck_Analyzer(solid).IsValid():
-                    return solid, True
-        except Exception:
-            pass
-    if not BRepCheck_Analyzer(shape).IsValid():
-        # Respaldo: cosido clásico
-        sew = BRepBuilderAPI_Sewing(scale * 1e-7)
-        for fc in faces_built:
-            sew.Add(fc)
-        sew.Perform()
-        shape = sew.SewedShape()
-    return shape, False
-
-
 def scene_to_cad(scene: SceneModel, options, report, progress=None) -> CADModel:
-    """Malla (m) → CAD (mm) facetado. Cada instancia de malla es una pieza."""
+    """Malla (m) → CAD (mm) facetado. Cada componente conectado de cada malla es una pieza.
+
+    Delegado en mesh_to_brep: análisis, reparación, estimación de recursos, simplificación opcional y
+    construcción nativa (BRepBuilderAPI_MakeShapeOnMesh). Registra todo en report.technical.
+    """
+    import copy
+    from . import mesh_to_brep as mb
+
+    set_stage = getattr(report, "set_stage", lambda s: None)
+    set_stage("estimación de recursos")
     total = scene.triangle_count()
-    if total > options.max_triangles_to_cad:
-        raise ValueError(
-            f"La malla tiene {total:,} triángulos; el límite para B-Rep facetado es "
-            f"{options.max_triangles_to_cad:,}. Un B-Rep facetado tan denso no es recomendable "
-            "(archivo enorme y poco útil en CAD). Reduzca la malla o aumente el límite en Opciones.")
+    avail = mb.available_memory_mb()
+    affordable = mb.max_affordable_triangles(avail, options.timeout_s)
+    budget = min(int(options.max_triangles_to_cad), affordable)
+    limit_reason = ("limitado por la memoria libre y el tiempo máximo" if affordable < int(options.max_triangles_to_cad)
+                    else "limitado por el límite de triángulos → CAD")
+    tech = {"triangulos_totales": int(total), "memoria_disponible_mb": round(avail), "limite_triangulos": budget,
+            "estimacion_sin_simplificar": mb.estimate(total), "mallas": []}
+    if hasattr(report, "technical"):
+        report.technical["malla_a_brep"] = tech
+    report.info(f"Recursos: {round(avail):,} MB de memoria libre; límite de B-Rep facetado: {budget:,} triángulos.")
+    target_total = min(int(getattr(options, "mesh_target_triangles", 100_000)), budget)
     cad = CADModel(name=scene.name)
-    parents = {}
-    for idx, _, parent in scene.iter_nodes():
-        parents[idx] = parent
-    node_of = {}
-    for idx, world, _ in scene.iter_nodes():
-        node_of[idx] = world
-    solids = shells = 0
-    items = list(scene.iter_nodes())
+    parents = {idx: parent for idx, _, parent in scene.iter_nodes()}
+    built = {"sólido": 0, "superficie": 0, "superficie no manifold": 0}
     done = 0
-    for idx, world, parent in items:
+    for idx, world, parent in list(scene.iter_nodes()):
         node = scene.nodes[idx]
         path = []
         p = parent
@@ -556,20 +506,33 @@ def scene_to_cad(scene: SceneModel, options, report, progress=None) -> CADModel:
             v = mesh.vertices @ world[:3, :3].T + world[:3, 3]
             f = mesh.faces[:, ::-1] if np.linalg.det(world[:3, :3]) < 0 else mesh.faces
             name = node.name if len(node.meshes) == 1 else f"{node.name}_{mesh.name}"
-            if progress:
-                progress(done / max(1, total), f"Construyendo B-Rep facetado: {name}")
-            shape, is_solid = mesh_to_shape(v * 1000.0, f, report, name, options.sew_mesh_to_solid)
+            share = len(f) / max(total, 1)
+            mopts = copy.copy(options)
+            mopts.mesh_target_triangles = max(1000, int(target_total * share)) if total > target_total else target_total
+            mopts.resource_limited_target = target_total < int(getattr(options, "mesh_target_triangles", 100_000))
+            mopts.resource_limit_reason = limit_reason
+            mopts.hard_triangle_budget = max(1000, int(min(int(options.max_triangles_to_cad),
+                                                           mb.max_affordable_triangles(avail, options.timeout_s, 1.0)) * share))
+            mbudget = max(1000, int(budget * share))
+
+            def prog(fr, msg, d=done, n=len(f)):
+                if progress:
+                    progress((d + fr * n) / max(total, 1), msg)
+
+            mtech: dict = {}
+            tech["mallas"].append(mtech)
+            parts, _ = mb.mesh_to_parts(np.asarray(v, np.float64) * 1000.0, np.asarray(f, np.int64), name,
+                                        mopts, report, mbudget, prog, tech=mtech)
             done += len(f)
-            solids += is_solid
-            shells += not is_solid
             color = None
             if mesh.material is not None and mesh.material < len(scene.materials):
                 color = tuple(scene.materials[mesh.material].base_color[:3])
-            cad.parts.append(CadPart(name=name, shape=shape, color=color,
-                                     path=tuple(path) if options.keep_structure else (), faceted=True))
+            for pname, shape, kind in parts:
+                built[kind] += 1
+                cad.parts.append(CadPart(name=pname, shape=shape, color=color,
+                                         path=tuple(path) if options.keep_structure else (), faceted=True,
+                                         properties={"tipo": kind}))
     if not cad.parts:
         raise ValueError("No hay geometría para convertir a B-Rep.")
-    report.info(f"B-Rep facetado: {solids} sólido(s) cerrado(s), {shells} superficie(s) abierta(s).")
-    if shells:
-        report.warn(f"{shells} malla(s) abierta(s) o no manifold: se exportan como superficies (shell), no como sólidos.")
+    tech["resultado"] = built
     return cad

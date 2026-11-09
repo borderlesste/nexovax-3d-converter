@@ -22,13 +22,19 @@ def main():
     s.clear()
     if len(sys.argv) > 3:
         s.setValue("language", sys.argv[3])
-    s.setValue("options", json.dumps(ConversionOptions(target_format="glb", output_dir=out, overwrite=True).to_dict()))
+    # Variables opcionales: U3DC_SELFTEST_TARGET (formato), U3DC_SELFTEST_OPTS (JSON), U3DC_SELFTEST_FILES (rutas)
+    extra = json.loads(os.environ.get("U3DC_SELFTEST_OPTS", "{}"))
+    opts = ConversionOptions(target_format=os.environ.get("U3DC_SELFTEST_TARGET", "glb"), output_dir=out,
+                             overwrite=True, **extra)
+    s.setValue("options", json.dumps(opts.to_dict()))
     s.sync()
     from u3dc.ui.app import run
     a = os.path.join(ROOT, "test_assets")
     files = [os.path.join(a, n) for n in ("edificio_ifc4.ifc", "ensamblaje_mecanico.step", "mueble.obj",
                                           "cubo_ascii.fbx", "soporte_binario.stl", "escena_jerarquia.glb",
                                           "ensamblaje_mecanico.igs", "almacen_ifc2x3.ifc")]
+    if os.environ.get("U3DC_SELFTEST_FILES"):
+        files = os.environ["U3DC_SELFTEST_FILES"].split(os.pathsep)
     return run(files)
 
 

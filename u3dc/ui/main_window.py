@@ -443,11 +443,31 @@ class MainWindow(QMainWindow):
         self.chk_solid = QCheckBox(tr("Malla → CAD: crear sólidos cerrados cuando sea posible"))
         self.chk_solid.setChecked(True)
         form.addRow(self.chk_solid)
+        self.chk_repair = QCheckBox(tr("Malla → CAD: reparar malla (soldar, degenerados, duplicados, normales)"))
+        self.chk_repair.setChecked(True)
+        form.addRow(self.chk_repair)
+        self.chk_unify = QCheckBox(tr("Malla → CAD: unir triángulos coplanares en caras"))
+        self.chk_unify.setChecked(True)
+        form.addRow(self.chk_unify)
+        self.chk_simplify = QCheckBox(tr("Malla → CAD: simplificar mallas densas automáticamente"))
+        self.chk_simplify.setChecked(True)
+        self.chk_simplify.setToolTip(tr("Un STEP facetado ocupa ≈2,5 KB y ≈13 KB de memoria por triángulo. Por encima del "
+                                        "objetivo, la malla se reduce conservando la forma; la desviación se informa."))
+        form.addRow(self.chk_simplify)
+        self.spn_target = QSpinBox()
+        self.spn_target.setRange(1000, 2_000_000)
+        self.spn_target.setSingleStep(10_000)
+        self.spn_target.setValue(100_000)
+        self.spn_target.setGroupSeparatorShown(True)
+        self.lbl_target = QLabel(tr("Objetivo de simplificación (triángulos):"))
+        form.addRow(self.lbl_target, self.spn_target)
         self.spn_maxtri = QSpinBox()
         self.spn_maxtri.setRange(1000, 5_000_000)
         self.spn_maxtri.setSingleStep(50_000)
-        self.spn_maxtri.setValue(200_000)
+        self.spn_maxtri.setValue(1_000_000)
         self.spn_maxtri.setGroupSeparatorShown(True)
+        self.spn_maxtri.setToolTip(tr("Límite absoluto. Además se aplica un límite automático según la memoria libre "
+                                      "y el tiempo máximo por archivo."))
         self.lbl_maxtri = QLabel(tr("Límite de triángulos → CAD:"))
         form.addRow(self.lbl_maxtri, self.spn_maxtri)
         self.chk_validate = QCheckBox(tr("Validar el resultado (relectura y comparación)"))
@@ -504,6 +524,9 @@ class MainWindow(QMainWindow):
         self.lbl_pct.setMinimumWidth(48)
         prow.addWidget(self.lbl_pct)
         mid.addLayout(prow)
+        self.lbl_counts = QLabel("")
+        self.lbl_counts.setObjectName("muted")
+        mid.addWidget(self.lbl_counts)
         top.addLayout(mid, 1)
         times = QVBoxLayout()
         self.lbl_elapsed = QLabel(tr("Tiempo transcurrido: 00:00:00"))
@@ -744,6 +767,9 @@ class MainWindow(QMainWindow):
             if self.files[fid].get("report") is not None:
                 m.addAction(icon("report"), tr("Ver informe de conversión"),
                             lambda: ReportDialog(self.files[fid]["report"], self).exec())
+                diag = getattr(self.files[fid]["report"], "diagnostic_log", "")
+                if diag and os.path.isfile(diag):
+                    m.addAction(icon("log"), tr("Abrir registro de diagnóstico"), lambda d=diag: os.startfile(d))
         m.addAction(icon("trash"), tr("Eliminar de la lista"), self.remove_selected)
         m.exec(self.table.viewport().mapToGlobal(pos))
 
@@ -859,6 +885,9 @@ class MainWindow(QMainWindow):
             merge_by_material=self.chk_merge.isChecked(), stl_ascii=self.chk_stl_ascii.isChecked(),
             gltf_embed=self.chk_embed.isChecked(), ifc_schema=self.cmb_ifc.currentData(),
             step_schema=self.cmb_step.currentData(), sew_mesh_to_solid=self.chk_solid.isChecked(),
+            mesh_repair=self.chk_repair.isChecked(), unify_coplanar=self.chk_unify.isChecked(),
+            mesh_simplify="auto" if self.chk_simplify.isChecked() else "off",
+            mesh_target_triangles=self.spn_target.value(),
             max_triangles_to_cad=self.spn_maxtri.value(), timeout_s=self.spn_timeout.value(),
             overwrite=self.chk_overwrite.isChecked(), validate=self.chk_validate.isChecked())
 
@@ -885,6 +914,10 @@ class MainWindow(QMainWindow):
         set_combo(self.cmb_ifc, o.ifc_schema)
         set_combo(self.cmb_step, o.step_schema)
         self.chk_solid.setChecked(o.sew_mesh_to_solid)
+        self.chk_repair.setChecked(o.mesh_repair)
+        self.chk_unify.setChecked(o.unify_coplanar)
+        self.chk_simplify.setChecked(o.mesh_simplify != "off")
+        self.spn_target.setValue(o.mesh_target_triangles)
         self.spn_maxtri.setValue(o.max_triangles_to_cad)
         self.spn_timeout.setValue(o.timeout_s)
         self.chk_overwrite.setChecked(o.overwrite)
@@ -919,7 +952,8 @@ class MainWindow(QMainWindow):
             ((self.chk_embed,), dst == "gltf"),
             ((self.lbl_ifc, self.cmb_ifc), dst == "ifc" and (srcs != {"ifc"})),
             ((self.lbl_step, self.cmb_step), dst == "step"),
-            ((self.chk_solid, self.lbl_maxtri, self.spn_maxtri), to_cad or (dst in ("step", "iges") and not srcs)),
+            ((self.chk_solid, self.chk_repair, self.chk_unify, self.chk_simplify, self.lbl_target, self.spn_target,
+              self.lbl_maxtri, self.spn_maxtri), to_cad or (dst in ("step", "iges") and not srcs)),
         ]
         for widgets, enabled in rules:
             for w in widgets:
@@ -1054,7 +1088,10 @@ class MainWindow(QMainWindow):
         self.batch_done = 0
         self.job_progress = {fid: 0.0 for fid, _, _ in jobs}
         self.batch_started = time.time()
-        self.batch_stats = {"ok": 0, "warn": 0, "fail": 0}
+        self.batch_stats = {"ok": 0, "warn": 0, "fail": 0, "cancel": 0}
+        self.batch_first_failed = None
+        self.lbl_counts.setText("")
+        self.lbl_current.setStyleSheet("")
         self.conv_thread = ConversionThread(jobs, parallel=self.spn_parallel.value())
         self.conv_thread.job_started.connect(self._job_started)
         self.conv_thread.job_progress.connect(self._job_progress)
@@ -1129,17 +1166,46 @@ class MainWindow(QMainWindow):
                         parts.append(f"{k}={v[k]}")
                 self._log("ok", tr("{f}: validación correcta ({d})", f=name, d=', '.join(parts)))
         else:
-            self.batch_stats["fail"] += 1
+            self.batch_stats["cancel" if rep.status == Status.CANCELLED else "fail"] += 1
             if rep.status == Status.FAILED:
                 self._log("error", tr("{f}: conversión fallida. El archivo original no se ha modificado.", f=name))
+                if rep.stage:
+                    self._log("error", tr("{f}: etapa del fallo: {s}", f=name, s=tr_msg(rep.stage)))
+                proc = rep.technical.get("proceso", {}) if isinstance(rep.technical, dict) else {}
+                if proc.get("codigo_salida") not in (None, 0):
+                    self._log("error", tr("{f}: código de salida del proceso: {c}", f=name, c=proc.get("interpretacion")))
+                if self.batch_first_failed is None:
+                    self.batch_first_failed = fid
+        diag = getattr(rep, "diagnostic_log", "")
+        if diag:
+            self._log("error" if rep.status == Status.FAILED else "info",
+                      tr("{f}: registro de diagnóstico: {p}", f=name, p=diag))
         if fid == self._current_id():
             self._show_losses(rep.losses, rep.warnings + rep.errors, done=True)
         self._update_overall()
 
     def _batch_finished(self):
         s = self.batch_stats
-        self._log("info", tr("Lote finalizado: {ok} correctas, {warn} con advertencias, {fail} fallidas/canceladas.", ok=s['ok'], warn=s['warn'], fail=s['fail']))
-        self.lbl_current.setText(tr("Finalizado: {n} de {t} archivo(s) convertidos.", n=s['ok'] + s['warn'], t=self.batch_total))
+        good = s['ok'] + s['warn']
+        bad = s['fail'] + s['cancel']
+        if bad == 0:
+            self._log("ok", tr("Lote finalizado: {ok} correctas, {warn} con advertencias, {fail} fallidas/canceladas.",
+                               ok=s['ok'], warn=s['warn'], fail=0))
+            self.lbl_current.setText(tr("Finalizado: {n} de {t} archivo(s) convertidos.", n=good, t=self.batch_total))
+            self.lbl_current.setStyleSheet(f"color:{OK}; font-weight:600;")
+        else:
+            self._log("error", tr("Lote finalizado con errores: {ok} correctas, {warn} con advertencias, {fail} fallidas, "
+                                  "{cancel} canceladas.", ok=s['ok'], warn=s['warn'], fail=s['fail'], cancel=s['cancel']))
+            self.lbl_current.setText(tr("Finalizado con errores: {n} de {t} archivo(s) convertidos.", n=good,
+                                        t=self.batch_total))
+            self.lbl_current.setStyleSheet(f"color:{ERR}; font-weight:600;")
+            if self.batch_first_failed is not None:      # mostrar el archivo fallido (vista previa y causas)
+                r = self._row_of(self.batch_first_failed)
+                if r >= 0:
+                    self.table.selectRow(r)
+                rep = self.files[self.batch_first_failed].get("report")
+                if rep is not None:
+                    self._show_losses(rep.losses, rep.errors + rep.warnings, done=True)
         self.btn_convert.setEnabled(True)
         self.btn_convert_top.setEnabled(True)
         self.btn_cancel.setEnabled(False)
@@ -1156,6 +1222,10 @@ class MainWindow(QMainWindow):
         self.progress.setValue(int(frac * 1000))
         self.lbl_pct.setText(f"{int(frac * 100)} %")
         self._overall_frac = frac
+        s = self.batch_stats
+        self.lbl_counts.setText(tr("Procesados: {d}/{t} · Correctos: {ok} · Con advertencias: {w} · Fallidos: {f} · "
+                                   "Cancelados: {c}", d=self.batch_done, t=self.batch_total, ok=s['ok'], w=s['warn'],
+                                   f=s['fail'], c=s['cancel']))
 
     def _tick(self):
         if self.conv_thread is not None and self.conv_thread.isRunning():
@@ -1177,6 +1247,9 @@ class MainWindow(QMainWindow):
         if r < 0:
             return
         fid = self.queue.item(r, 0).data(Qt.UserRole)
+        row = self._row_of(fid)
+        if row >= 0 and self.table.currentRow() != row:
+            self.table.selectRow(row)             # la vista previa y el formato de origen pasan a ese archivo
         rep = self.files.get(fid, {}).get("report")
         if rep is not None:
             self._show_losses(rep.losses, rep.warnings + rep.errors, done=True)

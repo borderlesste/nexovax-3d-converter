@@ -36,6 +36,8 @@ datas.append((os.path.join(SP, "ifcopenshell", "express", "express_parser.py"), 
 # --- mallas
 datas += collect_data_files("trimesh")
 binaries += collect_dynamic_libs("assimp_py") + collect_dynamic_libs("ufbx")
+hiddenimports += ["fast_simplification"] + collect_submodules("fast_simplification")
+binaries += collect_dynamic_libs("fast_simplification")
 hiddenimports += ["ufbx", "ufbx._native", "assimp_py", "PIL.PngImagePlugin", "PIL.JpegImagePlugin",
                   "PIL.TgaImagePlugin", "PIL.BmpImagePlugin", "PIL.DdsImagePlugin"]
 

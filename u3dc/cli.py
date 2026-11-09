@@ -49,7 +49,9 @@ def cmd_convert(args) -> int:
         keep_materials=not args.no_materials, keep_structure=not args.no_structure,
         include_properties=not args.no_properties, stl_ascii=args.stl_ascii, gltf_embed=args.gltf_embed,
         ifc_schema=args.ifc_schema, step_schema=args.step_schema, overwrite=args.overwrite,
-        validate=not args.no_validate, max_triangles_to_cad=args.max_cad_triangles, timeout_s=args.timeout)
+        validate=not args.no_validate, max_triangles_to_cad=args.max_cad_triangles, timeout_s=args.timeout,
+        mesh_simplify="off" if args.no_simplify else "auto", mesh_target_triangles=args.target_triangles,
+        mesh_repair=not args.no_repair, unify_coplanar=not args.no_unify)
     from .core.jobs import run_isolated
     from .core.converter import convert_file
     results = []
@@ -70,6 +72,10 @@ def cmd_convert(args) -> int:
             print("   " + tr("PÉRDIDA") + ": " + tr_msg(l))
         for e in rep.errors:
             print("   ERROR: " + tr_msg(e))
+        if rep.errors and rep.stage:
+            print("   " + tr("Etapa del fallo: {s}", s=tr_msg(rep.stage)))
+        if rep.diagnostic_log:
+            print("   " + tr("Registro de diagnóstico: {p}", p=rep.diagnostic_log))
         if rep.status in (Status.FAILED, Status.CANCELLED):
             failed += 1
     if args.report:
@@ -131,7 +137,11 @@ def build_parser() -> argparse.ArgumentParser:
     c.add_argument("--gltf-embed", action="store_true")
     c.add_argument("--ifc-schema", default="IFC4", choices=["IFC4", "IFC2X3"])
     c.add_argument("--step-schema", default="AP214", choices=["AP203", "AP214", "AP242"])
-    c.add_argument("--max-cad-triangles", type=int, default=200_000)
+    c.add_argument("--max-cad-triangles", type=int, default=1_000_000)
+    c.add_argument("--no-simplify", action="store_true", help=tr("malla → CAD: no simplificar mallas densas"))
+    c.add_argument("--target-triangles", type=int, default=100_000, help=tr("malla → CAD: objetivo de simplificación"))
+    c.add_argument("--no-repair", action="store_true", help=tr("malla → CAD: no reparar la malla"))
+    c.add_argument("--no-unify", action="store_true", help=tr("malla → CAD: no unir triángulos coplanares"))
     c.add_argument("--timeout", type=int, default=1800)
     c.add_argument("--overwrite", action="store_true")
     c.add_argument("--no-validate", action="store_true")

@@ -34,7 +34,7 @@ def test_placeholders_match(lang):
         assert set(FIELD.findall(es)) == set(FIELD.findall(out)), (lang, es, out)
 
 
-CASES = [("soporte_binario.stl", "step"), ("edificio_ifc4.ifc", "glb"), ("mueble.obj", "fbx"),
+CASES = [("soporte_binario.stl", "step"), ("dos_solidos_ascii.stl", "iges"), ("edificio_ifc4.ifc", "glb"), ("mueble.obj", "fbx"),
          ("robot_jerarquia.fbx", "stl"), ("ensamblaje_mecanico.step", "ifc"), ("escena.gltf", "obj"),
          ("almacen_ifc2x3.ifc", "iges")]
 
@@ -50,6 +50,14 @@ def test_real_engine_messages_are_translated(lang, tmp_path):
     bad = tmp_path / "roto.step"
     bad.write_bytes(b"ISO-10303-21;\nHEADER;\nFILE_SCHEMA(('AUTOMOTIVE_DESIGN'));\nENDSEC;\nDATA;\n#1=X(;\n")
     msgs |= set(convert_file(str(bad), ConversionOptions(target_format="stl", output_dir=str(tmp_path))).errors)
+    from tests import stl_cases as SC
+    dense = SC.write_stl(str(tmp_path / "denso.stl"), SC.sphere_fast(20, 120))
+    for kw in ({"mesh_target_triangles": 5000}, {"mesh_simplify": "off", "max_triangles_to_cad": 5000}):
+        r = convert_file(dense, ConversionOptions(target_format="step", output_dir=str(tmp_path / "d"), **kw))
+        msgs |= {m for _, _, m in r.log} | {r.stage}
+    defects = SC.write_stl(str(tmp_path / "defectos.stl"), SC.lipo_battery(48))
+    r = convert_file(defects, ConversionOptions(target_format="step", output_dir=str(tmp_path / "e")))
+    msgs |= {m for _, _, m in r.log}
     i18n.set_language(lang)
     untranslated = [m for m in msgs if i18n.tr_msg(m) == m]
     assert not untranslated, f"Mensajes sin traducir ({lang}): {untranslated}"

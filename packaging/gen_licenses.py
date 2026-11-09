@@ -22,6 +22,7 @@ COMPONENTS = [
     ("ufbx", "ufbx (binding Python)", "MIT / dominio público (biblioteca ufbx)", "Lectura FBX y OBJ. El paquete PyPI 0.0.5 no declara licencia en sus metadatos; la biblioteca ufbx (github.com/ufbx/ufbx) es MIT o dominio público. Verificar el binding antes de redistribuir comercialmente."),
     ("assimp-py", "assimp-py + Open Asset Import Library", "MIT (binding) / BSD-3-Clause (assimp)", "Validación independiente de mallas."),
     ("pillow", "Pillow", "MIT-CMU (HPND)", "Texturas."),
+    ("fast-simplification", "fast-simplification", "MIT", "Simplificación de mallas densas (malla → STEP/IGES)."),
     ("shapely", "Shapely", "BSD-3-Clause", "Dependencia de IfcOpenShell."),
     ("lark", "Lark", "MIT", "Dependencia de IfcOpenShell."),
     ("isodate", "isodate", "BSD-3-Clause", "Dependencia de IfcOpenShell."),

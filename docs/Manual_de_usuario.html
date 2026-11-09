@@ -103,6 +103,7 @@ detiene conversiones que excedan el límite.</p>
 <tr><td>STL ASCII · glTF embebido</td><td>Variantes de escritura de esos formatos.</td></tr>
 <tr><td>Esquema IFC / STEP</td><td>IFC4 o IFC2X3; STEP AP214 (por defecto, con colores), AP242 o AP203.</td></tr>
 <tr><td>Malla → CAD: sólidos cerrados</td><td>Si la malla es cerrada y válida, se genera un sólido; si no, una superficie (shell).</td></tr>
+<tr><td>Malla → CAD: reparar, unir caras, simplificar</td><td>Repara la malla (vértices, degenerados, duplicados, normales), une triángulos coplanares en caras y, si la malla supera el <i>objetivo de simplificación</i> (100 000 triángulos por defecto) o la memoria libre, la reduce conservando la forma e informa la desviación. Cada cuerpo cerrado se convierte en un sólido. Si una conversión falla, el registro indica la etapa y la causa, y el <b>registro de diagnóstico</b> (<code>%LOCALAPPDATA%\NEXOVAX3DConverter\logs</code>) contiene todo el detalle técnico. CLI: <code>--no-simplify</code>, <code>--target-triangles N</code>, <code>--no-repair</code>, <code>--no-unify</code>.</td></tr>
 <tr><td>Límite de triángulos → CAD</td><td>Por encima de este número se rechaza la conversión malla → STEP/IGES, porque el B-Rep facetado resultante sería enorme y poco útil.</td></tr>
 <tr><td>Validar el resultado</td><td>Relee el archivo generado y lo compara con el modelo (recomendado; ver sección 5).</td></tr>
 </table>

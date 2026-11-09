@@ -32,10 +32,16 @@ def plan(source_fmt: str, target_fmt: str) -> dict:
             "semantic": semantic_level(source_fmt, target_fmt), "note": NOTES.get((source_fmt, target_fmt), "")}
 
 
-def convert_file(source: str, options: ConversionOptions, progress=None, cancelled=None) -> ConversionReport:
-    """Convierte un archivo. Nunca modifica el original. Devuelve siempre un informe."""
+def convert_file(source: str, options: ConversionOptions, progress=None, cancelled=None,
+                 staging: str | None = None, write_diag: bool = True) -> ConversionReport:
+    """Convierte un archivo. Nunca modifica el original. Devuelve siempre un informe.
+
+    staging: carpeta temporal creada por el proceso padre (que la limpia aunque este proceso muera).
+    write_diag: escribir el registro de diagnóstico (en modo aislado lo escribe el proceso padre,
+    que además conoce el código de salida y la salida estándar/errores del proceso).
+    """
     report = ConversionReport(source=os.path.abspath(source), target_format=options.target_format)
-    staging = None
+    own_staging = staging is None
 
     def step(frac: float, msg: str):
         if cancelled is not None and cancelled():
@@ -44,6 +50,7 @@ def convert_file(source: str, options: ConversionOptions, progress=None, cancell
             progress(frac, msg)
 
     try:
+        report.set_stage("detección de formato")
         step(0.0, "Detectando formato")
         if not os.path.isfile(long_path(source)):
             raise DetectionError(f"El archivo no existe: {source}")
@@ -68,7 +75,8 @@ def convert_file(source: str, options: ConversionOptions, progress=None, cancell
             report.loss(l)
 
         # --------------------------------------------------------- preparación
-        staging = make_staging_dir()
+        if own_staging:
+            staging = make_staging_dir()
         work_input = source
         if FORMATS[src_fmt].family in ("cad", "bim") and needs_short_copy(source):
             work_input = copy_for_engine(source, staging, src_fmt)
@@ -77,6 +85,7 @@ def convert_file(source: str, options: ConversionOptions, progress=None, cancell
             work_input = long_path(source)
 
         # --------------------------------------------------------- importación
+        report.set_stage("lectura del archivo")
         step(0.05, f"Importando {FORMATS[src_fmt].name}")
         t0 = time.time()
         rep, model = adapters.read(src_fmt, work_input, options, report,
@@ -93,6 +102,7 @@ def convert_file(source: str, options: ConversionOptions, progress=None, cancell
         last_bounds = adapters.canonical_bounds(rep, model)
         reps = route.representations
         for i, nxt in enumerate(reps[1:], start=1):
+            report.set_stage(f"transformación {rep} → {nxt}")
             step(0.3 + 0.1 * i, f"Transformando {rep} → {nxt}")
             t0 = time.time()
             base = 0.3 + 0.1 * i
@@ -130,6 +140,7 @@ def convert_file(source: str, options: ConversionOptions, progress=None, cancell
             report.stats["dimensiones_m"] = [round(float(x), 6) for x in size]
 
         # --------------------------------------------------------- exportación
+        report.set_stage(f"exportación {FORMATS[dst_fmt].name}")
         step(0.75, f"Exportando {FORMATS[dst_fmt].name}")
         out_dir = options.output_dir or os.path.dirname(os.path.abspath(source))
         os.makedirs(long_path(out_dir), exist_ok=True)
@@ -156,6 +167,7 @@ def convert_file(source: str, options: ConversionOptions, progress=None, cancell
 
         # --------------------------------------------------------- validación
         if options.validate:
+            report.set_stage("validación del resultado")
             step(0.88, "Validando el resultado")
             t0 = time.time()
             report.validation = validate_output(files, dst_fmt, options, expected, report)
@@ -164,6 +176,7 @@ def convert_file(source: str, options: ConversionOptions, progress=None, cancell
             report.warn("Validación posterior desactivada por configuración.")
 
         # --------------------------------------------------------- publicación atómica
+        report.set_stage("publicación de archivos")
         step(0.97, "Guardando archivos")
         outputs = []
         for f in files:
@@ -176,19 +189,32 @@ def convert_file(source: str, options: ConversionOptions, progress=None, cancell
                                                     or not report.validation.get("ok", True)) else Status.SUCCESS
         report.info("Conversión finalizada.")
         step(1.0, "Completado")
+        report.set_stage("completada")
     except Cancelled:
         report.status = Status.CANCELLED
         report.error("Conversión cancelada por el usuario.")
     except MemoryError:
         report.status = Status.FAILED
-        report.error("Memoria insuficiente para procesar el modelo.")
+        report.error(f"Memoria insuficiente para procesar el modelo (etapa: {report.stage}).")
+        report.traceback = traceback.format_exc()
+        report.technical["excepcion"] = {"tipo": "MemoryError", "etapa": report.stage}
     except Exception as e:  # cualquier fallo se informa; el original nunca se toca
         report.status = Status.FAILED
         report.error(_friendly(e))
-        report.stats["traza"] = traceback.format_exc(limit=6)
+        report.traceback = traceback.format_exc()
+        report.technical["excepcion"] = {"tipo": f"{type(e).__module__}.{type(e).__name__}",
+                                         "mensaje": str(e), "etapa": report.stage}
     finally:
-        cleanup_dir(staging)
+        report.stage_times[report.stage] = round(report.stage_times.get(report.stage, 0.0)
+                                                 + time.time() - getattr(report, "_t", time.time()), 2)
+        if own_staging:
+            cleanup_dir(staging)
         report.finished = time.time()
+        from .diagnostics import peak_memory_mb, write_log
+        report.stats["memoria_maxima_mb"] = peak_memory_mb()
+        report.stats["duracion_total_s"] = round(report.finished - report.started, 2)
+        if write_diag:
+            write_log(report, options)
     return report
 
 
@@ -277,6 +303,7 @@ def _friendly(e: Exception) -> str:
         return f"Archivo no encontrado: {msg}"
     if isinstance(e, PermissionError):
         return f"Permiso denegado: {msg}"
-    if isinstance(e, DetectionError):
+    if isinstance(e, (DetectionError, ValueError, TimeoutError, FileExistsError)):
         return msg
-    return msg
+    # excepción de una biblioteca (OCCT, IfcOpenShell…): se conserva su tipo para poder identificarla
+    return f"{type(e).__name__}: {msg}"

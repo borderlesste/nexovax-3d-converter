@@ -147,10 +147,16 @@ def validate_output(files: list[str], fmt: str, options, expected: dict, report)
                                 f"{result.get('triangles')} (instancias) / {unique} (mallas únicas).")
         elif fmt in ("step", "iges"):
             from OCP.BRepCheck import BRepCheck_Analyzer
-            invalid = sum(0 if BRepCheck_Analyzer(p.shape).IsValid() else 1 for p in model.parts)
-            result["formas_no_validas"] = invalid
-            if invalid:
-                report.warn(f"Validación OCCT: {invalid} forma(s) con defectos topológicos en el archivo generado.")
+            limit = 2 * int(getattr(options, "brep_check_max_faces", 60_000))
+            if result.get("caras", 0) <= limit:
+                invalid = sum(0 if BRepCheck_Analyzer(p.shape).IsValid() else 1 for p in model.parts)
+                result["formas_no_validas"] = invalid
+                if invalid:
+                    report.warn(f"Validación OCCT: {invalid} forma(s) con defectos topológicos en el archivo generado.")
+            else:
+                result["formas_no_validas"] = f"no comprobado (> {limit} caras)"
+                report.info(f"Validación OCCT: comprobación topológica completa omitida por tamaño "
+                            f"({result.get('caras', 0):,} caras); se verificaron relectura, geometría y dimensiones.")
         elif fmt == "ifc":
             result["errores_esquema"] = ifc_schema_errors(model.ifc)
             if result["errores_esquema"]:

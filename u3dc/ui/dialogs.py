@@ -83,6 +83,11 @@ class ReportDialog(QDialog):
         save = QPushButton(tr("Guardar informe…"))
         save.clicked.connect(self._save)
         row.addWidget(save)
+        diag = getattr(report, "diagnostic_log", "")
+        if diag and os.path.isfile(diag):
+            bdiag = QPushButton(tr("Abrir registro de diagnóstico"))
+            bdiag.clicked.connect(lambda: os.startfile(diag))
+            row.addWidget(bdiag)
         row.addStretch(1)
         close = QPushButton(tr("Cerrar"))
         close.clicked.connect(self.accept)

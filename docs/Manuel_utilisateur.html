@@ -89,6 +89,7 @@ effet sur la conversion choisie sont <b>désactivées</b>. Le bouton <b>Profils<
 <tr><td>Inclure les propriétés</td><td>Psets et identifiants IFC dans les <i>extras</i> glTF ; données d'origine dans un pset <code>NEXOVAX_Origen</code> lors de la création d'un IFC.</td></tr>
 <tr><td>Fusionner par matériau</td><td>Réunit tous les objets d'un même matériau (fichiers plus légers ; la hiérarchie est perdue).</td></tr>
 <tr><td>Schéma IFC / STEP</td><td>IFC4 ou IFC2X3 ; STEP AP214 (par défaut, avec couleurs), AP242 ou AP203.</td></tr>
+<tr><td>Maillage → CAO : réparer, fusionner, simplifier</td><td>Répare le maillage (sommets, dégénérés, doublons, normales), fusionne les triangles coplanaires en faces et, si le maillage dépasse l'<i>objectif de simplification</i> (100 000 triangles par défaut) ou la mémoire libre, le réduit en conservant la forme et signale l'écart. Chaque corps fermé devient un solide. En cas d'échec, le journal indique l'étape et la cause, et le <b>journal de diagnostic</b> (<code>%LOCALAPPDATA%\NEXOVAX3DConverter\logs</code>) contient tout le détail technique. CLI : <code>--no-simplify</code>, <code>--target-triangles N</code>, <code>--no-repair</code>, <code>--no-unify</code>.</td></tr>
 <tr><td>Limite de triangles → CAO</td><td>Au-delà, la conversion maillage → STEP/IGES est refusée, car le B-Rep facettisé serait énorme et peu utile.</td></tr>
 <tr><td>Valider le résultat</td><td>Relit le fichier généré et le compare au modèle (recommandé).</td></tr>
 </table>
