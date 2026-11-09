@@ -83,11 +83,11 @@ def validate_output(files: list[str], fmt: str, options, expected: dict, report)
         from ..engines.cad.occt import shape_stats
         if not model.parts:
             raise ValueError("Validación: el archivo generado no contiene formas.")
-        st = {"solidos": 0, "caras": 0}
+        st = {"solidos": 0, "superficies": 0, "caras": 0}
         for p in model.parts:
             s = shape_stats(p.shape)
-            st["solidos"] += s["solidos"]
-            st["caras"] += s["caras"]
+            for k in st:
+                st[k] += s[k]
         result.update(st)
         if st["caras"] == 0:
             raise ValueError("Validación: el archivo CAD generado no contiene caras.")

@@ -1161,9 +1161,12 @@ class MainWindow(QMainWindow):
                 parts = []
                 if "desviacion_dimensiones_m" in v:
                     parts.append(tr("Δ dimensiones {d} mm", d=f"{v['desviacion_dimensiones_m'] * 1000:.4g}"))
-                for k in ("triangles", "solidos", "productos", "assimp_triangles"):
+                labels = {"triangles": tr("triángulos"), "solidos": tr("sólidos"), "superficies": tr("superficies"),
+                          "caras": tr("caras"), "productos": tr("productos"),
+                          "assimp_triangles": tr("triángulos (lector independiente)")}
+                for k, lbl in labels.items():
                     if k in v:
-                        parts.append(f"{k}={v[k]}")
+                        parts.append(f"{lbl} {v[k]:,}" if isinstance(v[k], int) else f"{lbl} {v[k]}")
                 self._log("ok", tr("{f}: validación correcta ({d})", f=name, d=', '.join(parts)))
         else:
             self.batch_stats["cancel" if rep.status == Status.CANCELLED else "fail"] += 1

@@ -481,3 +481,18 @@ MESSAGES += [
 STATIC['limitado por el límite de triángulos → CAD'] = 'limité par la limite de triangles → CAO'
 MESSAGES.append(("Malla '{n}': {t} triángulos sin simplificar (opción desactivada); uso de memoria elevado previsto (≈{m} MB). Cierre otras aplicaciones si la conversión se ralentiza.", "Maillage « {n} » : {t} triangles non simplifiés (option désactivée) ; forte consommation de mémoire prévue (≈{m} Mo). Fermez d'autres applications si la conversion ralentit."))
 STATIC.update({'malla → CAD: no simplificar mallas densas': 'maillage → CAO : ne pas simplifier les maillages denses', 'malla → CAD: objetivo de simplificación': 'maillage → CAO : objectif de simplification', 'malla → CAD: no reparar la malla': 'maillage → CAO : ne pas réparer le maillage', 'malla → CAD: no unir triángulos coplanares': 'maillage → CAO : ne pas fusionner les triangles coplanaires'})
+# 1.0.2: simplification par pièce, réparation non-manifold, résumé de validation
+STATIC.update({
+    'triángulos': 'triangles', 'sólidos': 'solides', 'superficies': 'surfaces', 'caras': 'faces',
+    'productos': 'produits', 'triángulos (lector independiente)': 'triangles (lecteur indépendant)',
+})
+MESSAGES.extend([
+    ("'{n}': {m} vértice(s) repetidos en costuras de textura o normales unidos (mismas coordenadas).", "« {n} » : {m} sommet(s) répétés sur les coutures de texture ou de normales fusionnés (mêmes coordonnées)."),
+    ('{n} triángulo(s) superpuestos con orientación opuesta (aletas sin volumen) eliminados.', '{n} triangle(s) superposé(s) d’orientation opposée (ailettes sans volume) supprimé(s).'),
+    ('{n} triángulo(s) sueltos apoyados en aristas no manifold eliminados.', '{n} triangle(s) isolé(s) appuyé(s) sur des arêtes non-manifold supprimé(s).'),
+    ('{n} vértice(s) no manifold separados (piezas que solo se tocaban en un punto o arista).', '{n} sommet(s) non-manifold séparé(s) (pièces qui ne se touchaient qu’en un point ou une arête).'),
+    ("'{n}': {k} pieza(s) finas recibieron más triángulos para seguir cerradas.", "« {n} » : {k} pièce(s) fine(s) ont reçu plus de triangles pour rester fermées."),
+    ("'{n}': {k} pieza(s) no se pudieron simplificar hasta {t} triángulos sin perder el cierre; se exportan como superficies. Con más memoria libre o un objetivo mayor se conservan como sólidos.", "« {n} » : {k} pièce(s) n’ont pas pu être simplifiées à {t} triangles sans perdre leur fermeture ; exportées comme surfaces. Avec plus de mémoire libre ou un objectif plus élevé, elles restent des solides."),
+    ('limitado por la memoria libre: {m} MB disponibles; cierre otras aplicaciones para conservar más detalle', 'limité par la mémoire libre : {m} Mo disponibles ; fermez d’autres applications pour conserver plus de détails'),
+    ('limitado por el tiempo máximo ({s} s)', 'limité par la durée maximale ({s} s)'),
+])

@@ -2,7 +2,7 @@
 ; Compilar con:  ISCC.exe packaging\installer.iss   (lo hace build.ps1)
 
 #define AppName "NEXOVAX 3D Converter"
-#define AppVersion "1.0.1"
+#define AppVersion "1.0.2"
 #define AppExe "NEXOVAX3DConverter.exe"
 #define DistDir "..\build\dist\NEXOVAX3DConverter"
 
@@ -34,7 +34,7 @@ WizardStyle=modern
 ShowLanguageDialog=yes
 LanguageDetectionMethod=uilanguage
 CloseApplications=yes
-VersionInfoVersion=1.0.1.0
+VersionInfoVersion=1.0.2.0
 VersionInfoProductName={#AppName}
 VersionInfoDescription={#AppName} Setup
 

@@ -481,3 +481,18 @@ MESSAGES += [
 STATIC['limitado por el límite de triángulos → CAD'] = 'limite pa limit triyang → CAD'
 MESSAGES.append(("Malla '{n}': {t} triángulos sin simplificar (opción desactivada); uso de memoria elevado previsto (≈{m} MB). Cierre otras aplicaciones si la conversión se ralentiza.", "Mayaj '{n}': {t} triyang san senplifikasyon (opsyon an dezaktive); li ap sèvi ak anpil memwa (≈{m} MB). Fèmen lòt aplikasyon si konvèsyon an vin lan."))
 STATIC.update({'malla → CAD: no simplificar mallas densas': 'mayaj → CAD: pa senplifye mayaj ki dans yo', 'malla → CAD: objetivo de simplificación': 'mayaj → CAD: objektif senplifikasyon', 'malla → CAD: no reparar la malla': 'mayaj → CAD: pa repare mayaj la', 'malla → CAD: no unir triángulos coplanares': 'mayaj → CAD: pa mete triyang ki nan menm plan ansanm'})
+# 1.0.2: senplifikasyon pa moso, reparasyon non-manifold, rezime verifikasyon
+STATIC.update({
+    'triángulos': 'triyang', 'sólidos': 'solid', 'superficies': 'sifas', 'caras': 'fas',
+    'productos': 'pwodui', 'triángulos (lector independiente)': 'triyang (lektè endepandan)',
+})
+MESSAGES.extend([
+    ("'{n}': {m} vértice(s) repetidos en costuras de textura o normales unidos (mismas coordenadas).", "'{n}': {m} somè ki te repete sou kouti tekstil oswa nòmal yo mete ansanm (menm kowòdone)."),
+    ('{n} triángulo(s) superpuestos con orientación opuesta (aletas sin volumen) eliminados.', '{n} triyang youn sou lòt ak oryantasyon opoze (zèl san volim) retire.'),
+    ('{n} triángulo(s) sueltos apoyados en aristas no manifold eliminados.', '{n} triyang lage ki apiye sou arèt non-manifold retire.'),
+    ('{n} vértice(s) no manifold separados (piezas que solo se tocaban en un punto o arista).', '{n} somè non-manifold separe (moso ki te touche sèlman nan yon pwen oswa yon arèt).'),
+    ("'{n}': {k} pieza(s) finas recibieron más triángulos para seguir cerradas.", "'{n}': {k} moso fen resevwa plis triyang pou yo rete fèmen."),
+    ("'{n}': {k} pieza(s) no se pudieron simplificar hasta {t} triángulos sin perder el cierre; se exportan como superficies. Con más memoria libre o un objetivo mayor se conservan como sólidos.", "'{n}': {k} moso pa t ka senplifye jiska {t} triyang san yo pa pèdi fèmti yo; yo ekspòte kòm sifas. Avèk plis memwa lib oswa yon objektif pi wo, yo rete solid."),
+    ('limitado por la memoria libre: {m} MB disponibles; cierre otras aplicaciones para conservar más detalle', 'limite pa memwa lib la: {m} MB disponib; fèmen lòt aplikasyon pou kenbe plis detay'),
+    ('limitado por el tiempo máximo ({s} s)', 'limite pa tan maksimòm lan ({s} s)'),
+])

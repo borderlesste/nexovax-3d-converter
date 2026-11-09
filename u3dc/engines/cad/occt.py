@@ -242,6 +242,12 @@ def shape_stats(shape) -> dict:
             n += 1
             exp.Next()
         out[key] = n
+    exp = TopExp_Explorer(shape, TopAbs_ShapeEnum.TopAbs_SHELL, TopAbs_ShapeEnum.TopAbs_SOLID)
+    n = 0
+    while exp.More():                     # superficies (shells) que no forman parte de un sólido
+        n += 1
+        exp.Next()
+    out["superficies"] = n
     return out
 
 
@@ -477,11 +483,20 @@ def scene_to_cad(scene: SceneModel, options, report, progress=None) -> CADModel:
     set_stage = getattr(report, "set_stage", lambda s: None)
     set_stage("estimación de recursos")
     total = scene.triangle_count()
+    import gc
+    gc.collect()                    # la memoria libre se mide con la escena ya cargada y sin basura pendiente
     avail = mb.available_memory_mb()
-    affordable = mb.max_affordable_triangles(avail, options.timeout_s)
+    unify_max = int(getattr(options, "unify_max_triangles", 50_000)) if getattr(options, "unify_coplanar", True) else 0
+    affordable = mb.max_affordable_triangles(avail, options.timeout_s, unify_max=unify_max)
     budget = min(int(options.max_triangles_to_cad), affordable)
-    limit_reason = ("limitado por la memoria libre y el tiempo máximo" if affordable < int(options.max_triangles_to_cad)
-                    else "limitado por el límite de triángulos → CAD")
+    by_time = mb.max_affordable_triangles(1e12, options.timeout_s, unify_max=unify_max)
+    if affordable >= int(options.max_triangles_to_cad):
+        limit_reason = "limitado por el límite de triángulos → CAD"
+    elif by_time <= affordable:
+        limit_reason = f"limitado por el tiempo máximo ({int(options.timeout_s)} s)"
+    else:
+        limit_reason = (f"limitado por la memoria libre: {round(avail):,} MB disponibles; cierre otras "
+                        f"aplicaciones para conservar más detalle")
     tech = {"triangulos_totales": int(total), "memoria_disponible_mb": round(avail), "limite_triangulos": budget,
             "estimacion_sin_simplificar": mb.estimate(total), "mallas": []}
     if hasattr(report, "technical"):
@@ -512,7 +527,7 @@ def scene_to_cad(scene: SceneModel, options, report, progress=None) -> CADModel:
             mopts.resource_limited_target = target_total < int(getattr(options, "mesh_target_triangles", 100_000))
             mopts.resource_limit_reason = limit_reason
             mopts.hard_triangle_budget = max(1000, int(min(int(options.max_triangles_to_cad),
-                                                           mb.max_affordable_triangles(avail, options.timeout_s, 1.0)) * share))
+                                                           mb.max_affordable_triangles(avail, options.timeout_s, 1.0, unify_max)) * share))
             mbudget = max(1000, int(budget * share))
 
             def prog(fr, msg, d=done, n=len(f)):

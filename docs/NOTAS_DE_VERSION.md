@@ -1,3 +1,26 @@
+## NEXOVAX 3D Converter 1.0.2
+
+**ES** — Conversión de mallas densas (GLB, OBJ, FBX, STL) a STEP/IGES:
+- Las piezas cerradas se conservan como **sólidos** tras simplificar: cada pieza se simplifica por separado, se comprueba su cierre y, si lo pierde, se reintenta con más detalle dentro de la memoria disponible (modelo real de 1,9 M triángulos: 13 sólidos y 0 superficies, antes 5 sólidos y 5 superficies).
+- Se respeta el objetivo de triángulos también por encima del 99 % de reducción.
+- Diagnóstico correcto en GLB con costuras de textura (antes mostraba cientos de piezas abiertas inexistentes).
+- Reparación de aletas, solapas y cuerpos que se tocan en un punto o arista.
+- Análisis y reparación ≈3,5 veces más rápidos en mallas de millones de triángulos; presupuesto de memoria medido y más preciso, con aviso de cuánta memoria libre había.
+- La validación muestra sólidos, superficies y caras.
+
+**FR** — Conversion des maillages denses vers STEP/IGES : les pièces fermées restent des **solides** après simplification (simplification par pièce avec contrôle de fermeture), objectif de triangles respecté au-delà de 99 % de réduction, diagnostic correct des GLB à coutures de texture, réparation des ailettes et pièces en contact, analyse ≈3,5× plus rapide, budget mémoire mesuré, validation indiquant solides, surfaces et faces.
+
+**HT** — Konvèsyon mayaj ki dans an STEP/IGES: moso ki fèmen yo rete **solid** apre senplifikasyon (senplifikasyon pa moso ak verifikasyon fèmti), objektif triyang respekte menm pi wo pase 99 % rediksyon, dyagnostik kòrèk pou GLB ki gen kouti tekstil, reparasyon zèl ak moso ki touche, analiz ≈3,5 fwa pi rapid, bidjè memwa mezire, verifikasyon an montre solid, sifas ak fas.
+
+### Instalación · Installation · Enstalasyon
+1. Descargue / Téléchargez / Telechaje `NEXOVAX3DConverter-Setup.exe`.
+2. Ejecútelo / Lancez-le / Lanse l (actualiza la versión anterior · met à jour la version précédente · mete vèsyon anvan an ajou).
+3. Compruebe la suma / Vérifiez la somme / Verifye sòm nan: `SHA256SUMS.txt`.
+
+Si Windows SmartScreen muestra «Windows protegió su PC», pulse *Más información → Ejecutar de todas formas* (instalador aún sin firma digital).
+
+---
+
 ## NEXOVAX 3D Converter 1.0.1
 
 **ES** — Corrección de la conversión STL → STEP/IGES y diagnóstico de errores:
