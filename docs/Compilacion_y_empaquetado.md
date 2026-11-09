@@ -58,7 +58,7 @@ Pasos que ejecuta:
 | Instalador `/VERYSILENT /CURRENTUSER` | instalado en 43 s, 766 MB; acceso directo de escritorio, menú Inicio y entrada de desinstalación creados |
 | App instalada: 13 archivos × 8 formatos destino (CLI) | **104/104** correctas; ningún proceso de la app abrió conexiones TCP/UDP durante las conversiones |
 | Desinstalación silenciosa | carpeta, accesos directos, menú Inicio y clave de desinstalación eliminados |
-| Instalador trilingüe ES/FR/HT (instalado con `/LANG=ht`) | 140,8 MB, SHA-256 `CAED640F…FC9F88B9`; accesos directos en criollo; la app arranca en el idioma elegido en el instalador; desinstalación limpia, incluidas las preferencias |
+| Instalador trilingüe ES/FR/HT (instalado con `/LANG=ht`) | 140,8 MB, SHA-256 `0253AE59…F55F103` (versión publicada en GitHub); accesos directos en criollo; la app arranca en el idioma elegido en el instalador; desinstalación limpia, incluidas las preferencias |
 
 ## Verificación pendiente (requiere otra máquina)
 * Instalar en un **Windows 10/11 limpio** (sin Python) y con **la red desactivada**, y ejecutar:
