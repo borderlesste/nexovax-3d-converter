@@ -2,4 +2,4 @@
 
 APP_NAME = "NEXOVAX 3D Converter"
 APP_ID = "NEXOVAX3DConverter"
-__version__ = "1.0.2"
+__version__ = "1.0.3"

@@ -2,7 +2,7 @@
 ; Compilar con:  ISCC.exe packaging\installer.iss   (lo hace build.ps1)
 
 #define AppName "NEXOVAX 3D Converter"
-#define AppVersion "1.0.2"
+#define AppVersion "1.0.3"
 #define AppExe "NEXOVAX3DConverter.exe"
 #define DistDir "..\build\dist\NEXOVAX3DConverter"
 
@@ -34,7 +34,7 @@ WizardStyle=modern
 ShowLanguageDialog=yes
 LanguageDetectionMethod=uilanguage
 CloseApplications=yes
-VersionInfoVersion=1.0.2.0
+VersionInfoVersion=1.0.3.0
 VersionInfoProductName={#AppName}
 VersionInfoDescription={#AppName} Setup
 
@@ -68,6 +68,12 @@ ht.CliName=Konsòl konvèsyon (nexovax3d-cli)
 es.UninstallName=Desinstalar {#AppName}
 fr.UninstallName=Désinstaller {#AppName}
 ht.UninstallName=Dezenstale {#AppName}
+es.OldOtherScope=Hay otra instalación de {#AppName} (versión %1) en:%n%2%n%nSe desinstalará antes de continuar para que el acceso directo no siga abriendo la versión antigua. Si esa instalación es «para todos los usuarios», Windows pedirá permiso de administrador.
+fr.OldOtherScope=Une autre installation de {#AppName} (version %1) existe dans :%n%2%n%nElle sera désinstallée avant de continuer, afin que le raccourci n'ouvre plus l'ancienne version. Si elle est installée « pour tous les utilisateurs », Windows demandera l'autorisation d'administrateur.
+ht.OldOtherScope=Gen yon lòt enstalasyon {#AppName} (vèsyon %1) nan:%n%2%n%nN ap dezenstale l anvan nou kontinye, pou rakousi a pa louvri ansyen vèsyon an ankò. Si li te enstale «pou tout itilizatè», Windows ap mande pèmisyon administratè.
+es.OldOtherScopeFailed=No se pudo desinstalar la versión anterior (%1). Desinstálela desde Configuración → Aplicaciones y vuelva a ejecutar este instalador.
+fr.OldOtherScopeFailed=Impossible de désinstaller l'ancienne version (%1). Désinstallez-la depuis Paramètres → Applications, puis relancez ce programme d'installation.
+ht.OldOtherScopeFailed=Nou pa t ka dezenstale ansyen vèsyon an (%1). Dezenstale l nan Paramèt → Aplikasyon, epi lanse enstalatè sa a ankò.
 es.RunApp=Iniciar {#AppName}
 fr.RunApp=Lancer {#AppName}
 ht.RunApp=Lanse {#AppName}
@@ -123,3 +129,41 @@ Filename: "{app}\{#AppExe}"; Description: "{cm:RunApp}"; Flags: nowait postinsta
 ; restos que la aplicación pueda haber creado dentro de su carpeta (cachés de Python)
 Type: filesandordirs; Name: "{app}\_internal\__pycache__"
 Type: dirifempty; Name: "{app}"
+
+[Code]
+// Una instalación anterior en el OTRO ámbito (para todos los usuarios ↔ solo para mí) no se actualiza:
+// Inno Setup solo reemplaza la del mismo ámbito. Quedarían dos copias y el acceso directo antiguo
+// seguiría abriendo la versión vieja (caso real: 1.0.1 en Program Files + 1.0.2 por usuario).
+const
+  UninstKey = 'Software\Microsoft\Windows\CurrentVersion\Uninstall\{EDEA72AB-C63B-4585-9C62-CF9078B661C4}_is1';
+
+var
+  OtherRoot: Integer;
+  OtherVersion, OtherUninstaller, OtherDir: String;
+
+function FindOtherScopeInstall(): Boolean;
+begin
+  if IsAdminInstallMode then OtherRoot := HKCU else OtherRoot := HKLM64;
+  Result := RegQueryStringValue(OtherRoot, UninstKey, 'UninstallString', OtherUninstaller);
+  if Result then begin
+    OtherUninstaller := RemoveQuotes(OtherUninstaller);
+    if not RegQueryStringValue(OtherRoot, UninstKey, 'DisplayVersion', OtherVersion) then OtherVersion := '?';
+    if not RegQueryStringValue(OtherRoot, UninstKey, 'InstallLocation', OtherDir) then OtherDir := ExtractFileDir(OtherUninstaller);
+    Result := FileExists(OtherUninstaller);
+  end;
+end;
+
+function PrepareToInstall(var NeedsRestart: Boolean): String;
+var
+  Code: Integer;
+begin
+  Result := '';
+  if not FindOtherScopeInstall() then Exit;
+  SuppressibleMsgBox(FmtMessage(CustomMessage('OldOtherScope'), [OtherVersion, OtherDir]), mbInformation, MB_OK, IDOK);
+  // ShellExec respeta la elevación que pide el desinstalador de una instalación para todos los usuarios
+  if not ShellExec('', OtherUninstaller, '/SILENT /NORESTART /SUPPRESSMSGBOXES', '', SW_SHOW, ewWaitUntilTerminated, Code) then
+    Code := -1;
+  Sleep(1500);
+  if RegKeyExists(OtherRoot, UninstKey) then
+    Result := FmtMessage(CustomMessage('OldOtherScopeFailed'), [OtherDir]);
+end;

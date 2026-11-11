@@ -136,7 +136,8 @@ STATIC = {
     "Guardar perfil": "Enregistrer le profil",
     "Nombre del perfil:": "Nom du profil :",
     "Cola de conversión ({n})": "File de conversion ({n})",
-    "Iniciando lote: {n} archivo(s) → {fmt}.": "Démarrage du lot : {n} fichier(s) → {fmt}.",
+    "Iniciando lote: {n} archivo(s) → {fmt} (versión {v}).": "Démarrage du lot : {n} fichier(s) → {fmt} (version {v}).",
+    "Versión instalada": "Version installée",
     "Convirtiendo: {a} → {b}": "Conversion : {a} → {b}",
     "Iniciando conversión de \"{f}\"…": "Début de la conversion de « {f} »…",
     "Lote finalizado: {ok} correctas, {warn} con advertencias, {fail} fallidas/canceladas.":

@@ -69,7 +69,7 @@ def panel(title: str, icon_name: str) -> tuple[QFrame, QVBoxLayout, QHBoxLayout]
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle(APP_NAME)
+        self.setWindowTitle(f"{APP_NAME} {__version__}")      # la versión siempre visible
         self.setWindowIcon(app_icon())
         from PySide6.QtGui import QGuiApplication
         scr = QGuiApplication.primaryScreen()
@@ -152,6 +152,11 @@ class MainWindow(QMainWindow):
         t = QLabel(APP_NAME)
         t.setObjectName("appTitle")
         row1.addWidget(t)
+        ver = QLabel(f"v{__version__}")
+        ver.setObjectName("appVersion")
+        ver.setStyleSheet("color:#6b7a90; font-size:11px; padding-top:8px;")
+        ver.setToolTip(tr("Versión instalada"))
+        row1.addWidget(ver)
         sep = QFrame()
         sep.setFrameShape(QFrame.VLine)
         sep.setStyleSheet("color:#d9e0ea;")
@@ -1100,7 +1105,8 @@ class MainWindow(QMainWindow):
         self.btn_convert.setEnabled(False)
         self.btn_convert_top.setEnabled(False)
         self.btn_cancel.setEnabled(True)
-        self._log("info", tr("Iniciando lote: {n} archivo(s) → {fmt}.", n=len(jobs), fmt=FORMATS[opts.target_format].name))
+        self._log("info", tr("Iniciando lote: {n} archivo(s) → {fmt} (versión {v}).", n=len(jobs), fmt=FORMATS[opts.target_format].name,
+                               v=__version__))
         self.settings.setValue("options", json.dumps(opts.to_dict()))
         self.conv_thread.start()
 

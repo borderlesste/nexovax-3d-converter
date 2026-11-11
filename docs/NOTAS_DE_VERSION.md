@@ -1,3 +1,24 @@
+## NEXOVAX 3D Converter 1.0.3
+
+**ES** — Actualización fiable desde versiones anteriores:
+- Si había una versión instalada en el otro modo («para todos los usuarios» ↔ «solo para mí»), el instalador la desinstala antes de continuar (Windows puede pedir permiso de administrador). Antes quedaban dos copias y el acceso directo seguía abriendo la versión antigua, sin las correcciones de 1.0.1 y 1.0.2.
+- La versión aparece en el título de la ventana, en la cabecera y en el registro de cada lote.
+
+**FR** — Mise à jour fiable : le programme d'installation désinstalle une version installée dans l'autre mode (« pour tous les utilisateurs » ↔ « pour moi uniquement ») ; la version s'affiche dans le titre de la fenêtre, l'en-tête et le journal de chaque lot.
+
+**HT** — Mizajou ki serye: enstalatè a dezenstale yon vèsyon ki te enstale nan lòt mòd la («pou tout itilizatè» ↔ «pou mwen sèlman»); vèsyon an parèt nan tit fenèt la, nan antèt la ak nan jounal chak lo.
+
+Incluye todas las mejoras de 1.0.2 · Inclut toutes les améliorations de 1.0.2 · Gen tout amelyorasyon 1.0.2 yo.
+
+### Instalación · Installation · Enstalasyon
+1. Descargue / Téléchargez / Telechaje `NEXOVAX3DConverter-Setup.exe`.
+2. Ejecútelo / Lancez-le / Lanse l (actualiza la versión anterior · met à jour la version précédente · mete vèsyon anvan an ajou).
+3. Compruebe la suma / Vérifiez la somme / Verifye sòm nan: `SHA256SUMS.txt`.
+
+Si Windows SmartScreen muestra «Windows protegió su PC», pulse *Más información → Ejecutar de todas formas* (instalador aún sin firma digital).
+
+---
+
 ## NEXOVAX 3D Converter 1.0.2
 
 **ES** — Conversión de mallas densas (GLB, OBJ, FBX, STL) a STEP/IGES:

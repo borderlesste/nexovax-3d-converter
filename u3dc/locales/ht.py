@@ -136,7 +136,8 @@ STATIC = {
     "Guardar perfil": "Anrejistre pwofil",
     "Nombre del perfil:": "Non pwofil la:",
     "Cola de conversión ({n})": "Fil konvèsyon ({n})",
-    "Iniciando lote: {n} archivo(s) → {fmt}.": "Kòmanse lo a: {n} fichye → {fmt}.",
+    "Iniciando lote: {n} archivo(s) → {fmt} (versión {v}).": "Kòmanse lo a: {n} fichye → {fmt} (vèsyon {v}).",
+    "Versión instalada": "Vèsyon ki enstale",
     "Convirtiendo: {a} → {b}": "Ap konvèti: {a} → {b}",
     "Iniciando conversión de \"{f}\"…": "Kòmanse konvèsyon \"{f}\"…",
     "Lote finalizado: {ok} correctas, {warn} con advertencias, {fail} fallidas/canceladas.":

@@ -1,5 +1,5 @@
-NEXOVAX 3D Converter 1.0.2 - resultados de pruebas automáticas
-Fecha: 2026-11-09 12:05 · Windows 11 Pro 10.0.26200 · Python 3.12.10
+NEXOVAX 3D Converter 1.0.3 - resultados de pruebas automáticas
+Fecha: 2026-11-11 13:16 · Windows 11 Pro 10.0.26200 · Python 3.12.10
 rootdir: C:\Users\en-rr\Desktop\3D\Universal3DConverter
 collecting ... collected 175 items
 tests/test_cli.py::test_cli_matrix PASSED                                [  0%]
@@ -177,4 +177,4 @@ tests/test_stl_to_step.py::test_comparison_stl_to_mesh_formats[obj] PASSED [ 98%
 tests/test_stl_to_step.py::test_comparison_stl_to_mesh_formats[glb] PASSED [ 98%]
 tests/test_stl_to_step.py::test_native_crash_is_diagnosed PASSED         [ 99%]
 tests/test_stl_to_step.py::test_isolated_run_leaves_no_temp_dirs PASSED  [100%]
-======================= 175 passed in 259.88s (0:04:19) =======================
+======================= 175 passed in 276.11s (0:04:36) =======================
